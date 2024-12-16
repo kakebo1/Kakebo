@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFAFA"
+    tools:context=".InicioSesion">
+
+    <TextView
+        android:id="@+id/lblKakebo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="524dp"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/Kakebo"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="215dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="Iniciar Sesión"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="249dp"
+        android:fontFamily="@font/asap_semibold"
+        android:foregroundTint="#629C44"
+        android:text="@string/Correo"
+        android:textColor="#629C44"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtCorreoE"
+        android:layout_width="325dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:fontFamily="@font/asap_medium"
+        android:hint="@string/Correo"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="390dp"
+        android:layout_marginEnd="293dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="@string/Contraseña"
+        android:textColor="#629C44"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtContraseña"
+        android:layout_width="328dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="37dp"
+        android:ems="10"
+        android:fontFamily="@font/asap_medium"
+        android:hint="@string/Contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="224dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="486dp"
+        android:layout_marginEnd="103dp"
+        android:backgroundTint="#72BB53"
+        android:fontFamily="@font/asap_semibold"
+        android:text="@string/Continuar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="541dp"
+        android:layout_marginEnd="125dp"
+        android:fontFamily="@font/asap_medium"
+        android:text="O inicia sesión con Google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnGoogle"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="112dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/googleicon" />
+
+    <ImageButton
+        android:id="@+id/btnVerContra"
+        android:layout_width="33dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="425dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ojoabierto" />
+
+    <TextView
+        android:id="@+id/txtOlvContr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="646dp"
+        android:layout_marginEnd="210dp"
+        android:fontFamily="@font/asap_medium"
+        android:text="¿Olvidaste tu contraseña?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="628dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="#72BB53"
+        android:fontFamily="@font/asap_semibold"
+        android:text="Crear cuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="115dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="74dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/monedas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

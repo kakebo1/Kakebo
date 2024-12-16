@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Categorias">
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parque"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="647dp" />
+
+    <Spinner
+        android:id="@+id/menuLateral"
+        android:layout_width="62dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/menu_100"
+        android:spinnerMode="dropdown"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categorias"
+        android:textSize="48sp"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresos"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Egresos"
+        tools:layout_editor_absoluteX="298dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <ImageButton
+        android:id="@+id/btnComida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        android:scrollbarDefaultDelayBeforeFade="400"
+        android:scrollbarFadeDuration="250"
+        app:srcCompat="@drawable/comida_cat"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <ImageButton
+        android:id="@+id/btnSalud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/salud_cat"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <ImageButton
+        android:id="@+id/btnFamilia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/familia_cat"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <ImageButton
+        android:id="@+id/btnHogar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_casa"
+        tools:layout_editor_absoluteX="293dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <ImageButton
+        android:id="@+id/btnTransporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/coche_cat"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="291dp" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supervivencia"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comida"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="259dp" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salud"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Familia"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hogar"
+        tools:layout_editor_absoluteX="298dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <ImageButton
+        android:id="@+id/btnAgregarSup"
+        android:layout_width="37dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/add"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="141dp" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transporte"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="348dp" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ocio"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="402dp" />
+
+    <ImageButton
+        android:id="@+id/btnFiesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_fiesta"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="457dp" />
+
+    <ImageButton
+        android:id="@+id/btnAlcohol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/alcohol_cat"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="457dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_videojuegos"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="457dp" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cultural"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="547dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/museo_cat"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="586dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_bosque"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="586dp" />
+
+    <ImageButton
+        android:id="@+id/btnAgregarOcio"
+        android:layout_width="39dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/add"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="402dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton19"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/add"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="544dp" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fiesta"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="510dp" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alcohol"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="509dp" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Juegos"
+        tools:layout_editor_absoluteX="211dp"
+        tools:layout_editor_absoluteY="507dp" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Museo"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="646dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

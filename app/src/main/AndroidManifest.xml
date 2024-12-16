@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+        <activity
+            android:name=".categoriasIngresos"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarCategoria"
+            android:exported="false" />
+        <activity
+            android:name=".LlenadoDeudas"
+            android:exported="true" />
+        <activity
+            android:name=".LlenadoEgresos"
+            android:exported="false" />
+        <activity
+            android:name=".LlenadoIngresos"
+            android:exported="true" />
+        <activity
+            android:name=".PlaneacionIngresos"
+            android:exported="true" />
+        <activity
+            android:name=".Categorias"
+            android:exported="false" />
+        <activity
+            android:name=".Egresos"
+            android:exported="false" />
+        <activity
+            android:name=".Reportes"
+            android:exported="false" />
+        <activity
+            android:name=".Notas"
+            android:exported="false" />
+        <activity
+            android:name=".PlaneacionDeudas"
+            android:exported="false" />
+        <activity
+            android:name=".MetaFin"
+            android:exported="true" />
+        <activity
+            android:name=".Ingresos"
+            android:exported="true" />
+        <activity
+            android:name=".Ayuda"
+            android:exported="false" />
+        <activity
+            android:name=".PlaneacionEgresos"
+            android:exported="false" />
+        <activity
+            android:name=".MenuPrinc"
+            android:exported="true" />
+        <activity
+            android:name=".RecuperarContra"
+            android:exported="false" />
+        <activity
+            android:name=".CrearCuenta"
+            android:exported="false" />
+        <activity
+            android:name=".InicioSesion"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

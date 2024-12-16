@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".categoriasIngresos">
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresos"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Egresos"
+        tools:layout_editor_absoluteX="298dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categorias"
+        android:textSize="48sp"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresos"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <ImageButton
+        android:id="@+id/btnAgregarSup"
+        android:layout_width="37dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/add"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="141dp" />
+
+    <Spinner
+        android:id="@+id/menuLateral"
+        android:layout_width="62dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/menu_100"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/salario_cat"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ahorro_cat"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/beca_cat"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/prestamo_cat"
+        tools:layout_editor_absoluteX="310dp"
+        tools:layout_editor_absoluteY="216dp" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salario"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="271dp" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ahorro"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="270dp" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beca"
+        tools:layout_editor_absoluteX="217dp"
+        tools:layout_editor_absoluteY="269dp" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Préstamo"
+        tools:layout_editor_absoluteX="311dp"
+        tools:layout_editor_absoluteY="271dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

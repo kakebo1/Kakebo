@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBE8BA"
+    tools:context=".LlenadoEgresos">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="107dp" />
+
+    <EditText
+        android:id="@+id/txtConceptoa"
+        android:layout_width="170dp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <EditText
+        android:id="@+id/txtCantidad"
+        android:layout_width="205dp"
+        android:layout_height="43dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="168dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Concepto"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoria"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="171dp"
+        android:layout_height="32dp"
+        android:text="Comentarios:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="514dp" />
+
+    <ImageButton
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        android:tint="@color/transparente"
+        app:srcCompat="@drawable/icons8_cancelar_100"
+        tools:layout_editor_absoluteX="332dp"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <EditText
+        android:id="@+id/txtComentarios"
+        android:layout_width="341dp"
+        android:layout_height="109dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="554dp" />
+
+    <ImageButton
+        android:id="@+id/btnAgregarImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/icons8_add_image_96"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="498dp" />
+
+    <EditText
+        android:id="@+id/txtFecha"
+        android:layout_width="207dp"
+        android:layout_height="41dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4C7A34"
+        android:text="Aceptar"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="672dp" />
+
+    <Switch
+        android:id="@+id/txtDeuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deuda       "
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="222dp" />
+
+    <RadioButton
+        android:id="@+id/btnFijo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Fijo"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="279dp" />
+
+    <RadioButton
+        android:id="@+id/btmVariable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:clickable="true"
+        android:text="Variable"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="277dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

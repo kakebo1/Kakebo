@@ -1,0 +1,131 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="Kakebo">Kakebo</string>
+    <string name="Continuar">Continuar</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="Correo">Correo electrónico</string>
+    <string name="Tyc">Estoy de acuerdo con los términos y condiciones de uso </string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="AvisodePriv">
+        Aplicación móvil para la gestión de finanzas personales basado en el método “Kakebo” es un proyecto escolar desarrollado por estudiantes de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN con fines académicos y sin fines de lucro. La protección de tus datos personales es importante para nosotros. \n\n En este aviso de privacidad te explicamos cómo recopilamos, utilizamos, y protegemos tu información cuando utilizas nuestra aplicación.
+\n\n 1. Responsable del tratamiento de los datos personales
+Los responsables del tratamiento de tus datos personales son los estudiantes y docentes a cargo del proyecto "Aplicación móvil para la gestión de finanzas personales basado en el método “Kakebo”" de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN
+\n\n 2. Datos personales que recopilamos
+La aplicación puede recopilar algunos de los siguientes datos personales de sus usuarios:
+\n	Nombre completo
+\n	Correo electrónico
+\n	Datos de uso dentro de la aplicación
+\n\n 3. Finalidad del tratamiento de los datos
+\n Los datos personales que recopilamos se utilizarán únicamente con el fin de monitorear y analizar el uso de la aplicación para fines académicos y de mejora del proyecto.
+\n No utilizamos tus datos personales para fines comerciales ni los compartimos con terceros sin tu consentimiento.
+\n\n 4. Conservación de los datos
+\n Los datos personales serán conservados solo por el tiempo necesario para cumplir con la finalidad del proyecto, es por eso que, una vez que el proyecto finalice o ya no se necesiten los datos para los fines educativos, estos serán eliminados de forma segura.
+\n 5. Cambios en el aviso de privacidad
+\n Nos reservamos el derecho a modificar este aviso de privacidad en cualquier momento. Cualquier cambio será notificado a través de la aplicación, por lo cual recomendamos revisar periódicamente este aviso de privacidad para estar al tanto de las actualizaciones.
+\n 6. Aceptación del aviso de privacidad
+\n Al utilizar nuestra aplicación, aceptas el tratamiento de tus datos personales conforme a los términos y condiciones descritos en este aviso de privacidad.
+\n\n Fecha de última actualización: 21 de octubre del 2024
+
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_scrolling2">ScrollingActivity2</string>
+    <string name="title_activity_main4">MainActivity4</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="large_text">a</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="TerminosyCond">
+Estos términos y condiciones rigen el uso de la presente aplicación móvil que ha sido desarrollada como un proyecto escolar por estudiantes de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN
+\n Al descargar, acceder y utilizar la aplicación, aceptas cumplir con los siguientes Términos; por lo cual, si no estás de acuerdo con estos términos, por favor no utilices la aplicación.
+\n\n 1. Descripción del servicio
+\n\n La aplicación es un proyecto educativo, el cual está destinado únicamente para fines académicos y no tiene un propósito comercial. El uso de la aplicación es completamente voluntario y gratuito.
+\n\n 2. Aceptación de los términos
+\n\n Al descargar, acceder o utilizar la aplicación, reconoces que has leído, comprendido y aceptado cumplir con estos términos; nos reservamos el derecho de modificarlos en cualquier momento, y cualquier cambio será notificado a los usuarios.
+        \n El uso continuo de la aplicación después de cualquier modificación constituye la aceptación de dichos cambios.
+\n\n 3. Uso de la aplicación
+\n\n El usuario se compromete a utilizar la aplicación únicamente para fines lícitos y de acuerdo con los presentes términos, queda prohibido:
+\n\n • Usar la aplicación para cualquier actividad ilegal o que infrinja derechos de terceros.
+\n • Descompilar, realizar ingeniería inversa o alterar la aplicación.
+\n\n 4. Recopilación y uso de datos
+\n\n La aplicación puede recopilar ciertos datos personales y de uso para mejorar la experiencia de usuario.
+        \n Para más información sobre cómo tratamos tus datos, por favor consulta nuestro Aviso de Privacidad.
+\n\n 5. Limitación de Responsabilidad
+\n No nos hacemos responsables de:
+\n •	Cualquier daño directo, indirecto, incidental, especial o consecuente derivado del uso o la imposibilidad de usar la aplicación.
+\n •	La pérdida de datos, interrupciones del servicio o cualquier otro daño relacionado con el uso de la aplicación.
+\n\n  6. Enlaces a Terceros
+\n\n La aplicación puede contener enlaces a sitios web o servicios de terceros que no están bajo nuestro control.
+        \n No somos responsables de los contenidos, políticas de privacidad o prácticas de sitios o servicios de terceros.
+\n\n 7. Modificaciones a los Términos de condiciones
+\n\n Nos reservamos el derecho de modificar estos términos en cualquier momento.
+\n Cualquier modificación será notificada a los usuarios a través de la aplicación.
+        \n Te recomendamos revisar los términos periódicamente para estar informado de cualquier cambio.
+</string>
+    <string-array name="menu">
+        <item></item>
+        <item>Inicio</item>
+        <item></item>
+        <item>Ingresos</item>
+        <item></item>
+        <item>Egresos</item>
+        <item></item>
+        <item>Notas</item>
+        <item></item>
+        <item>Planeación de deudas</item>
+        <item></item>
+        <item>Categorias</item>
+        <item></item>
+        <item>Reportes</item>
+        <item></item>
+        <item>Meta financiera</item>
+        <item></item>
+        <item>Ayuda</item>
+        <item></item>
+        <item>Modo oscuro</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="reporte">
+        <item></item>
+        <item>Quincenal</item>
+        <item></item>
+        <item>Mensual</item>
+        <item></item>
+        <item>Trimestral</item>
+    </string-array>
+
+    <string-array name="plazo">
+        <item></item>
+        <item>Corto (menor a 6 meses)</item>
+        <item></item>
+        <item>Mediano (6 meses a 1 año)</item>
+        <item></item>
+        <item>Largo (mayor a 1 año) </item>
+    </string-array>
+
+    <string-array name="plazospagodeuda">
+        <item></item>
+        <item>Mensual</item>
+        <item></item>
+        <item>Quincenal</item>
+        <item></item>
+        <item>Único</item>
+    </string-array>
+
+    <string-array name="kakebo">
+        <item></item>
+        <item>Supervivencia</item>
+        <item></item>
+        <item>Ocio</item>
+        <item></item>
+        <item>Cultura</item>
+
+
+    </string-array>
+
+</resources>

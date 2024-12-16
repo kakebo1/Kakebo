@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgregarCategoria">
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar categoría"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <ImageButton
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/icons8_cancelar_100"
+        tools:layout_editor_absoluteX="342dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/btnAlcoholIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_alcohol"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <ImageButton
+        android:id="@+id/btnTransporteIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_autob_s"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <ImageButton
+        android:id="@+id/btnBosqueIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_bosque"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <ImageButton
+        android:id="@+id/btnBotiquinIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_botiquin"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <ImageButton
+        android:id="@+id/btnCasaIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_casa"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <ImageButton
+        android:id="@+id/btnCineIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_cine"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <ImageButton
+        android:id="@+id/btnComidaIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_comida"
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <ImageButton
+        android:id="@+id/btnFamiliaIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_familia"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <ImageButton
+        android:id="@+id/btnFiestaIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_fiesta"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <ImageButton
+        android:id="@+id/btnGymIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_gimnasio"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <ImageButton
+        android:id="@+id/btnVideojuegosIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_videojuegos"
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <ImageButton
+        android:id="@+id/btnLibroIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_libro"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <ImageButton
+        android:id="@+id/btnMaquillajeIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_maquillaje"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <ImageButton
+        android:id="@+id/btnRopaIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_ropa"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <ImageButton
+        android:id="@+id/btnTarjetaIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_tarjetacredito"
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <ImageButton
+        android:id="@+id/btnTelefonoIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparente"
+        app:srcCompat="@drawable/cat_telefono"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#92D36E"
+        android:text="Aceptar"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="675dp" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="98dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="nombre"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="76dp"
+        android:layout_height="30dp"
+        android:text="Icono:"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Color"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="485dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
