@@ -33,7 +33,7 @@ public class MetaFin extends AppCompatActivity {
     Button btnAceptar;
     private FirebaseFirestore basededatos;
     String plazoMe;
-    //QUITAR ESTE COMENTARIO
+    //ACTUALICE ESTE COMENTARIO
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
