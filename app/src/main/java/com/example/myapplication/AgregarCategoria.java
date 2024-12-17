@@ -13,7 +13,7 @@ public class AgregarCategoria extends AppCompatActivity {
 ImageButton btnAlcoholIco, btnTransporteIco, btnBosqueIco, btnBotiquinIco, btnCasaIco, btnCineIco, btnComidaIco, btnFamiliaIco,
     btnFiestaIco, btnGymIco, btnVideojuegosIco, btnLibroIco, btnMaquillajeIco, btnRopaIco, btnTarjetaIco, btnTelefonoIco;
     @Override
-    //uuuu
+    //uuuunn
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
