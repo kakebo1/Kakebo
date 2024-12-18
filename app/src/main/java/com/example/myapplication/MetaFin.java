@@ -28,10 +28,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MetaFin extends AppCompatActivity {
-//DECLARAR EL EDIT TEXT
+//DECLARAR EDIT TEXTS Y BOTÓN
     EditText txtMetaCant, txtRazon;
     Button btnAceptar;
+    // SE DECLARÓ LA BASE DE DATOS
     private FirebaseFirestore basededatos;
+    //VARIABLE DE LA CUAL SE VA A SACAR EL PLAZO DE META
     String plazoMe;
 
     @Override
@@ -46,13 +48,14 @@ public class MetaFin extends AppCompatActivity {
             return insets;
         });
         /** SPINNER PLAZO **/
+        // SE TOMAN LOS DATOS DEL ARRAY (DENTRO DEL ARCHIVO ARRAYS)
         Spinner plazo = findViewById(R.id.plazoMeta);
         ArrayAdapter<CharSequence>ad = ArrayAdapter.createFromResource(this, R.array.plazo, simple_spinner_item);
         ad.setDropDownViewResource(simple_spinner_item);
         plazo.setAdapter(ad);
         boolean b = true;
         plazo.setSelected(b);
-     //   int a;
+        // DEPENDIENDO DE QUE SE ESCOJA DENTRO DEL SPINNER DE PLAZO SE MANDA ESE DATO A LA BASE DE DATOS
         plazo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int a, long l) {
@@ -174,15 +177,18 @@ public void aceptar (View v){
     public boolean validar(){
         boolean retorno =true;
         String MetaCant = txtMetaCant.getText().toString();
-        String cantidad_objetivo = txtMetaCant.getText().toString().trim();
+        String cantidad_objetiv = txtMetaCant.getText().toString().trim();
+        int cantidad_objetivo = Integer.parseInt(cantidad_objetiv);
         String Razon = txtRazon.getText().toString();
         String motivo_ahorro = txtRazon.getText().toString().trim();
         String plazoM;
         plazoM = plazoMe;
         if(MetaCant.isEmpty()) {
+            //VALIDAR QUE EL DATO META CANTIDAD NO QUEDE VACÍO
             txtMetaCant.setError("Este campo NO puede quedar vacío");
             retorno = false;
                 } else if (Razon.isEmpty()) {
+            // VALIDAR QUE EL DATO RAZÓN NO QUEDE VACÍO
                 txtRazon.setError("Este campo NO puede quedar vacío");
                 retorno = false;
             } else {
@@ -193,8 +199,9 @@ public void aceptar (View v){
             }
         return retorno;
     }
-private void meta_financiera (String motivo_ahorro, String cantidad_objetivo, String plazoM){
+private void meta_financiera (String motivo_ahorro, int cantidad_objetivo, String plazoM){
 Map <String, Object> map = new HashMap<>();
+// SE MANDAN ESTOS CAMPOS AL FIREBASE
 map.put("cantidad_objetivo",cantidad_objetivo ); //ESTE ES STRING
 map.put("motivo_ahorro", motivo_ahorro);
 map.put("plazo",plazoM);

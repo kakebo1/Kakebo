@@ -25,34 +25,38 @@ public class LlenadoDeudas extends AppCompatActivity {
     //DECLARAR LOS COMPONENTES
 Button btnAceptar;
 EditText txtConceptoa, txtCantidad, txtFecha;
-private FirebaseFirestore mfirestore;
+private FirebaseFirestore basededatos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.act_llenado_deudas);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        mfirestore = FirebaseFirestore.getInstance();
+
         btnAceptar = findViewById(R.id.btnAceptar);
         txtConceptoa = findViewById(R.id.txtConceptoa);
         txtCantidad = findViewById(R.id.txtCantidad);
+        basededatos = FirebaseFirestore.getInstance();
 
+        // AL DAR CLICK AL BOTÓN ACEPTAR
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String Conceptodeuda = txtConceptoa.getText().toString().trim();
-                Integer Cantidad = txtCantidad.getText().length();
+                String Cantidad = txtCantidad.getText().toString().trim();
+             //   Integer Cantidad = txtCantidad.getText().length();
 
 
                 if(Conceptodeuda.isEmpty()){
 
                 }else{
-                    postDeuda(Conceptodeuda);
+                    //postDeuda(Conceptodeuda);
 
                 }
 
@@ -60,21 +64,5 @@ private FirebaseFirestore mfirestore;
         });
     }
 
-    private void postDeuda(String conceptodeuda) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("concepto", conceptodeuda);
-     //   map.put("cantidad", cantidad);
 
-        mfirestore.collection("deudas").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                finish();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-
-            }
-        });
-    }
 }
