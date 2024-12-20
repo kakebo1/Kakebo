@@ -39,8 +39,6 @@ android {
 
 dependencies {
     implementation(libs.kotlin.gradle.plugin)
-
-    // Dependencia necesaria para scripts Kotlin
     implementation(libs.kotlin.script.runtime)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
