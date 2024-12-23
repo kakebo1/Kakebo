@@ -66,6 +66,7 @@ Estos términos y condiciones rigen el uso de la presente aplicación móvil que
 \n Cualquier modificación será notificada a los usuarios a través de la aplicación.
         \n Te recomendamos revisar los términos periódicamente para estar informado de cualquier cambio.
 </string>
+    <string name="crear_cuenta">Crear cuenta</string>
     <string-array name="menu">
         <item></item>
         <item>Inicio</item>

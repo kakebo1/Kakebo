@@ -1,6 +1,10 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,17 +12,31 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class InicioSesion extends AppCompatActivity {
+
+    private EditText mloginemail, mloginpassword;
+    private RelativeLayout mlog_in, mCrearCuenta;
+    private TextView mgotoforgotPassword;
+    private FirebaseAuth firebaseAuth;
+
+    ProgressBar mprogressbaroflogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.act_inicio_sesion);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+
+        mloginemail = findViewById(R.id.loginemail);
+        mloginpassword = findViewById(R.id.loginPassword);
+        mlog_in = findViewById(R.id.log_in);
+        mgotoforgotPassword = findViewById(R.id.gotoforgotPassword);
+        mCrearCuenta = findViewById(R.id.btnCrearCuenta);
     }
 }
