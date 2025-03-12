@@ -17,6 +17,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Ayuda extends AppCompatActivity {
     //DECLARAR BOTONES
@@ -95,11 +97,17 @@ Button btnAvisoPriv, btnGuiaDeUso, btnTyC;
                     startActivity(ayuda);
                 }  /** FIN CÓDIGO BOTÓN INICIO MENÚ   **/
 
-                /** SI SE SELECCIONA EL TEXTO SE CAMBIA EL COLOR DE LAS PANTALLAS **/
-                // if (adapterView.getItemAtPosition(i).equals ("Inicio")){
-                //   Intent inicio = new Intent(Ingresos.this, MenuPrinc.class);
-                // startActivity(inicio);
-                // }  /** FIN CÓDIGO BOTÓN INICIO MENÚ   **/
+                if (adapterView.getItemAtPosition(i).equals ("Cerrar sesión")){
+                    logOut();
+                }
+            }
+
+            public void logOut(){
+                FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                if(firebaseUser != null ){
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(Ayuda.this, InicioSesion.class));
+                }
             }
 
             @Override
@@ -128,9 +136,8 @@ Button btnAvisoPriv, btnGuiaDeUso, btnTyC;
                builder.show();
             }
 
-        }); // FIIIIN
+        });
 
-        //BOTON TYC
         btnTyC=findViewById(R.id.btnTyC);
         AlertDialog.Builder builder2;
         builder2 = new AlertDialog.Builder(this);
@@ -151,7 +158,7 @@ Button btnAvisoPriv, btnGuiaDeUso, btnTyC;
                 builder.show();
             }
 
-        }); // FIIIIN
+        });
         };
 
 

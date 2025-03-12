@@ -13,6 +13,25 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".noteDetails"
+            android:exported="false" />
+        <activity
+            android:name=".notasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecuperarContra"
+            android:exported="false" />
+        <activity
+            android:name=".editNoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".createNote"
+            android:exported="false" />
+        <activity
+            android:name=".checkbox"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication" />
+        <activity
             android:name=".categoriasIngresos"
             android:exported="false" />
         <activity
@@ -61,14 +80,11 @@
             android:name=".MenuPrinc"
             android:exported="true" />
         <activity
-            android:name=".RecuperarContra"
-            android:exported="false" />
-        <activity
             android:name=".CrearCuenta"
             android:exported="false" />
         <activity
             android:name=".InicioSesion"
-            android:exported="false" />
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

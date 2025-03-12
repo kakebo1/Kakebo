@@ -16,6 +16,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Ingresos extends AppCompatActivity {
 
     @Override
@@ -91,11 +94,17 @@ public class Ingresos extends AppCompatActivity {
                 startActivity(ayuda);
             }  /** FIN CÓDIGO BOTÓN INICIO MENÚ   **/
 
-            /** SI SE SELECCIONA EL TEXTO SE CAMBIA EL COLOR DE LAS PANTALLAS **/
-           // if (adapterView.getItemAtPosition(i).equals ("Inicio")){
-             //   Intent inicio = new Intent(Ingresos.this, MenuPrinc.class);
-               // startActivity(inicio);
-           // }  /** FIN CÓDIGO BOTÓN INICIO MENÚ   **/
+            if (adapterView.getItemAtPosition(i).equals ("Cerrar sesión")){
+                logOut();
+            }
+        }
+
+        public void logOut(){
+            FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            if(firebaseUser != null ){
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(Ingresos.this, InicioSesion.class));
+            }
         }
 
         @Override

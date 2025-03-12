@@ -13,7 +13,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class PlaneacionIngresos extends AppCompatActivity {
-Button btnAceptar, btnAgregar;
+
+    Button btnAceptar, btnAgregar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +26,7 @@ Button btnAceptar, btnAgregar;
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        //BOTON ACEPTAR
+
         btnAceptar=findViewById(R.id.btnAceptar);
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(this);
@@ -45,6 +47,6 @@ Button btnAceptar, btnAgregar;
                 builder.show();
             }
 
-        }); // FIIIIN
+        });
     }
 }
