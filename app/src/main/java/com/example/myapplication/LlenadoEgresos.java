@@ -28,6 +28,7 @@ import java.util.Map;
 public class LlenadoEgresos extends AppCompatActivity {
     //DECLARAR VARIABLES
     Button btnAceptarEg;
+    //Hhh
     ImageButton btnAgregarImg, btnCancelarEg;
     EditText txtConceptoEg, txtCantidadEg, txtFechaEg, txtComentarioEg;
     Switch deuda;
