@@ -49,7 +49,10 @@ public class LlenadoEgresos extends AppCompatActivity {
         });
 
         // INICIALIZAR COMPONENTES
-
+        txtConceptoEg= findViewById(R.id.txtConceptoEg);
+        txtCantidadEg= findViewById(R.id.txtCantidadEg);
+        txtFechaEg= findViewById(R.id.txtFechaEg);
+        txtComentarioEg= findViewById(R.id.txtComentarioEg);
         btnAceptarEg = findViewById(R.id.btnAceptarEg);
 
         /** SPINNER CATEGORÍA **/
