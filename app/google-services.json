@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "325704762356",
+    "project_id": "kakebo-d5ea2",
+    "storage_bucket": "kakebo-d5ea2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325704762356:android:5d324cae2a20b7641aafa1",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325704762356-lsh64kqkjiorh9u766mq4eptt6jra655.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXKtz144j51AQ98VaIeKRBBtWAo1p2pIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325704762356-lsh64kqkjiorh9u766mq4eptt6jra655.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

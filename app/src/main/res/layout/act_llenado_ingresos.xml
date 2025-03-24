@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBE8BA"
+    tools:context=".LlenadoIngresos">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="115dp"
+        android:text="Cantidad:  $"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtQuincena"
+        app:layout_constraintEnd_toStartOf="@+id/txtCantidadIng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtConceptoIng" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="82dp"
+        android:text="Fecha:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView30"
+        app:layout_constraintEnd_toStartOf="@+id/txtQuincena"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+    <TextView
+        android:id="@+id/txtQuincena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:text="Quincena"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/categoriaIng"
+        app:layout_constraintEnd_toStartOf="@+id/categoriaIng"
+        app:layout_constraintStart_toStartOf="@+id/categoriaIng"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="203dp"
+        android:text="Categoria"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtComentarioIng"
+        app:layout_constraintEnd_toStartOf="@+id/categoriaIng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="156dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="11dp"
+        android:text="Comentarios:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtComentarioIng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoriaIng" />
+
+    <Spinner
+        android:id="@+id/categoriaIng"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="152dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView31"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView30"
+        app:layout_constraintTop_toBottomOf="@+id/txtQuincena" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="132dp"
+        android:fontFamily="sans-serif"
+        android:text="Concepto:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toStartOf="@+id/txtConceptoIng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtComentarioIng"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <Button
+        android:id="@+id/btnAceptarIng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:onClick="aceptar1"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtComentarioIng" />
+
+    <ImageButton
+        android:id="@+id/btnAgregarImgIng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtComentarioIng"
+        app:layout_constraintEnd_toEndOf="@+id/txtComentarioIng"
+        app:layout_constraintStart_toStartOf="@+id/txtComentarioIng"
+        app:srcCompat="@drawable/icons8_add_image_96" />
+
+    <EditText
+        android:id="@+id/txtCantidadIng"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="37dp"
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+    <EditText
+        android:id="@+id/txtConceptoIng"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView26"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

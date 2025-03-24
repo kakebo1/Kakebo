@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#00FFFFFF"
+    tools:context=".MenuPrinc">
+
+    <ImageButton
+        android:id="@+id/btnReportes"
+        android:layout_width="176dp"
+        android:layout_height="162dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="531dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="38dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/reportes_removebg_preview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/Kakebo"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAyuda"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnAyuda"
+        android:layout_width="65dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="632dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ayudaico" />
+
+    <ImageButton
+        android:id="@+id/btnMetaFin"
+        android:layout_width="159dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="219dp"
+        android:layout_marginBottom="435dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="Meta financiera"
+        android:hint="Meta financiera"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/alcancia" />
+
+    <ImageButton
+        android:id="@+id/btnIngresos"
+        android:layout_width="193dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="206dp"
+        android:layout_marginTop="149dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="435dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="irPantallaIngresos"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ganancia_jpg_1_removebg_preview" />
+
+    <ImageButton
+        android:id="@+id/btnNotas"
+        android:layout_width="154dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="224dp"
+        android:layout_marginBottom="243dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/notas_removebg_preview" />
+
+    <ImageButton
+        android:id="@+id/btnEgresos"
+        android:layout_width="188dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="206dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="243dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gastos_jpg_1_removebg_preview" />
+
+    <ImageButton
+        android:id="@+id/btnCategorias"
+        android:layout_width="155dp"
+        android:layout_height="163dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="223dp"
+        android:layout_marginBottom="38dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/categorias_jpg_1_removebg_preview" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="296dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="416dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="Meta financiera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="296dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="416dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="Ingresos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="49dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="488dp"
+        android:layout_marginEnd="273dp"
+        android:layout_marginBottom="224dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="Notas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="279dp"
+        android:layout_marginTop="488dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="224dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="Egresos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="693dp"
+        android:layout_marginEnd="262dp"
+        android:layout_marginBottom="19dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="Categorias"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="279dp"
+        android:layout_marginTop="693dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="19dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="Reportes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
