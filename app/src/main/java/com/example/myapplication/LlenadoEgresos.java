@@ -28,7 +28,7 @@ import java.util.Map;
 public class LlenadoEgresos extends AppCompatActivity {
     //DECLARAR VARIABLES
     Button btnAceptarEg;
-    ImageButton btnAgregarImg, btnCancelar;
+    ImageButton btnAgregarImg, btnCancelarEg;
     EditText txtConceptoEg, txtCantidadEg, txtFechaEg, txtComentarioEg;
     Switch deuda;
     RadioButton fijo, variable;
@@ -54,6 +54,7 @@ public class LlenadoEgresos extends AppCompatActivity {
         txtFechaEg= findViewById(R.id.txtFechaEg);
         txtComentarioEg= findViewById(R.id.txtComentarioEg);
         btnAceptarEg = findViewById(R.id.btnAceptarEg);
+        btnCancelarEg = findViewById(R.id.btnCancelarEg);
 
         /** SPINNER CATEGORÍA **/
         // SE DEBE DE CAMBIAR LAS OPCIONES, LAS CORRESPONDIENTES A CADA CATEGORIA DE KAKEBO
@@ -73,6 +74,11 @@ public class LlenadoEgresos extends AppCompatActivity {
         ArrayAdapter<CharSequence> adc = ArrayAdapter.createFromResource(this, R.array.kakebo, simple_spinner_item);
         ad.setDropDownViewResource(simple_spinner_item);
         kakebo.setAdapter(adc);
+
+        btnCancelarEg.setOnClickListener(v -> {
+            Toast.makeText(LlenadoEgresos.this, "Acción cancelada", Toast.LENGTH_SHORT).show();
+            finish();
+        });
     }
 
 
@@ -118,12 +124,14 @@ public class LlenadoEgresos extends AppCompatActivity {
         return retorno;
     }
 
+
     private void egreso(String concepto, int cantidad, String fecha, String comentario) {
         Map<String, Object> mapiii = new HashMap<>();
         mapiii.put("concepto", concepto);
         mapiii.put("cantidad", cantidad);
         mapiii.put("fecha", fecha);
         mapiii.put("comentario", comentario);
+
 
         basededatos.collection("egresos").add(mapiii)
                 .addOnSuccessListener(documentReference -> {
