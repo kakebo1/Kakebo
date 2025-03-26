@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import com.google.firebase.Timestamp;
+
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.ParseException;
 import java.util.Date;
@@ -27,6 +27,7 @@ Button btnAceptarIng;
 ImageButton btnAgregarImgIng, btnCancelarIng;
 EditText txtConceptoIng, txtCantidadIng, txtComentarioIng, txtFechaIng;
 private FirebaseFirestore basededatos;
+//
 final Calendar calendarioIng = Calendar.getInstance();
 
     @Override

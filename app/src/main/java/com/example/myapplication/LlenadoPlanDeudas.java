@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import static android.R.layout.simple_spinner_item;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +21,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class LlenadoPlanDeudas extends AppCompatActivity {
@@ -29,6 +35,7 @@ public class LlenadoPlanDeudas extends AppCompatActivity {
     EditText txtConceptoDe, txtCantidadDe, txtFechaDe, txtComentarioDe;
     String planPagDe, kakeboDe;
     private FirebaseFirestore basededatos;
+    final Calendar calendarioDe = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +54,18 @@ public class LlenadoPlanDeudas extends AppCompatActivity {
         btnAceptarDe = findViewById(R.id.btnAceptarPlan);
         txtConceptoDe = findViewById(R.id.txtConceptoPlan);
         txtCantidadDe = findViewById(R.id.txtCantidadPlan);
-        txtFechaDe = findViewById(R.id.txtFecha);
+        txtFechaDe = findViewById(R.id.txtFechaPlan);
         txtComentarioDe = findViewById(R.id.txtComentariosPlan);
+
+        // Abrir el DatePicker al hacer clic
+        txtFechaDe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarCalendarioDe();
+            }
+        });
+
+
 
         /** SPINNER PLAN DE PAGOS **/
         Spinner plandepagos = findViewById(R.id.plandepagosDe);
@@ -85,7 +102,27 @@ public class LlenadoPlanDeudas extends AppCompatActivity {
             }
         });
     }
+    private void mostrarCalendarioDe() {
+        int año = calendarioDe.get(Calendar.YEAR);
+        int mes = calendarioDe.get(Calendar.MONTH);
+        int día = calendarioDe.get(Calendar.DAY_OF_MONTH);
 
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                LlenadoPlanDeudas.this,
+                (view, year, month, dayOfMonth) -> {
+                    calendarioDe.set(Calendar.YEAR, year);
+                    calendarioDe.set(Calendar.MONTH, month);
+                    calendarioDe.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                    actualizarFechaEnEditText1();
+                },
+                año, mes, día
+        );
+        datePickerDialog.show();
+    }
+    private void actualizarFechaEnEditText1() {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        txtFechaDe.setText(formato.format(calendarioDe.getTime()));
+    }
     public void aceptar(View v) {
         if (validar()) {
             Toast.makeText(getApplicationContext(), "Datos guardados correctamente", Toast.LENGTH_SHORT).show();
@@ -98,8 +135,9 @@ public class LlenadoPlanDeudas extends AppCompatActivity {
         boolean retorno = true;
         String concepto = txtConceptoDe.getText().toString().trim();
         String cantida = txtCantidadDe.getText().toString().trim();
-        String fecha = txtFechaDe.getText().toString().trim();
+      //  String fecha = txtFechaDe.getText().toString().trim();
         String comentario = txtComentarioDe.getText().toString().trim();
+        String fecha1 = txtFechaDe.getText().toString().trim();
 
 
         if (concepto.isEmpty()) {
@@ -110,24 +148,28 @@ public class LlenadoPlanDeudas extends AppCompatActivity {
             txtCantidadDe.setError("Este campo NO puede quedar vacío");
             retorno = false;
         }
-     //   if (fecha.isEmpty()) {
-       //     txtFechaDe.setError("Este campo NO puede quedar vacío");
-         //   retorno = false;
-       // }
+        if (fecha1.isEmpty()){
+            txtFechaDe.setError("Ingrese una fecha");
+            retorno = false;
+        }
 
         if (retorno) {
             try {
                 int cantidad = Integer.parseInt(cantida);
+                SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                Date fecha = formato.parse(fecha1);
                 pago_deuda(concepto, cantidad, fecha, planPagDe, kakeboDe, comentario);
             } catch (NumberFormatException e) {
                 txtCantidadDe.setError("Introduce un número válido");
                 retorno = false;
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
             }
         }
         return retorno;
     }
 
-    private void pago_deuda(String concepto, int cantidad, String fecha, String planPagDe,String kakeboDe, String comentario) {
+    private void pago_deuda(String concepto, int cantidad, Date fecha, String planPagDe,String kakeboDe, String comentario) {
         Map<String, Object> mapi = new HashMap<>();
         mapi.put("concepto", concepto);
         mapi.put("cantidad", cantidad);
@@ -136,7 +178,7 @@ public class LlenadoPlanDeudas extends AppCompatActivity {
         mapi.put("kakebo",kakeboDe);  //SE DEBE DE CAMBIAR, EL KAKEBO NO SE DEBE DE GUARDAR, SOLO LA SUBCATEGORIA+
         mapi.put("comentario", comentario);
 
-        basededatos.collection("pago_deuda").add(mapi)
+        basededatos.collection("plan_deuda").add(mapi)
                 .addOnSuccessListener(documentReference -> {
                     Toast.makeText(LlenadoPlanDeudas.this, "Pago guardado con éxito", Toast.LENGTH_SHORT).show();
                     finish();

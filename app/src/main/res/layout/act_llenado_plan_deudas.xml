@@ -59,8 +59,8 @@
         android:layout_marginStart="31dp"
         android:text="Fecha:"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtFecha"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="165dp" />
 
     <TextView
         android:id="@+id/textView16"
@@ -148,22 +148,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icons8_add_image_96" />
 
-    <EditText
-        android:id="@+id/txtFecha"
-        android:layout_width="156dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginBottom="56dp"
-        android:background="@color/white"
-        android:clickable="true"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="date"
-        app:layout_constraintBottom_toBottomOf="@+id/textView14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView1" />
-
     <Button
         android:id="@+id/btnAceptarPlan"
         android:layout_width="wrap_content"
@@ -176,6 +160,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtComentariosPlan" />
 
+    <EditText
+        android:id="@+id/txtFechaPlan"
+        android:layout_width="192dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="526dp"
+        android:background="@drawable/esquinas_redondeadas"
+        android:clickable="true"
+        android:focusable="false"
+        android:hint="Selecciona la fecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
@@ -191,12 +191,10 @@
         android:id="@+id/plandepagosDe"
         android:layout_width="153dp"
         android:layout_height="38dp"
-        android:layout_marginTop="18dp"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/kakeboPlanDe"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFecha" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Spinner
         android:id="@+id/kakeboPlanDe"

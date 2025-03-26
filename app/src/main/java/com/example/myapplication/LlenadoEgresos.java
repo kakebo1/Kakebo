@@ -22,6 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,6 +35,7 @@ public class LlenadoEgresos extends AppCompatActivity {
     Switch deuda;
     RadioButton fijo, variable;
     private FirebaseFirestore basededatos;
+    final Calendar calendarioEg = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
