@@ -7,267 +7,357 @@
     android:layout_height="match_parent"
     tools:context=".Categorias">
 
-    <TextView
-        android:id="@+id/textView51"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Parque"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="647dp" />
-
     <Spinner
         android:id="@+id/menuLateral"
         android:layout_width="62dp"
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="11dp"
         android:background="@drawable/menu_100"
         android:spinnerMode="dropdown"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Categorias"
+        android:layout_marginTop="16dp"
+        android:text="@string/tituloSeccionCategorias"
         android:textSize="48sp"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="26dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingresos"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="105dp" />
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tituloIngresos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
     <TextView
         android:id="@+id/textView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Egresos"
-        tools:layout_editor_absoluteX="298dp"
-        tools:layout_editor_absoluteY="105dp" />
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="72dp"
+        android:text="@string/tituloEgresos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintStart_toEndOf="@+id/textView36"
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
     <ImageButton
         android:id="@+id/btnComida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/transparente"
+        android:contentDescription="@string/tituloComida"
         android:scrollbarDefaultDelayBeforeFade="400"
         android:scrollbarFadeDuration="250"
-        app:srcCompat="@drawable/comida_cat"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="202dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView39"
+        app:srcCompat="@drawable/comida_cat" />
 
     <ImageButton
         android:id="@+id/btnSalud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/salud_cat"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="202dp" />
+        android:contentDescription="@string/imgSalud"
+        app:layout_constraintStart_toEndOf="@+id/btnComida"
+        app:layout_constraintTop_toBottomOf="@+id/textView39"
+        app:srcCompat="@drawable/salud_cat" />
 
     <ImageButton
         android:id="@+id/btnFamilia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/familia_cat"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="202dp" />
+        android:contentDescription="@string/tituloFamilia"
+        app:layout_constraintStart_toEndOf="@+id/btnSalud"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregarSup"
+        app:srcCompat="@drawable/familia_cat" />
 
     <ImageButton
         android:id="@+id/btnHogar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="64dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_casa"
-        tools:layout_editor_absoluteX="293dp"
-        tools:layout_editor_absoluteY="202dp" />
+        android:contentDescription="@string/tituloHogar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnFamilia"
+        app:layout_constraintTop_toBottomOf="@+id/textView37"
+        app:srcCompat="@drawable/cat_casa" />
 
     <ImageButton
         android:id="@+id/btnTransporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/coche_cat"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="291dp" />
+        android:contentDescription="@string/tituloTransporte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView40"
+        app:srcCompat="@drawable/coche_cat" />
 
     <TextView
         android:id="@+id/textView39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Supervivencia"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tituloSupervivencia"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="149dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
     <TextView
         android:id="@+id/textView40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comida"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="259dp" />
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tituloComida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnComida" />
 
     <TextView
         android:id="@+id/textView41"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Salud"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="263dp" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/categSalud"
+        app:layout_constraintStart_toEndOf="@+id/textView40"
+        app:layout_constraintTop_toBottomOf="@+id/btnSalud" />
 
     <TextView
         android:id="@+id/textView42"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Familia"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="263dp" />
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/catFamilia"
+        app:layout_constraintStart_toEndOf="@+id/textView41"
+        app:layout_constraintTop_toBottomOf="@+id/btnFamilia" />
 
     <TextView
         android:id="@+id/textView43"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hogar"
-        tools:layout_editor_absoluteX="298dp"
-        tools:layout_editor_absoluteY="263dp" />
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/catHogar"
+        app:layout_constraintStart_toEndOf="@+id/textView42"
+        app:layout_constraintTop_toBottomOf="@+id/btnHogar" />
 
     <ImageButton
         android:id="@+id/btnAgregarSup"
         android:layout_width="37dp"
         android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="200dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/add"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="141dp" />
+        android:contentDescription="@string/imgAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/textView39"
+        app:layout_constraintTop_toBottomOf="@+id/textView36"
+        app:srcCompat="@drawable/add" />
 
     <TextView
         android:id="@+id/textView44"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Transporte"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="348dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/catTransporte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTransporte" />
 
     <TextView
         android:id="@+id/textView45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ocio"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/catkOcio"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="402dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
     <ImageButton
         android:id="@+id/btnFiesta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_fiesta"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="457dp" />
+        android:contentDescription="@string/imgFiesta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView45"
+        app:srcCompat="@drawable/cat_fiesta" />
 
     <ImageButton
         android:id="@+id/btnAlcohol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/alcohol_cat"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="457dp" />
+        android:contentDescription="@string/imgAlcohol"
+        app:layout_constraintStart_toEndOf="@+id/btnFiesta"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregarOcio"
+        app:srcCompat="@drawable/alcohol_cat" />
 
     <ImageButton
         android:id="@+id/imageButton15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_videojuegos"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="457dp" />
-
-    <TextView
-        android:id="@+id/textView46"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cultural"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="547dp" />
+        android:contentDescription="@string/imgJuegos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toEndOf="@+id/btnAlcohol"
+        app:layout_constraintTop_toBottomOf="@+id/textView42"
+        app:srcCompat="@drawable/cat_videojuegos" />
 
     <ImageButton
         android:id="@+id/imageButton16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/museo_cat"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="586dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_bosque"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="586dp" />
-
-    <ImageButton
-        android:id="@+id/btnAgregarOcio"
-        android:layout_width="39dp"
-        android:layout_height="35dp"
-        android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/add"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="402dp" />
+        android:contentDescription="@string/imgMuseo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView46"
+        app:srcCompat="@drawable/museo_cat" />
 
     <ImageButton
         android:id="@+id/imageButton19"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginTop="124dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/add"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="544dp" />
+        android:contentDescription="@string/imgAddCultural"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregarOcio"
+        app:srcCompat="@drawable/add" />
 
     <TextView
-        android:id="@+id/textView47"
+        android:id="@+id/textView51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fiesta"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="510dp" />
+        android:layout_marginBottom="44dp"
+        android:text="@string/culturalDefaultParque"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView48"
+        android:id="@+id/textView46"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alcohol"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="509dp" />
-
-    <TextView
-        android:id="@+id/textView49"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Juegos"
-        tools:layout_editor_absoluteX="211dp"
-        tools:layout_editor_absoluteY="507dp" />
+        android:layout_marginTop="132dp"
+        android:text="@string/titleCultural"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton19"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
     <TextView
         android:id="@+id/textView50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Museo"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="646dp" />
+        android:layout_marginStart="48dp"
+        android:text="@string/txtMuseo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton16"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="224dp"
+        android:backgroundTint="@color/transparente"
+        android:contentDescription="@string/imgParque"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton16"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton19"
+        app:layout_constraintVertical_bias="0.04"
+        app:srcCompat="@drawable/cat_bosque" />
+
+    <ImageButton
+        android:id="@+id/btnAgregarOcio"
+        android:layout_width="39dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="216dp"
+        android:backgroundTint="@color/transparente"
+        android:contentDescription="@string/imgAddOcio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView45"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregarSup"
+        app:srcCompat="@drawable/add" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/txtFiesta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFiesta" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/txtAlcohol"
+        app:layout_constraintEnd_toStartOf="@+id/textView49"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toEndOf="@+id/textView47"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlcohol" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="176dp"
+        android:text="@string/txtJuegos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton15"
+        app:layout_constraintVertical_bias="0.451" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,205 +11,294 @@
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar categoría"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/agregar_categoria"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="28dp" />
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btnCancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/icons8_cancelar_100"
-        tools:layout_editor_absoluteX="342dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/cancelarCat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_cancelar_100" />
 
     <ImageButton
         android:id="@+id/btnAlcoholIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_alcohol"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="195dp" />
+        android:contentDescription="@string/imgBottle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33"
+        app:srcCompat="@drawable/cat_alcohol" />
 
     <ImageButton
         android:id="@+id/btnTransporteIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_autob_s"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="195dp" />
+        android:contentDescription="@string/imgBus"
+        app:layout_constraintEnd_toStartOf="@+id/btnBosqueIco"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toEndOf="@+id/btnAlcoholIco"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:srcCompat="@drawable/cat_autob_s" />
 
     <ImageButton
         android:id="@+id/btnBosqueIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_bosque"
-        tools:layout_editor_absoluteX="223dp"
-        tools:layout_editor_absoluteY="195dp" />
+        android:contentDescription="@string/imgTrees"
+        app:layout_constraintEnd_toStartOf="@+id/btnBotiquinIco"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:srcCompat="@drawable/cat_bosque" />
 
     <ImageButton
         android:id="@+id/btnBotiquinIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="44dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_botiquin"
-        tools:layout_editor_absoluteX="304dp"
-        tools:layout_editor_absoluteY="195dp" />
+        android:contentDescription="@string/imgMaletin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:srcCompat="@drawable/cat_botiquin" />
 
     <ImageButton
         android:id="@+id/btnCasaIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_casa"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="266dp" />
+        android:contentDescription="@string/imgCasa"
+        app:layout_constraintEnd_toStartOf="@+id/btnCineIco"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlcoholIco"
+        app:srcCompat="@drawable/cat_casa" />
 
     <ImageButton
         android:id="@+id/btnCineIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_cine"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="266dp" />
+        android:contentDescription="@string/imgCine"
+        app:layout_constraintEnd_toStartOf="@+id/btnComidaIco"
+        app:layout_constraintTop_toBottomOf="@+id/btnTransporteIco"
+        app:srcCompat="@drawable/cat_cine" />
 
     <ImageButton
         android:id="@+id/btnComidaIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_comida"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="266dp" />
+        android:contentDescription="@string/imgComida"
+        app:layout_constraintEnd_toStartOf="@+id/btnFamiliaIco"
+        app:layout_constraintTop_toBottomOf="@+id/btnBosqueIco"
+        app:srcCompat="@drawable/cat_comida" />
 
     <ImageButton
         android:id="@+id/btnFamiliaIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_familia"
-        tools:layout_editor_absoluteX="304dp"
-        tools:layout_editor_absoluteY="266dp" />
+        android:contentDescription="@string/imgFamilia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBotiquinIco"
+        app:srcCompat="@drawable/cat_familia" />
 
     <ImageButton
         android:id="@+id/btnFiestaIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_fiesta"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="337dp" />
+        android:contentDescription="@string/imgParty"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCasaIco"
+        app:srcCompat="@drawable/cat_fiesta" />
 
     <ImageButton
         android:id="@+id/btnGymIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_gimnasio"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="337dp" />
+        android:contentDescription="@string/imgGym"
+        app:layout_constraintStart_toEndOf="@+id/btnFiestaIco"
+        app:layout_constraintTop_toBottomOf="@+id/btnCineIco"
+        app:srcCompat="@drawable/cat_gimnasio" />
 
     <ImageButton
         android:id="@+id/btnVideojuegosIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_videojuegos"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="337dp" />
+        android:contentDescription="@string/imgVideogames"
+        app:layout_constraintStart_toEndOf="@+id/btnGymIco"
+        app:layout_constraintTop_toBottomOf="@+id/btnComidaIco"
+        app:srcCompat="@drawable/cat_videojuegos" />
 
     <ImageButton
         android:id="@+id/btnLibroIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_libro"
-        tools:layout_editor_absoluteX="304dp"
-        tools:layout_editor_absoluteY="337dp" />
+        android:contentDescription="@string/imgLibro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toEndOf="@+id/btnVideojuegosIco"
+        app:layout_constraintTop_toBottomOf="@+id/btnFamiliaIco"
+        app:srcCompat="@drawable/cat_libro" />
 
     <ImageButton
         android:id="@+id/btnMaquillajeIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_maquillaje"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="411dp" />
+        android:contentDescription="@string/imgDado"
+        app:layout_constraintEnd_toStartOf="@+id/btnRopaIco"
+        app:layout_constraintHorizontal_bias="0.705"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFiestaIco"
+        app:srcCompat="@drawable/cat_maquillaje" />
 
     <ImageButton
         android:id="@+id/btnRopaIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_ropa"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="411dp" />
+        android:contentDescription="@string/imgRopa"
+        app:layout_constraintEnd_toStartOf="@+id/btnTarjetaIco"
+        app:layout_constraintTop_toBottomOf="@+id/btnGymIco"
+        app:srcCompat="@drawable/cat_ropa" />
 
     <ImageButton
         android:id="@+id/btnTarjetaIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_tarjetacredito"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="411dp" />
+        android:contentDescription="@string/imgTarjeta"
+        app:layout_constraintEnd_toStartOf="@+id/btnTelefonoIco"
+        app:layout_constraintTop_toBottomOf="@+id/btnVideojuegosIco"
+        app:srcCompat="@drawable/cat_tarjetacredito" />
 
     <ImageButton
         android:id="@+id/btnTelefonoIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
         android:backgroundTint="@color/transparente"
-        app:srcCompat="@drawable/cat_telefono"
-        tools:layout_editor_absoluteX="304dp"
-        tools:layout_editor_absoluteY="411dp" />
+        android:contentDescription="@string/imgTelefono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLibroIco"
+        app:srcCompat="@drawable/cat_telefono" />
 
     <Button
         android:id="@+id/btnAceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#92D36E"
-        android:text="Aceptar"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="675dp" />
+        android:text="@string/btnAceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/textNombre"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="98dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
     <EditText
         android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="219dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="@string/nombre_de_usuario"
         android:inputType="text"
-        android:text="nombre"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="84dp" />
+        android:text="@string/addNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.661"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
     <TextView
         android:id="@+id/textView33"
         android:layout_width="76dp"
         android:layout_height="30dp"
-        android:text="Icono:"
+        android:layout_marginTop="44dp"
+        android:text="@string/icono"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="156dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
     <TextView
         android:id="@+id/textView34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Color"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="485dp" />
+        android:layout_marginTop="16dp"
+        android:text="@string/color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMaquillajeIco" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/elegirColores"
+        android:layout_width="400dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btnAceptar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView34"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

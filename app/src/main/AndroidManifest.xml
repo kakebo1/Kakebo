@@ -42,7 +42,7 @@
             android:exported="true" />
         <activity
             android:name=".LlenadoEgresos"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LlenadoIngresos"
             android:exported="true" />
@@ -54,7 +54,7 @@
             android:exported="false" />
         <activity
             android:name=".Egresos"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Reportes"
             android:exported="false" />
