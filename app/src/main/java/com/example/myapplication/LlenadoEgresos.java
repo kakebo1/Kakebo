@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import static android.R.layout.simple_spinner_item;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,8 +23,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class LlenadoEgresos extends AppCompatActivity {
@@ -59,6 +64,12 @@ public class LlenadoEgresos extends AppCompatActivity {
         btnAceptarEg = findViewById(R.id.btnAceptarEg);
         btnCancelarEg = findViewById(R.id.btnCancelarEg);
 
+        txtFechaEg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarCalendarioEg();
+            }
+        });
         /** SPINNER CATEGORÍA **/
         // SE DEBE DE CAMBIAR LAS OPCIONES, LAS CORRESPONDIENTES A CADA CATEGORIA DE KAKEBO
 
@@ -83,8 +94,27 @@ public class LlenadoEgresos extends AppCompatActivity {
             finish();
         });
     }
+    private void mostrarCalendarioEg() {
+        int año = calendarioEg.get(Calendar.YEAR);
+        int mes = calendarioEg.get(Calendar.MONTH);
+        int día = calendarioEg.get(Calendar.DAY_OF_MONTH);
 
-
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                LlenadoEgresos.this,
+                (view, year, month, dayOfMonth) -> {
+                    calendarioEg.set(Calendar.YEAR, year);
+                    calendarioEg.set(Calendar.MONTH, month);
+                    calendarioEg.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                    actualizarFechaEnEditText();
+                },
+                año, mes, día
+        );
+        datePickerDialog.show();
+    }
+    private void actualizarFechaEnEditText() {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        txtFechaEg.setText(formato.format(calendarioEg.getTime()));
+    }
     public void aceptar2(View v) {
         if (validar2()) {
             Toast.makeText(getApplicationContext(), "Datos guardados correctamente", Toast.LENGTH_SHORT).show();
@@ -98,8 +128,8 @@ public class LlenadoEgresos extends AppCompatActivity {
         boolean retorno = true;
 
         String concepto = txtConceptoEg.getText().toString().trim();
-        String cantidadStr = txtCantidadEg.getText().toString().trim();
-        String fecha = txtFechaEg.getText().toString().trim();
+        String cantidad = txtCantidadEg.getText().toString().trim();
+        String fecha2 = txtFechaEg.getText().toString().trim();
         String comentario = txtComentarioEg.getText().toString().trim();
 
         if (concepto.isEmpty()) {
@@ -107,28 +137,28 @@ public class LlenadoEgresos extends AppCompatActivity {
             retorno = false;
         }
 
-        int cantidad = 0;
-        if (cantidadStr.isEmpty()) {
+      //  int cantidad = 0;
+        if (cantidad.isEmpty()) {
             txtCantidadEg.setError("Este campo NO puede quedar vacío");
             retorno = false;
-        } else {
-            try {
-                cantidad = Integer.parseInt(cantidadStr);
-            } catch (NumberFormatException e) {
-                txtCantidadEg.setError("Introduce un número válido");
-                retorno = false;
-            }
         }
-
         if (retorno) {
-            egreso(concepto, cantidad, fecha, comentario);
+            int cantida = Integer.parseInt(cantidad);
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            Date fecha = null;
+            try {
+                fecha = formato.parse(fecha2);
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+            egreso(concepto, cantida, fecha, comentario);
         }
 
         return retorno;
     }
 
 
-    private void egreso(String concepto, int cantidad, String fecha, String comentario) {
+    private void egreso(String concepto, int cantidad, Date fecha, String comentario) {
         Map<String, Object> mapiii = new HashMap<>();
         mapiii.put("concepto", concepto);
         mapiii.put("cantidad", cantidad);
