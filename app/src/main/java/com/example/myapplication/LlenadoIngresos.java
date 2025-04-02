@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -26,6 +27,7 @@ public class LlenadoIngresos extends AppCompatActivity {
 Button btnAceptarIng;
 ImageButton btnAgregarImgIng, btnCancelarIng;
 EditText txtConceptoIng, txtCantidadIng, txtComentarioIng, txtFechaIng;
+TextView txtQuincena;
 private FirebaseFirestore basededatos;
 //
 final Calendar calendarioIng = Calendar.getInstance();
@@ -48,8 +50,10 @@ final Calendar calendarioIng = Calendar.getInstance();
         txtComentarioIng = findViewById(R.id.txtComentarioIng);
         txtFechaIng = findViewById(R.id.txtFechaIng);
         btnCancelarIng = findViewById(R.id.btnCancelarIng);
+        //INICIALIZAR EL TEXTVIEW CORRESPONDIENTE A LA QUINCENA
+        txtQuincena = findViewById(R.id.txtQuincena);
 
-        // Abrir el DatePicker al hacer clic
+        // ABRIR DATE PICKER
         txtFechaIng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +78,12 @@ final Calendar calendarioIng = Calendar.getInstance();
                     calendarioIng.set(Calendar.MONTH, month);
                     calendarioIng.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                     actualizarFechaEnEditText();
+                    //Modificar el TextView para mostrar la quincena
+                    if (dayOfMonth < 15){
+                        txtQuincena.setText("Quincena 1");
+                    }else {
+                        txtQuincena.setText("Quincena 2");
+                    }
                 },
                 año, mes, día
         );

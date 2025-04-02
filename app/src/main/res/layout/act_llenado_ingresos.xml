@@ -78,7 +78,7 @@
         android:layout_marginTop="307dp"
         android:layout_marginEnd="284dp"
         android:layout_marginBottom="392dp"
-        android:text="Categoria"
+        android:text="Categoria:"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -37,12 +37,12 @@
         app:layout_constraintBottom_toTopOf="@+id/txtCantidadPlan"
         app:layout_constraintEnd_toStartOf="@+id/btnCancelarPlan"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687" />
+        app:layout_constraintVertical_bias="0.458" />
 
     <EditText
         android:id="@+id/txtCantidadPlan"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_width="236dp"
+        android:layout_height="32dp"
         android:layout_marginStart="34dp"
         android:layout_marginEnd="34dp"
         android:background="@drawable/esquinas_redondeadas"
@@ -176,13 +176,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginBottom="20dp"
-        android:text="Plan de pagos"
+        android:text="Plan de pagos:"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/kakeboPlanDe"
         app:layout_constraintStart_toStartOf="parent" />

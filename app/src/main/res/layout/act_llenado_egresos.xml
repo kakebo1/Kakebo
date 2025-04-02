@@ -12,145 +12,150 @@
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginEnd="12dp"
         android:text="Concepto:"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtConceptoEg"
-        app:layout_constraintEnd_toStartOf="@+id/txtConceptoEg"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="31dp" />
 
     <TextView
         android:id="@+id/textView56"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="97dp"
-        android:layout_marginEnd="13dp"
         android:text="Cantidad:"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtCantidadEg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="94dp" />
 
     <TextView
         android:id="@+id/textView55"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Fecha"
+        android:text="Fecha:"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/textView56"
-        app:layout_constraintTop_toBottomOf="@+id/textView56" />
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="146dp" />
 
     <EditText
         android:id="@+id/txtConceptoEg"
-        android:layout_width="0dp"
+        android:layout_width="181dp"
         android:layout_height="39dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="51dp"
         android:background="@drawable/esquinas_redondeadas"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/txtCantidadEg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="24dp" />
 
     <EditText
         android:id="@+id/txtCantidadEg"
-        android:layout_width="0dp"
+        android:layout_width="187dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="69dp"
         android:background="@drawable/esquinas_redondeadas"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/textView56"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView56" />
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="94dp" />
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="28dp"
         android:text="Deuda"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/textView55"
-        app:layout_constraintTop_toBottomOf="@+id/textView55" />
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="203dp" />
 
     <EditText
         android:id="@+id/txtComentarioEg"
-        android:layout_width="0dp"
-        android:layout_height="133dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="363dp"
+        android:layout_height="90dp"
+        android:background="@drawable/esquinas_redondeadas"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/btnAceptarEg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="576dp" />
 
     <EditText
         android:id="@+id/txtFechaEg"
-        android:layout_width="192dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="127dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="526dp"
+        android:layout_width="179dp"
+        android:layout_height="35dp"
         android:background="@drawable/esquinas_redondeadas"
         android:clickable="true"
         android:focusable="false"
         android:hint="Selecciona la fecha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="146dp" />
 
     <Button
         android:id="@+id/btnAceptarEg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
+        android:backgroundTint="#4C7A34"
         android:text="Aceptar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="670dp" />
 
     <Spinner
         android:id="@+id/kakebospn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="58dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        android:layout_width="159dp"
+        android:layout_height="37dp"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="315dp" />
 
     <Spinner
         android:id="@+id/categoriaspn"
-        android:layout_width="0dp"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kakebospn" />
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="461dp" />
 
     <ImageButton
         android:id="@+id/btnCancelarEg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/icons8_cancelar_100"
-        tools:layout_editor_absoluteX="346dp"
-        tools:layout_editor_absoluteY="14dp" />
+        tools:layout_editor_absoluteX="336dp"
+        tools:layout_editor_absoluteY="13dp" />
+
+    <RadioGroup
+        android:layout_width="395dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="246dp">
+
+        <RadioButton
+            android:id="@+id/btnFijoEg"
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Fijo"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/btnVariableEg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Variable"
+            android:textSize="24sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView59"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kakebo:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="320dp" />
+
+    <TextView
+        android:id="@+id/textView60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="372dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
