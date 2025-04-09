@@ -210,6 +210,7 @@
         android:layout_marginStart="176dp"
         android:layout_marginTop="503dp"
         android:layout_marginBottom="185dp"
+        android:backgroundTint="@color/transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
