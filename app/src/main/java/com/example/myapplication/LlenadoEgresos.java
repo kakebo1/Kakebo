@@ -36,7 +36,7 @@ public class LlenadoEgresos extends AppCompatActivity {
     Button btnAceptarEg;
     ImageButton btnAgregarImg, btnCancelarEg;
     EditText txtConceptoEg, txtCantidadEg, txtFechaEg, txtComentarioEg;
-    Switch deuda;
+    Switch switchDeuda;
     RadioButton fijo, variable;
     private FirebaseFirestore basededatos;
     final Calendar calendarioEg = Calendar.getInstance();
@@ -62,7 +62,7 @@ public class LlenadoEgresos extends AppCompatActivity {
         txtComentarioEg= findViewById(R.id.txtComentarioEg);
         btnAceptarEg = findViewById(R.id.btnAceptarEg);
         btnCancelarEg = findViewById(R.id.btnCancelarEg);
-
+        switchDeuda = findViewById(R.id.switchDeuda);
         txtFechaEg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,6 +150,7 @@ public class LlenadoEgresos extends AppCompatActivity {
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }
+
             egreso(concepto, cantida, fecha, comentario);
         }
 
@@ -163,9 +164,18 @@ public class LlenadoEgresos extends AppCompatActivity {
         mapiii.put("cantidad", cantidad);
         mapiii.put("fecha", fecha);
         mapiii.put("comentario", comentario);
+        //VARIABLE TABLA
 
-
-        basededatos.collection("egresos").add(mapiii)
+        String tabla;
+        // SI EL SWITCH DEUDA ESTÁ ACTIVO LA TABLA SERÁ DEUDA,
+        if (switchDeuda.isChecked()){
+            tabla = "pago_deuda";
+            // SI NO, LA TABLA SE LLAMARÁ EGRESOS
+        } else{
+            tabla = "egresos";
+        }
+        // LOS DATOS SE MANDAN A LA TABLA ANTERIORMENTE LLAMADA
+        basededatos.collection(tabla).add(mapiii)
                 .addOnSuccessListener(documentReference -> {
              //       Toast.makeText(LlenadoEgresos.this, "Pago guardado con éxito", Toast.LENGTH_SHORT).show();
                 })
