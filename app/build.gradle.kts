@@ -1,9 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
-   // id("com.android.application")  //
+  //  id("com.android.application")  //
     id("com.google.gms.google-services")
  //   alias(libs.plugins.google.firebase.crashlytics)
     id("com.google.firebase.crashlytics")
+
 
 
 }
@@ -44,6 +45,10 @@ dependencies {
     implementation (platform("com.google.firebase:firebase-bom:32.7.0") )// Usa la versión más actual
     implementation ("com.google.firebase:firebase-crashlytics")
     implementation ("com.google.firebase:firebase-analytics")
+    implementation ("com.google.firebase:firebase-messaging:23.4.0")
+  //  implementation platform('com.google.firebase:firebase-bom:32.3.1')
+    implementation ("com.google.firebase:firebase-database")
+    implementation ("com.google.firebase:firebase-firestore:24.4.4")
 
   // implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
     //implementation("com.google.firebase:firebase-crashlytics")
@@ -51,7 +56,7 @@ dependencies {
     implementation ("com.google.firebase:firebase-storage")
     implementation ("com.google.firebase:firebase-auth:22.1.0")
     implementation ("com.google.firebase:firebase-auth:22.1.0")
-
+    implementation ("androidx.core:core:1.12.0")
 // Para manejo de imágenes (opcional)
     implementation ("com.github.bumptech.glide:glide:4.15.1")
 
@@ -73,5 +78,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
 }
+
