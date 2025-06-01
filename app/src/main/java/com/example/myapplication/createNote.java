@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -38,7 +39,7 @@ public class createNote extends AppCompatActivity {
         FloatingActionButton msavenote;
         FirebaseAuth firebaseAuth;
         FirebaseUser firebaseUser;
-        FirebaseFirestore firebaseFirestore;
+        FirebaseFirestore db;
         ProgressBar mprogressbarofcreatenote;
 
         @Override
@@ -56,8 +57,15 @@ public class createNote extends AppCompatActivity {
             Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
             firebaseAuth = FirebaseAuth.getInstance();
-            firebaseFirestore = FirebaseFirestore.getInstance();
+            db = FirebaseFirestore.getInstance();
             firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+            if (firebaseUser != null) {
+                String userId = firebaseUser.getUid();
+                Log.d("FIREBASE_UID", "UID del usuario: " + userId);
+            } else {
+                Log.d("FIREBASE_UID", "firebaseUser es null");
+            }
 
             msavenote.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -68,9 +76,8 @@ public class createNote extends AppCompatActivity {
                     if (title.isEmpty() || content.isEmpty()){
                         Toast.makeText(getApplicationContext(), "Ambos campos son requeridos", Toast.LENGTH_SHORT).show();
                     } else{
-
                         mprogressbarofcreatenote.setVisibility(View.VISIBLE);
-                        DocumentReference documentReference = firebaseFirestore.collection("notas").document(firebaseUser.getUid()).collection("MisNotas").document();
+                        DocumentReference documentReference = db.collection("notas").document(firebaseUser.getUid()).collection("MisNotas").document();
                         Map<String, Object> note = new HashMap<>();
                         note.put("Title", title);
                         note.put("Content", content);
@@ -80,6 +87,7 @@ public class createNote extends AppCompatActivity {
                             public void onSuccess(Void unused) {
                                 Toast.makeText(getApplicationContext(), "Nota creada exitosamente", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(createNote.this, notasActivity.class));
+                                finish();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -92,10 +100,10 @@ public class createNote extends AppCompatActivity {
                 }
             });
 
-
             getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
                 @Override
                 public void handleOnBackPressed() {
+                    startActivity(new Intent(createNote.this, notasActivity.class));
                     finish();
                 }
             });

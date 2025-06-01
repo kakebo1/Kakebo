@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="Kakebo">Kakebo</string>
+    <string name="kakebo">Kakebo</string>
     <string name="Continuar">Continuar</string>
     <string name="Contraseña">Contraseña</string>
     <string name="Correo">Correo electrónico</string>
     <string name="Tyc">Estoy de acuerdo con los términos y condiciones de uso </string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="AvisodePriv">
-        Aplicación móvil para la gestión de finanzas personales basado en el método “Kakebo” es un proyecto escolar desarrollado por estudiantes de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN con fines académicos y sin fines de lucro. La protección de tus datos personales es importante para nosotros. \n\n En este aviso de privacidad te explicamos cómo recopilamos, utilizamos, y protegemos tu información cuando utilizas nuestra aplicación.
+        Aplicación móvil para la gestión de finanzas personales basado en el método Kakebo; es un proyecto escolar desarrollado por estudiantes de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN con fines académicos y sin fines de lucro. La protección de tus datos personales es importante para nosotros. \n\n En este aviso de privacidad te explicamos cómo recopilamos, utilizamos, y protegemos tu información cuando utilizas nuestra aplicación.
 \n\n 1. Responsable del tratamiento de los datos personales
-Los responsables del tratamiento de tus datos personales son los estudiantes y docentes a cargo del proyecto "Aplicación móvil para la gestión de finanzas personales basado en el método “Kakebo”" de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN
+Los responsables del tratamiento de tus datos personales son los estudiantes y docentes a cargo del proyecto "Aplicación móvil para la gestión de finanzas personales basado en el método Kakebo" de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN
 \n\n 2. Datos personales que recopilamos
 La aplicación puede recopilar algunos de los siguientes datos personales de sus usuarios:
 \n	Nombre completo
@@ -69,67 +69,77 @@ Estos términos y condiciones rigen el uso de la presente aplicación móvil que
     <string name="crear_cuenta">Crear cuenta</string>
     <string name="continuar">Continuar</string>
     <string-array name="menu">
-        <item></item>
+        <item>-----------------</item>
         <item>Inicio</item>
-        <item></item>
+        <item>-----------------</item>
         <item>Ingresos</item>
-        <item></item>
+        <item>-----------------</item>
         <item>Egresos</item>
-        <item></item>
+        <item>-----------------</item>
         <item>Notas</item>
-        <item></item>
-        <item>Planeación de deudas</item>
-        <item></item>
+        <item>-----------------</item>
+        <item>Deudas</item>
+        <item>-----------------</item>
         <item>Categorias</item>
-        <item></item>
+        <item>-----------------</item>
         <item>Reportes</item>
-        <item></item>
+        <item>-----------------</item>
         <item>Meta financiera</item>
-        <item></item>
+        <item>-----------------</item>
         <item>Ayuda</item>
-        <item></item>
+        <item>-----------------</item>
         <item>Modo oscuro</item>
-        <item></item>
+        <item>-----------------</item>
         <item>Cerrar sesión</item>
-        <item></item>
+        <item>----------------</item>
     </string-array>
 
     <string-array name="reporte">
-        <item></item>
+        <item>----------</item>
         <item>Quincenal</item>
-        <item></item>
+        <item>----------</item>
         <item>Mensual</item>
-        <item></item>
+        <item>----------</item>
         <item>Trimestral</item>
     </string-array>
 
     <string-array name="plazo">
-        <item></item>
+        <item>---------------------</item>
         <item>Corto (menor a 6 meses)</item>
-        <item></item>
+        <item>---------------------</item>
         <item>Mediano (6 meses a 1 año)</item>
-        <item></item>
+        <item>---------------------</item>
         <item>Largo (mayor a 1 año) </item>
     </string-array>
 
     <string-array name="plazospagodeuda">
-        <item></item>
+        <item>----------</item>
         <item>Mensual</item>
-        <item></item>
+        <item>-----------</item>
         <item>Quincenal</item>
-        <item></item>
+        <item>----------</item>
         <item>Único</item>
     </string-array>
 
     <string-array name="kakebo">
-        <item></item>
+        <item>----------</item>
         <item>Supervivencia</item>
-        <item></item>
+        <item>----------</item>
         <item>Ocio</item>
-        <item></item>
+        <item>----------</item>
         <item>Cultura</item>
+    </string-array>
 
-
+    <string-array name="ingresos">
+        <item></item>
+        <item>Salario</item>
+        <item>----------</item>
+        <item>Préstamo</item>
+        <item>----------</item>
+        <item>Utilidades</item>
+        <item>----------</item>
+        <item>Aguinaldo</item>
+        <item>----------</item>
     </string-array>
 
     <!-- Strings used for fragments for navigation -->
@@ -203,7 +213,7 @@ Estos términos y condiciones rigen el uso de la presente aplicación móvil que
     <string name="hintPassword">Escriba una contraseña</string>
     <string name="textCuentaExist">¿Ya tienes una cuenta?</string>
     <string name="textLogIn">Iniciar sesión</string>
-    <string name="cantidad">Cantidad:</string>
+    <string name="cantidad">Cantidad: $</string>
     <string name="culturalDefaultParque">Parque</string>
     <string name="tituloSeccionCategorias">Categorias</string>
     <string name="tituloIngresos">Ingresos</string>
@@ -308,5 +318,26 @@ Estos términos y condiciones rigen el uso de la presente aplicación móvil que
     <string name="titleAyuda">Ayuda</string>
     <string name="exitLlenadoDeudas">Cancelar llenado deudas</string>
     <string name="selecciona_la_fecha">Selecciona la fecha</string>
+    <string name="deudas">Deudas</string>
+    <string name="txtquincena_2">Quincena 2</string>
+    <string name="txtquincena_1">Quincena 1</string>
+    <string name="reales">Reales</string>
+    <string name="planeados">Planeados</string>
+    <string name="addEgreso">Añadir registro de egreso</string>
+    <string name="egresos">Egresos</string>
+    <string name="quincena">Quincena</string>
+    <string name="fijo">Fijo</string>
+    <string name="variable">Variable</string>
+    <string name="monto">Monto: $00.0</string>
+    <string name="planeacion">Planeación</string>
+    <string name="ingresos">Ingresos</string>
+    <string name="iniciarSesion">Iniciar Sesión</string>
+    <string name="opcionGoogle">O inicia sesión con Google</string>
+    <string name="btnGoogle">logInGoogle</string>
+    <string name="viewPassword">view password in log in</string>
+    <string name="questForgotPassword">¿Olvidaste tu contraseña?</string>
+    <string name="coinsLogo">coin logo in log in screen</string>
+    <string name="PagodeDeudas">Pagos de Deudas</string>
+    <string name="planeadas">Planeadas</string>
 
 </resources>

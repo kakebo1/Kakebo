@@ -59,8 +59,8 @@ public class Reportes extends AppCompatActivity {
                     startActivity(notas);
                 }
 
-                if (adapterView.getItemAtPosition(i).equals("Planeación de deudas")) {
-                    Intent deudas = new Intent(Reportes.this, PlaneacionDeudas.class);
+                if (adapterView.getItemAtPosition(i).equals("Deudas")) {
+                    Intent deudas = new Intent(Reportes.this, Deudas.class);
                     startActivity(deudas);
                 }
 

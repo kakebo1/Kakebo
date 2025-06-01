@@ -2,25 +2,35 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.Menu;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Ingresos extends AppCompatActivity {
+
+    private TransaccionAdapter transaccionAdapter;
+    private final List<Transaccion> ingresoItemList = new ArrayList<>();
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +41,38 @@ public class Ingresos extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
+        });
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerIngresos);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        transaccionAdapter = new TransaccionAdapter(ingresoItemList);
+        recyclerView.setAdapter(transaccionAdapter);
+
+        db = FirebaseFirestore.getInstance();
+        cargarIngresos("ingresos");
+
+        Button btnReales = findViewById(R.id.btnIngReales);
+        Button btnPlaneados = findViewById(R.id.btnIngPlaneados);
+        btnReales.setOnClickListener(v -> {
+            cargarIngresos("ingresos");
+            actualizarEstiloBotones(btnReales, btnPlaneados);
+        });
+        btnPlaneados.setOnClickListener(v -> {
+                cargarIngresos("plan_ingresos");
+                actualizarEstiloBotones(btnPlaneados, btnReales);
         });
 
         ImageButton btnAgregarIng = findViewById(R.id.btnAgregar);
         btnAgregarIng.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
                 Intent addIngReal = new Intent(Ingresos.this, LlenadoIngresos.class);
                 startActivity(addIngReal);
             }
         });
+
 
         //Menú Lateral
         Spinner menuLateral=findViewById(R.id.menuLateral);
@@ -72,8 +103,8 @@ public class Ingresos extends AppCompatActivity {
                 startActivity(notas);
             }
 
-            if (adapterView.getItemAtPosition(i).equals ("Planeación de deudas")){
-                Intent deudas = new Intent(Ingresos.this, PlaneacionDeudas.class);
+            if (adapterView.getItemAtPosition(i).equals ("Deudas")){
+                Intent deudas = new Intent(Ingresos.this, Deudas.class);
                 startActivity(deudas);
             }
 
@@ -115,4 +146,31 @@ public class Ingresos extends AppCompatActivity {
     });
     }
 
+    private void actualizarEstiloBotones(Button selec, Button noSel){
+        selec.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.teal_200));
+        selec.setTextColor(ContextCompat.getColor(this, android.R.color.white));
+        noSel.setBackgroundTintList(ContextCompat.getColorStateList(this,R.color.gray));
+        noSel.setTextColor(ContextCompat.getColor(this, R.color.black));
+    }
+
+    private void cargarIngresos(String collection){
+        db.collection(collection).get().addOnSuccessListener(queryDocumentSnapshots -> {
+            Log.d("FirestoreDebug", "Datos recibidos: " + queryDocumentSnapshots.size());
+            ingresoItemList.clear(); //Limpiar para evitar duplicados
+            transaccionAdapter.notifyDataSetChanged();
+
+            for (DocumentSnapshot doc : queryDocumentSnapshots){
+                try{
+                Transaccion ingreso = doc.toObject(Transaccion.class);
+                if(ingreso != null){
+                    ingresoItemList.add(ingreso);
+                    transaccionAdapter.notifyItemInserted(ingresoItemList.size() - 1); //Notificar por cada nuevo item
+                    Log.d("FirestoreDebug", "Documento: " + doc.getData());
+                }
+                }catch (Exception e){
+                    Log.e("FirestoreDebug", "Error al obtener la información", e);
+                }
+            }
+        }).addOnFailureListener(e -> Log.e("FirestoreDebug", "Error al obtener la información", e));
+    }
 }

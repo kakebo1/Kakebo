@@ -21,12 +21,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.lang.reflect.Array;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -37,7 +37,7 @@ public class LlenadoEgresos extends AppCompatActivity {
     Button btnAceptarEg;
     ImageButton btnAgregarImg, btnCancelarEgreso;
     EditText txtConceptoEg, txtCantidadEg, txtFechaEg, txtComentarioEg;
-    Switch deuda;
+    Switch switchDeuda;
     RadioButton fijo, variable;
     private FirebaseFirestore basededatos;
     final Calendar calendarioEg = Calendar.getInstance();
@@ -62,7 +62,7 @@ public class LlenadoEgresos extends AppCompatActivity {
         txtCantidadEg = findViewById(R.id.txtCantidadEgReal);
         txtFechaEg = findViewById(R.id.txtFechaEgReal);
         txtComentarioEg = findViewById(R.id.txtComentariosEgReal);
-        deuda = findViewById(R.id.deuda);
+        switchDeuda = findViewById(R.id.switchDeuda);
         fijo = findViewById(R.id.btnFijo);
         variable = findViewById(R.id.btnVariable);
 
@@ -150,8 +150,9 @@ public class LlenadoEgresos extends AppCompatActivity {
             }
         });
     }
+
     public void aceptar(View v) {
-        if (validar1()) {
+        if (validar()) {
             Toast.makeText(getApplicationContext(), "Datos guardados correctamente", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LlenadoEgresos.this, MenuPrinc.class);
             startActivity(intent);
@@ -159,7 +160,7 @@ public class LlenadoEgresos extends AppCompatActivity {
         }
     }
 
-    public boolean validar1() {
+    public boolean validar() {
         boolean retorno = true;
 
         String concepto = txtConceptoEg.getText().toString().trim();
@@ -174,40 +175,43 @@ public class LlenadoEgresos extends AppCompatActivity {
             retorno = false;
         }
 
-        int cantidad = 0;
         if (cantidadStr.isEmpty()) {
             txtCantidadEg.setError("Este campo NO puede quedar vacío");
             retorno = false;
-        } else {
-            try {
-                cantidad = Integer.parseInt(cantidadStr);
-            } catch (NumberFormatException e) {
-                txtCantidadEg.setError("Introduce un número válido");
-                retorno = false;
-            }
         }
 
         if (retorno) {
-            egreso(concepto, cantidad, fecha, comentario, categoriaSel, subcategoriaSel);
+            int cantidad1 = Integer.parseInt(cantidadStr);
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            Date fecha1 = null;
+            try{
+                fecha1 = format.parse(fecha);
+            } catch (ParseException e){
+                throw new RuntimeException(e);
+            }
+            egreso(concepto, cantidad1, fecha1, comentario, categoriaSel, subcategoriaSel);
         }
         return retorno;
     }
 
-    private void egreso(String concepto, int cantidad, String fecha, String comentario, String categoria, String subcategoria) {
+    private void egreso(String concepto, int cantidad, Date fecha, String comentario, String categoria, String subcategoria) {
         Map<String, Object> mapii = new HashMap<>();
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         mapii.put("concepto", concepto);
         mapii.put("cantidad", cantidad);
-        mapii.put("fecha", fecha);
+        mapii.put("fecha", format.format(fecha));
         mapii.put("comentario", comentario);
         mapii.put("categoria", categoria);
         mapii.put("subcategoria", subcategoria);
 
-        basededatos.collection("egresos").add(mapii)
-                .addOnSuccessListener(documentReference -> {
-                    Toast.makeText(LlenadoEgresos.this, "Pago guardado con éxito", Toast.LENGTH_SHORT).show();
-                })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(LlenadoEgresos.this, "Error al guardar los datos", Toast.LENGTH_SHORT).show();
-                });
+        String tabla;
+        if(switchDeuda.isChecked()){
+            tabla = "pago_deuda";
+        } else{
+            tabla = "egresos";
+        }
+        basededatos.collection(tabla).add(mapii).addOnSuccessListener(documentReference -> {
+            Toast.makeText(LlenadoEgresos.this, "Egreso guardado", Toast.LENGTH_SHORT).show();
+        });
     }
 }

@@ -16,7 +16,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -63,8 +62,8 @@ Button btnAvisoPriv, btnGuiaDeUso, btnTyC;
                     startActivity(notas);
                 }
 
-                if (adapterView.getItemAtPosition(i).equals ("Planeación de deudas")){
-                    Intent deudas = new Intent(Ayuda.this, PlaneacionDeudas.class);
+                if (adapterView.getItemAtPosition(i).equals ("Deudas")){
+                    Intent deudas = new Intent(Ayuda.this, Deudas.class);
                     startActivity(deudas);
                 }
 

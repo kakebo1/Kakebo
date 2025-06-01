@@ -58,7 +58,7 @@
         android:layout_marginEnd="12dp"
         android:text="@string/fecha"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/deuda"
+        app:layout_constraintEnd_toStartOf="@+id/switchDeuda"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -93,15 +93,15 @@
         android:layout_marginBottom="12dp"
         android:text="@string/comentarios"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtComentariosPlan"
+        app:layout_constraintBottom_toTopOf="@+id/txtComentariosEgReal"
         app:layout_constraintEnd_toStartOf="@+id/btnAgregarImgPlan"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnAgregarImgPlan" />
 
     <ImageButton
         android:id="@+id/btnCancelarEg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="37dp"
+        android:layout_height="43dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/transparente"
@@ -110,7 +110,7 @@
         app:layout_constraintStart_toEndOf="@+id/txtConceptoEgReal"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icons8_cancelar_100"
-        app:tint="@color/red" />
+        app:tint="@color/black" />
 
     <EditText
         android:id="@+id/txtComentariosEgReal"
@@ -130,14 +130,15 @@
 
     <ImageButton
         android:id="@+id/btnAgregarImgPlan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="47dp"
+        android:layout_height="39dp"
         android:layout_marginEnd="147dp"
-        android:layout_marginBottom="178dp"
+        android:layout_marginBottom="192dp"
         android:backgroundTint="@color/transparente"
         android:contentDescription="@string/addImgEg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView31"
         app:srcCompat="@drawable/icons8_add_image_96" />
 
@@ -153,7 +154,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Switch
-        android:id="@+id/deuda"
+        android:id="@+id/switchDeuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -175,7 +176,7 @@
         android:text="@string/gastoFijo"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deuda" />
+        app:layout_constraintTop_toBottomOf="@+id/switchDeuda" />
 
     <RadioButton
         android:id="@+id/btnVariable"
@@ -183,7 +184,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="56dp"
-        android:checked="true"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/gastoVariable"
@@ -194,13 +194,17 @@
     <EditText
         android:id="@+id/txtFechaEgReal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="41dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:autofillHints=""
         android:ems="10"
+        android:background="@drawable/esquinas_redondeadas"
+        android:clickable="true"
+        android:focusable="true"
+        android:hint="@string/selecciona_la_fecha"
         android:inputType="date"
-        app:layout_constraintStart_toStartOf="@+id/deuda"
+        app:layout_constraintStart_toStartOf="@+id/switchDeuda"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <Spinner

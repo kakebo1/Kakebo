@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recyclerEgresos" type="id"/>
+    <item name="recyclerPagoDeudas" type="id"/>
+    <item name="recyclerDeudasPlan" type="id"/>
+</resources>

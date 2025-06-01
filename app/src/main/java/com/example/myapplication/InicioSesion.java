@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -25,8 +27,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class InicioSesion extends AppCompatActivity {
 
     private EditText mloginemail, mloginpassword;
-    private RelativeLayout mlog_in, mCrearCuenta;
-    private TextView mgotoforgotPassword;
     private FirebaseAuth firebaseAuth;
 
     ProgressBar mprogressbaroflogin;
@@ -43,9 +43,9 @@ public class InicioSesion extends AppCompatActivity {
 
         mloginemail = findViewById(R.id.loginemail);
         mloginpassword = findViewById(R.id.loginPassword);
-        mlog_in = findViewById(R.id.log_in);
-        mgotoforgotPassword = findViewById(R.id.gotoforgotPassword);
-        mCrearCuenta = findViewById(R.id.btnCrearCuenta);
+        Button mlog_in = findViewById(R.id.btnContinuar);
+        TextView mgotoforgotPassword = findViewById(R.id.gotoforgotPassword);
+        Button mCrearCuenta = findViewById(R.id.btnCrearCuenta);
         mprogressbaroflogin = findViewById(R.id.progressbaroflogin);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -55,9 +55,7 @@ public class InicioSesion extends AppCompatActivity {
             finish();
             startActivity(new Intent(InicioSesion.this, MenuPrinc.class));
         }
-/*        else{
-//            Toast.makeText(getApplicationContext(), "Sesión Cerrada", Toast.LENGTH_SHORT).show();
-//
+/*        else{  Toast.makeText(getApplicationContext(), "Sesión Cerrada", Toast.LENGTH_SHORT).show();
         } */
 
         mCrearCuenta.setOnClickListener(new View.OnClickListener() {

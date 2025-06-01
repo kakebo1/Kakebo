@@ -4,7 +4,6 @@ import static android.R.layout.*;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -114,8 +113,8 @@ public class MetaFin extends AppCompatActivity {
                     startActivity(notas);
                 }
 
-                if (adapterView.getItemAtPosition(i).equals("Planeación de deudas")) {
-                    Intent deudas = new Intent(MetaFin.this, PlaneacionDeudas.class);
+                if (adapterView.getItemAtPosition(i).equals("Deudas")) {
+                    Intent deudas = new Intent(MetaFin.this, Deudas.class);
                     startActivity(deudas);
                 }
 

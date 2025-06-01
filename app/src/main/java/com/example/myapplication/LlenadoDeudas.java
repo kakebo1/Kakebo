@@ -20,9 +20,11 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -47,7 +49,6 @@ public class LlenadoDeudas extends AppCompatActivity {
             return insets;
         });
 
-        // INICIALIZAR COMPONENTES
         btnAceptarDe = findViewById(R.id.btnAceptarPlan);
         btnCancelarDeuda = findViewById(R.id.btnCancelarPlan);
         txtConceptoDe = findViewById(R.id.txtConceptoPlan);
@@ -82,23 +83,20 @@ public class LlenadoDeudas extends AppCompatActivity {
 
         });
 
-        Spinner kakebo = findViewById(R.id.kakeboPlanDe);
+        Spinner categoria = findViewById(R.id.kakeboPlanDe);
         ArrayAdapter<CharSequence> adc = ArrayAdapter.createFromResource(this, R.array.kakebo, simple_spinner_item);
         adc.setDropDownViewResource(simple_spinner_item);
-        kakebo.setAdapter(adc);
-        kakebo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int ai, long l) {
-                kakeboDe   = adapterView.getItemAtPosition(ai).toString();
-            }
+        categoria.setAdapter(adc);
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-                //   planPagDe = "Mensual"; // Valor por defecto
-            }
+        Spinner subcategoria = findViewById(R.id.subcategoriaDeuda);
+        Map<String, List<String>> subcategoriasMap = new HashMap<>();
 
-        });
+        subcategoriasMap.put("Supervivencia", Arrays.asList("Alimentación", "Servicios del Hogar", "Transporte"));
+        subcategoriasMap.put("Ocio", Arrays.asList("Cine", "Restaurant", "Videojuegos", "Fiesta"));
+        subcategoriasMap.put("Cultural", Arrays.asList("Libros", "Museo", "Concierto"));
+        subcategoriasMap.put("Otros", Arrays.asList("Regalos", "Donacion", "Plantas"));
 
+        btnAceptarDe.setOnClickListener(this::aceptar);
         btnCancelarDeuda.setOnClickListener(v-> {
             Toast.makeText(LlenadoDeudas.this, "Registro cancelado", Toast.LENGTH_SHORT).show();
             finish();

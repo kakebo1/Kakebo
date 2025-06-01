@@ -33,7 +33,6 @@ public class Notas extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.menu,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         menuLateral.setAdapter(adapter);
-
         menuLateral.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -56,8 +55,8 @@ public class Notas extends AppCompatActivity {
                     startActivity(notas);
                 }
 
-                if (adapterView.getItemAtPosition(i).equals ("Planeación de deudas")){
-                    Intent deudas = new Intent(Notas.this, PlaneacionDeudas.class);
+                if (adapterView.getItemAtPosition(i).equals ("Deudas")){
+                    Intent deudas = new Intent(Notas.this, Deudas.class);
                     startActivity(deudas);
                 }
                 if (adapterView.getItemAtPosition(i).equals ("Categorias")){

@@ -9,7 +9,7 @@
     tools:context=".LlenadoIngresos">
 
     <EditText
-        android:id="@+id/txtFechaIng"
+        android:id="@+id/txtFechaIngPlan"
         android:layout_width="192dp"
         android:layout_height="41dp"
         android:layout_marginStart="127dp"
@@ -58,19 +58,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtQuincena"
+        android:id="@+id/txtQuincenaIngPlan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="89dp"
+        android:layout_marginTop="232dp"
         android:layout_marginEnd="222dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="467dp"
         android:text="@string/quincena"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView31"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView30"
@@ -84,10 +84,8 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView31"
@@ -105,10 +103,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/categoriaIng"
+        android:id="@+id/categoriaPlanIng"
         android:layout_width="168dp"
         android:layout_height="36dp"
-        android:layout_marginStart="191dp"
+        android:layout_marginStart="161dp"
         android:layout_marginTop="307dp"
         android:layout_marginEnd="82dp"
         android:layout_marginBottom="388dp"
@@ -134,7 +132,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtComentarioIng"
+        android:id="@+id/txtComentarioIngPlan"
         android:layout_width="389dp"
         android:layout_height="126dp"
         android:layout_marginStart="11dp"
@@ -152,7 +150,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnAceptarIng"
+        android:id="@+id/btnAceptarPlanIng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="157dp"
@@ -168,7 +166,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btnAgregarImgIng"
+        android:id="@+id/btnAgregarImgIngPlan"
         android:layout_width="47dp"
         android:layout_height="29dp"
         android:layout_marginStart="198dp"
@@ -184,9 +182,9 @@
         app:srcCompat="@drawable/icons8_add_image_96" />
 
     <EditText
-        android:id="@+id/txtCantidadIng"
-        android:layout_width="150dp"
-        android:layout_height="36dp"
+        android:id="@+id/txtCantidadIngPlan"
+        android:layout_width="165dp"
+        android:layout_height="33dp"
         android:layout_marginStart="189dp"
         android:layout_marginTop="103dp"
         android:layout_marginEnd="72dp"
@@ -201,7 +199,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtConceptoIng"
+        android:id="@+id/txtConceptoIngPlan"
         android:layout_width="193dp"
         android:layout_height="36dp"
         android:layout_marginStart="155dp"
@@ -217,55 +215,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btnCancelarIng"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnCancelarIngPlan"
+        android:layout_width="34dp"
+        android:layout_height="45dp"
         android:layout_marginStart="348dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="669dp"
         android:backgroundTint="@color/transparente"
-        android:contentDescription="@string/cancelarCat"
+        android:contentDescription="@string/cancelarEg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/icons8_cancelar_100" />
-
-
-    <RadioGroup
-        android:layout_width="395dp"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/categoriaIng"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFechaIng"
-        app:layout_editor_absoluteX="18dp"
-        app:layout_editor_absoluteY="246dp">
-
-
-        <RadioButton
-            android:id="@+id/btnFijoEg"
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/fijo"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/btnVariableEg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/variable"
-            android:textSize="24sp" />
-
-    </RadioGroup>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

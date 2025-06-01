@@ -46,9 +46,13 @@ public class editNoteActivity extends AppCompatActivity {
         meditcontentofnote = findViewById(R.id.editcontentofnote);
         msaveeditnote = findViewById(R.id.saveeditnote);
         data = getIntent();
-
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser == null) {
+            Toast.makeText(this, "No has iniciado sesión", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
 
         Toolbar toolbar = findViewById(R.id.toolbarofeditnote);
         setSupportActionBar(toolbar);
@@ -78,7 +82,8 @@ public class editNoteActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(getApplicationContext(), "Nota actualizada", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(editNoteActivity.this, notasActivity.class));
+                            finish();
+                            //startActivity(new Intent(editNoteActivity.this, notasActivity.class));
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
