@@ -339,5 +339,6 @@ Estos términos y condiciones rigen el uso de la presente aplicación móvil que
     <string name="coinsLogo">coin logo in log in screen</string>
     <string name="PagodeDeudas">Pagos de Deudas</string>
     <string name="planeadas">Planeadas</string>
+    <string name="allNotes">Todas las notas</string>
 
 </resources>
