@@ -4,6 +4,8 @@
     "project_id": "kakebo-d5ea2",
     "storage_bucket": "kakebo-d5ea2.firebasestorage.app"
   },
+
+
   "client": [
     {
       "client_info": {
