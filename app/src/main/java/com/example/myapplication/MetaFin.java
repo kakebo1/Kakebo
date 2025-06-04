@@ -109,10 +109,13 @@ public class MetaFin extends AppCompatActivity {
                 }
 
                 if (adapterView.getItemAtPosition(i).equals("Notas")) {
-                    Intent notas = new Intent(MetaFin.this, Notas.class);
+                    Intent notas = new Intent(MetaFin.this, notasActivity.class);
                     startActivity(notas);
                 }
-
+                if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
+                    Intent checkbox = new Intent(MetaFin.this, checkbox.class);
+                    startActivity(checkbox);
+                }
                 if (adapterView.getItemAtPosition(i).equals("Deudas")) {
                     Intent deudas = new Intent(MetaFin.this, Deudas.class);
                     startActivity(deudas);

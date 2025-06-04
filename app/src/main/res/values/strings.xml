@@ -78,6 +78,8 @@ Estos términos y condiciones rigen el uso de la presente aplicación móvil que
         <item>-----------------</item>
         <item>Notas</item>
         <item>-----------------</item>
+        <item>Checkbox</item>
+        <item>-----------------</item>
         <item>Deudas</item>
         <item>-----------------</item>
         <item>Categorias</item>
@@ -340,5 +342,6 @@ Estos términos y condiciones rigen el uso de la presente aplicación móvil que
     <string name="PagodeDeudas">Pagos de Deudas</string>
     <string name="planeadas">Planeadas</string>
     <string name="allNotes">Todas las notas</string>
+    <string name="volver">volver\n</string>
 
 </resources>

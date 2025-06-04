@@ -18,6 +18,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -99,10 +101,13 @@ public class Ingresos extends AppCompatActivity {
             }
 
             if (adapterView.getItemAtPosition(i).equals ("Notas")){
-                Intent notas = new Intent(Ingresos.this, Notas.class);
+                Intent notas = new Intent(Ingresos.this, notasActivity.class);
                 startActivity(notas);
             }
-
+            if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
+                    Intent checkbox = new Intent(Ingresos.this, checkbox.class);
+                    startActivity(checkbox);
+                }
             if (adapterView.getItemAtPosition(i).equals ("Deudas")){
                 Intent deudas = new Intent(Ingresos.this, Deudas.class);
                 startActivity(deudas);
@@ -163,12 +168,12 @@ public class Ingresos extends AppCompatActivity {
                 try{
                 Transaccion ingreso = doc.toObject(Transaccion.class);
                 if(ingreso != null){
+                    ingreso.setDocId(doc.getId());
                     ingresoItemList.add(ingreso);
                     transaccionAdapter.notifyItemInserted(ingresoItemList.size() - 1); //Notificar por cada nuevo item
-                    Log.d("FirestoreDebug", "Documento: " + doc.getData());
                 }
                 }catch (Exception e){
-                    Log.e("FirestoreDebug", "Error al obtener la información", e);
+                    Toast.makeText(this, "Error al obtener la información", Toast.LENGTH_SHORT).show();
                 }
             }
         }).addOnFailureListener(e -> Log.e("FirestoreDebug", "Error al obtener la información", e));

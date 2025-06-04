@@ -55,10 +55,13 @@ public class Reportes extends AppCompatActivity {
                 }
 
                 if (adapterView.getItemAtPosition(i).equals("Notas")) {
-                    Intent notas = new Intent(Reportes.this, Notas.class);
+                    Intent notas = new Intent(Reportes.this, notasActivity.class);
                     startActivity(notas);
                 }
-
+                if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
+                    Intent checkbox = new Intent(Reportes.this, checkbox.class);
+                    startActivity(checkbox);
+                }
                 if (adapterView.getItemAtPosition(i).equals("Deudas")) {
                     Intent deudas = new Intent(Reportes.this, Deudas.class);
                     startActivity(deudas);

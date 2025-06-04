@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -20,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -97,8 +100,23 @@ public class notasActivity extends AppCompatActivity {
                 protected void onBindViewHolder(@NonNull NoteViewHolder noteViewHolder, int i, @NonNull fbmodel fbbmodel) {
 
                     ImageView popupbutton = noteViewHolder.itemView.findViewById(R.id.menupopbutton);
-                    int colorcode = getRandomColor();
-                    noteViewHolder.mnote.setBackgroundColor(noteViewHolder.itemView.getResources().getColor(colorcode, null));
+
+                    int color = getRandomColor(noteViewHolder.itemView.getContext());
+                    noteViewHolder.mnote.setBackgroundColor(color);
+
+                    // Ajustar texto según claridad del color
+                    double darkness = 1 - (0.299 * Color.red(color) +
+                            0.587 * Color.green(color) +
+                            0.114 * Color.blue(color)) / 255;
+
+                    if (darkness < 0.5) {
+                        noteViewHolder.notetitle.setTextColor(Color.BLACK);
+                        noteViewHolder.notecontent.setTextColor(Color.BLACK);
+                    } else {
+                        noteViewHolder.notetitle.setTextColor(Color.WHITE);
+                        noteViewHolder.notecontent.setTextColor(Color.WHITE);
+                    }
+
                     noteViewHolder.notetitle.setText(fbbmodel.getTitle());
                     noteViewHolder.notecontent.setText(fbbmodel.getContent());
                     String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
@@ -134,8 +152,10 @@ public class notasActivity extends AppCompatActivity {
                             popupMenu.getMenu().add("Eliminar").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                                 @Override
                                 public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
-                                    // Toast.makeText(view.getContext(), "This note is deleted", Toast.LENGTH_SHORT).show();
-                                    DocumentReference documentReference = db.collection("notas").document(firebaseUser.getUid()).collection("MisNotas").document(docId);
+                                    DocumentReference documentReference = db.collection("notas")
+                                            .document(firebaseUser.getUid())
+                                            .collection("MisNotas")
+                                            .document(docId);
                                     documentReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
@@ -207,8 +227,13 @@ public class notasActivity extends AppCompatActivity {
                 }
 
                 if (adapterView.getItemAtPosition(i).equals("Notas")) {
-                    Intent notas = new Intent(notasActivity.this, Notas.class);
+                    Intent notas = new Intent(notasActivity.this, notasActivity.class);
                     startActivity(notas);
+                }
+
+                if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
+                    Intent checkbox = new Intent(notasActivity.this, checkbox.class);
+                    startActivity(checkbox);
                 }
 
                 if (adapterView.getItemAtPosition(i).equals("Planeación de deudas")) {
@@ -287,24 +312,24 @@ public class notasActivity extends AppCompatActivity {
             noteAdapter.stopListening();
         }
     }
-
-    private int getRandomColor(){
-        List<Integer> colorcode = new ArrayList<>();
-        colorcode.add(R.color.gray);
-        colorcode.add(R.color.pink);
-        colorcode.add(R.color.lightgreen);
-        colorcode.add(R.color.green);
-        colorcode.add(R.color.skyblue);
-        colorcode.add(R.color.color1);
-        colorcode.add(R.color.color2);
-        colorcode.add(R.color.color3);
-        colorcode.add(R.color.color4);
-        colorcode.add(R.color.color5);
+    private int getRandomColor(Context context) {
+        List<Integer> colorIds = new ArrayList<>();
+        colorIds.add(R.color.gray);
+        colorIds.add(R.color.pink);
+        colorIds.add(R.color.lightgreen);
+        colorIds.add(R.color.green);
+        colorIds.add(R.color.skyblue);
+        colorIds.add(R.color.color1);
+        colorIds.add(R.color.color2);
+        colorIds.add(R.color.color3);
+        colorIds.add(R.color.color4);
+        colorIds.add(R.color.color5);
 
         Random random = new Random();
-        int number = random.nextInt(colorcode.size());
-        return colorcode.get(number);
-    }
+        int randomIndex = random.nextInt(colorIds.size());
 
+        // Aquí usamos ContextCompat para convertir el ID en color real
+        return ContextCompat.getColor(context, colorIds.get(randomIndex));
+    }
 }
 

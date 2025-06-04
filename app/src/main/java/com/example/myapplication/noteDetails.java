@@ -49,7 +49,7 @@ public class noteDetails extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            getOnBackPressedDispatcher().onBackPressed();
+            startActivity(new Intent(noteDetails.this, notasActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

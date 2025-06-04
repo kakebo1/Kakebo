@@ -58,10 +58,13 @@ Button btnAvisoPriv, btnGuiaDeUso, btnTyC;
                 }
 
                 if (adapterView.getItemAtPosition(i).equals ("Notas")){
-                    Intent notas = new Intent(Ayuda.this, Notas.class);
+                    Intent notas = new Intent(Ayuda.this, notasActivity.class);
                     startActivity(notas);
                 }
-
+                if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
+                    Intent checkbox = new Intent(Ayuda.this, checkbox.class);
+                    startActivity(checkbox);
+                }
                 if (adapterView.getItemAtPosition(i).equals ("Deudas")){
                     Intent deudas = new Intent(Ayuda.this, Deudas.class);
                     startActivity(deudas);

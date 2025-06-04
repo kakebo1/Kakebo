@@ -95,10 +95,13 @@ public class Deudas extends AppCompatActivity {
                 }
 
                 if (adapterView.getItemAtPosition(i).equals("Notas")) {
-                    Intent notas = new Intent(Deudas.this, Notas.class);
+                    Intent notas = new Intent(Deudas.this, notasActivity.class);
                     startActivity(notas);
                 }
-
+                if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
+                    Intent checkbox = new Intent(Deudas.this, checkbox.class);
+                    startActivity(checkbox);
+                }
                 if (adapterView.getItemAtPosition(i).equals("Deudas")) {
                     Intent deudas = new Intent(Deudas.this, Deudas.class);
                     startActivity(deudas);

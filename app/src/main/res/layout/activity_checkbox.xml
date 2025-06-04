@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Botón de retroceso -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:contentDescription="@string/volver"
+        android:layout_gravity="start"
+        android:padding="8dp" />
+
     <EditText
         android:id="@+id/newItemInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints=""
         android:hint="@string/nuevo_elemento"
         android:inputType="text"
         android:minHeight="48dp"
@@ -18,21 +27,21 @@
 
     <Button
         android:id="@+id/deleteButton"
-        android:layout_width="377dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/eliminar" />
 
     <Button
         android:id="@+id/addButton"
-        android:layout_width="377dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/agregar" />
 
     <ListView
         android:id="@+id/listView_data"
-        android:layout_width="377dp"
-        android:layout_height="551dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:choiceMode="multipleChoice" />
 

@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
@@ -61,5 +62,9 @@ public class checkbox extends AppCompatActivity {
             }
             adapter.notifyDataSetChanged(); // Actualizar el adaptador
         });
+
+        ImageButton backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(v -> finish());
+
     }
 }

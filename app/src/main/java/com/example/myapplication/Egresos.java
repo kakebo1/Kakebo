@@ -104,8 +104,12 @@ public class Egresos extends AppCompatActivity {
                     }
 
                     if (adapterView.getItemAtPosition(i).equals("Notas")) {
-                        Intent notas = new Intent(Egresos.this, Notas.class);
+                        Intent notas = new Intent(Egresos.this, notasActivity.class);
                         startActivity(notas);
+                    }
+                    if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
+                        Intent checkbox = new Intent(Egresos.this, checkbox.class);
+                        startActivity(checkbox);
                     }
 
                     if (adapterView.getItemAtPosition(i).equals("Deudas")) {

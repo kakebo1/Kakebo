@@ -32,21 +32,19 @@
 
     <TextView
         android:id="@+id/contentofnotedetail"
-        android:layout_width="405dp"
-        android:layout_height="646dp"
-        android:layout_below="@+id/toolbarofnotedetail"
-        android:layout_marginBottom="4dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="#faf7f7"
-        android:gravity="top|left"
+        android:gravity="top|start"
         android:hint="@string/notecontent"
         android:padding="15dp"
         android:textColor="@color/black"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarofnotedetail"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/gotoeditnote" />
 
-    </TextView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/gotoeditnote"
@@ -65,6 +63,5 @@
         app:maxImageSize="40dp">
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
