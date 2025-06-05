@@ -49,14 +49,14 @@ public class Deudas extends AppCompatActivity {
         //Visualizar registros
         RecyclerView recyclerView = findViewById(R.id.recyclerDeudasPlan);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        deudaAdapter = new TransaccionAdapter(planDeudaList);
+        deudaAdapter = new TransaccionAdapter(planDeudaList, this,  "plan_deuda");
         recyclerView.setAdapter(deudaAdapter);
         db = FirebaseFirestore.getInstance();
         cargarDeudasPlan("plan_deuda");
 
         RecyclerView recyclerView1 = findViewById(R.id.recyclerPagoDeudas);
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
-        deudaAdapter1 = new TransaccionAdapter(pagoDeudaList);
+        deudaAdapter1 = new TransaccionAdapter(pagoDeudaList, this, "pago_deuda");
         recyclerView1.setAdapter(deudaAdapter1);
         db1 = FirebaseFirestore.getInstance();
         cargarPagoDeudas("pago_deuda");
@@ -157,6 +157,7 @@ public class Deudas extends AppCompatActivity {
                 try {
                     Transaccion pagoDeuda = doc.toObject(Transaccion.class);
                     if (pagoDeuda != null) {
+                        pagoDeuda.setId(doc.getId());
                         pagoDeudaList.add(pagoDeuda);
                         deudaAdapter1.notifyItemInserted(pagoDeudaList.size() - 1); //Notificar por cada nuevo item
                         Log.d("FirestoreDebug", "Documento bruto: " + doc.getData());
@@ -178,6 +179,7 @@ public class Deudas extends AppCompatActivity {
                 try {
                     Transaccion deudaPlaneada = doc.toObject(Transaccion.class);
                     if (deudaPlaneada != null) {
+                        deudaPlaneada.setId(doc.getId());
                         planDeudaList.add(deudaPlaneada);
                         deudaAdapter.notifyItemInserted(planDeudaList.size() - 1); //Notificar por cada nuevo item
                         Log.d("FirestoreDebug", "Documento bruto: " + doc.getData());

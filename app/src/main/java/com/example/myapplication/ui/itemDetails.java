@@ -16,21 +16,17 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.myapplication.R;
 import com.example.myapplication.editarRegistro;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 public class itemDetails extends AppCompatActivity {
-    TextView txtFecha, txtCategoria, txtSubcategoria, txtConcepto, txtCantidad, txtComentario, txtPlanPagos;
-    Button btnEditar, btnEliminar;
-    String docId;
-    FirebaseFirestore db;
+
+    private TextView txtFecha, txtCategoria, txtSubcategoria, txtConcepto, txtCantidad, txtComentario, txtPlanPagos;
+    private Button btnEditar, btnEliminar;
+    private String id, coleccion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_details);
 
-        db = FirebaseFirestore.getInstance();
-
-        // Inicializar vistas
         txtFecha = findViewById(R.id.txtFecha);
         txtCategoria = findViewById(R.id.txtCategoria);
         txtSubcategoria = findViewById(R.id.txtSubcategoria);
@@ -41,50 +37,61 @@ public class itemDetails extends AppCompatActivity {
         btnEditar = findViewById(R.id.btnEditar);
         btnEliminar = findViewById(R.id.btnEliminar);
 
-        // Recibe los datos
+        // Obtener datos del intent
         Intent intent = getIntent();
-        docId = intent.getStringExtra("docId");
+        id = intent.getStringExtra("id");
+        coleccion = intent.getStringExtra("coleccion");
+
         txtFecha.setText(intent.getStringExtra("fecha"));
         txtCategoria.setText(intent.getStringExtra("categoria"));
         txtSubcategoria.setText(intent.getStringExtra("subcategoria"));
         txtConcepto.setText(intent.getStringExtra("concepto"));
-        txtCantidad.setText(String.valueOf(intent.getDoubleExtra("cantidad", 0.0)));
+        txtCantidad.setText(String.valueOf(intent.getDoubleExtra("cantidad", 0)));
         txtComentario.setText(intent.getStringExtra("comentario"));
         txtPlanPagos.setText(intent.getStringExtra("plan_pagos"));
 
-        // Botón editar
         btnEditar.setOnClickListener(v -> {
-            // Puedes enviar los datos a otra Activity para edición o abrir un diálogo
-            Intent editIntent = new Intent(itemDetails.this, editarRegistro.class);
-            editIntent.putExtra("docId", docId);
-            editIntent.putExtra("fecha", txtFecha.getText().toString());
-            editIntent.putExtra("categoria", txtCategoria.getText().toString());
-            editIntent.putExtra("subcategoria", txtSubcategoria.getText().toString());
-            editIntent.putExtra("concepto", txtConcepto.getText().toString());
-            editIntent.putExtra("cantidad", Double.parseDouble(txtCantidad.getText().toString()));
-            editIntent.putExtra("comentario", txtComentario.getText().toString());
-            editIntent.putExtra("plan_pagos", txtPlanPagos.getText().toString());
-            startActivity(editIntent);
+            Intent editarIntent = new Intent(this, editarRegistro.class);
+            editarIntent.putExtras(intent); // Reutiliza los datos del item
+            editarIntent.putExtra("coleccion", coleccion);
+            editarIntent.putExtra("tipoTransaccion", coleccion);
+
+            // Define el tipo de transacción según la colección
+            if (coleccion.equals("ingresos") || coleccion.equals("plan_ingresos")) {
+                editarIntent.putExtra("tipoTransaccion", "ingresos");
+            } else if (coleccion.equals("egresos")) {
+                editarIntent.putExtra("tipoTransaccion", "egresos");
+            } else if (coleccion.equals("deudas")) {
+                editarIntent.putExtra("tipoTransaccion", "deudas"); // Por si luego personalizas también
+            }
+
+            startActivity(editarIntent);
+            finish();
         });
 
-        // Botón eliminar
-        btnEliminar.setOnClickListener(v -> {
-            new AlertDialog.Builder(this)
-                    .setTitle("Eliminar Registro")
-                    .setMessage("¿Estás seguro de que deseas eliminar este registro?")
-                    .setPositiveButton("Sí", (dialog, which) -> {
-                        db.collection("ingresos").document(docId)
-                                .delete()
-                                .addOnSuccessListener(unused -> {
-                                    Toast.makeText(this, "Registro eliminado", Toast.LENGTH_SHORT).show();
-                                    finish(); // Cierra la pantalla
-                                })
-                                .addOnFailureListener(e ->
-                                        Toast.makeText(this, "Error al eliminar registro", Toast.LENGTH_SHORT).show()
-                                );
-                    })
-                    .setNegativeButton("Cancelar", null)
-                    .show();
-        });
+
+        btnEliminar.setOnClickListener(v -> confirmarEliminacion());
+    }
+
+    private void confirmarEliminacion() {
+        new AlertDialog.Builder(this)
+                .setTitle("Eliminar registro")
+                .setMessage("¿Estás seguro de que deseas eliminar este registro?")
+                .setPositiveButton("Sí", (dialog, which) -> eliminarRegistro())
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+    private void eliminarRegistro() {
+        FirebaseFirestore.getInstance().collection(coleccion)
+                .document(id)
+                .delete()
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(this, "Registro eliminado", Toast.LENGTH_SHORT).show();
+                    finish();
+                })
+                .addOnFailureListener(e ->
+                        Toast.makeText(this, "Error al eliminar", Toast.LENGTH_SHORT).show()
+                );
     }
 }

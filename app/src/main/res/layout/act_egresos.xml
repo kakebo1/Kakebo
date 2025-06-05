@@ -60,34 +60,36 @@
         android:layout_marginTop="189dp"
         android:layout_marginEnd="268dp"
         android:layout_marginBottom="511dp"
+        android:backgroundTint="@color/gray"
         android:fontFamily="@font/asap_medium"
         android:text="@string/planeados"
-        android:textSize="24sp"
-        android:backgroundTint="@color/gray"
         android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnEgReales"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="183dp"
+        android:layout_width="146dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="233dp"
         android:layout_marginTop="190dp"
         android:layout_marginEnd="158dp"
         android:layout_marginBottom="510dp"
+        android:backgroundTint="@color/gray"
         android:fontFamily="@font/asap_medium"
         android:text="@string/reales"
-        android:textSize="24sp"
-        android:backgroundTint="@color/gray"
         android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
 
     <View
         android:id="@+id/divider2"
@@ -185,22 +187,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnDeudas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="297dp"
-        android:layout_marginTop="189dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="510dp"
-        android:text="@string/deudas"
-        android:textSize="24sp"
-        android:backgroundTint="@color/gray"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,8 +28,8 @@ import java.util.List;
 
 public class Egresos extends AppCompatActivity {
 
-    private EgresosAdapter egresoAdapter;
-    private final List<EgresoItem> egresoList = new ArrayList<>();
+    private TransaccionAdapter transaccionAdapter;
+    private final List<Transaccion> egresoList = new ArrayList<>();
     private FirebaseFirestore db;
 
     @Override
@@ -44,31 +44,34 @@ public class Egresos extends AppCompatActivity {
         });
 
         //Visualizar registros
+        // Visualizar registros
         RecyclerView recyclerView = findViewById(R.id.recyclerEgresos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        egresoAdapter = new EgresosAdapter(egresoList);
-        recyclerView.setAdapter(egresoAdapter);
-
-        db = FirebaseFirestore.getInstance();
-        cargarEgresos("egresos");
+        transaccionAdapter = new TransaccionAdapter(egresoList, this, "egresos");
+        recyclerView.setAdapter(transaccionAdapter);
 
         Button btnReales = findViewById(R.id.btnEgReales);
         Button btnPlaneados = findViewById(R.id.btnEgPlaneados);
-        Button btnDeudas = findViewById(R.id.btnDeudas);
 
         btnReales.setOnClickListener(v -> {
+            transaccionAdapter = new TransaccionAdapter(egresoList, this, "egresos");
+            recyclerView.setAdapter(transaccionAdapter);
             cargarEgresos("egresos");
-            actualizarEstiloBotones(btnReales, btnPlaneados, btnDeudas);
+            actualizarEstiloBotones(btnReales, btnPlaneados);
         });
+
         btnPlaneados.setOnClickListener(v -> {
+            transaccionAdapter = new TransaccionAdapter(egresoList, this, "plan_egresos");
+            recyclerView.setAdapter(transaccionAdapter);
             cargarEgresos("plan_egresos");
-            actualizarEstiloBotones(btnPlaneados, btnReales, btnDeudas);
+            actualizarEstiloBotones(btnPlaneados, btnReales);
         });
-        btnDeudas.setOnClickListener(v -> {
-            cargarEgresos("plan_deuda");
-            actualizarEstiloBotones(btnDeudas, btnPlaneados, btnReales);
-        });
+
+        db = FirebaseFirestore.getInstance();
+        cargarEgresos("egresos");
+        actualizarEstiloBotones(btnReales, btnPlaneados);
+
 
         ImageButton btnAgregarEg = findViewById(R.id.btnAgregar);
         btnAgregarEg.setOnClickListener(new View.OnClickListener(){
@@ -157,33 +160,34 @@ public class Egresos extends AppCompatActivity {
 
     }
 
-    private void actualizarEstiloBotones(Button selec, Button noSel, Button noSel2){
+    private void actualizarEstiloBotones(Button selec, Button noSel){
         selec.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.teal_200));
         selec.setTextColor(ContextCompat.getColor(this, android.R.color.white));
         noSel.setBackgroundTintList(ContextCompat.getColorStateList(this,R.color.gray));
         noSel.setTextColor(ContextCompat.getColor(this, R.color.black));
-        noSel2.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.gray));
-        noSel2.setTextColor(ContextCompat.getColor(this, android.R.color.black));
     }
 
     private void cargarEgresos(String collection) {
         db.collection(collection).get().addOnSuccessListener(queryDocumentSnapshots -> {
             Log.d("FirestoreDebug", "Documentos recibidos: " + queryDocumentSnapshots.size());
             egresoList.clear(); //Limpiar para evitar duplicados
-            egresoAdapter.notifyDataSetChanged();
+            transaccionAdapter.notifyDataSetChanged();
 
             for (DocumentSnapshot doc : queryDocumentSnapshots) {
                 try {
                     EgresoItem egreso = doc.toObject(EgresoItem.class);
                     if (egreso != null) {
+                        egreso.setId(doc.getId());
                         egresoList.add(egreso);
-                        egresoAdapter.notifyItemInserted(egresoList.size() - 1); //Notificar por cada nuevo item
+                        transaccionAdapter.notifyItemInserted(egresoList.size() - 1); //Notificar por cada nuevo item
                         Log.d("FirestoreDebug", "Documento bruto: " + doc.getData());
                     }
                 } catch (Exception e){
                     Log.e("FirestoreDebug", "Error al convertir documento: ", e);
                 }
             }
-        }).addOnFailureListener(e -> Log.e("FirestoreDebug", "Error al obtener egresos", e));
+        }).addOnFailureListener(e ->
+                Log.e("FirestoreDebug", "Error al obtener egresos", e)
+        );
     }
 }

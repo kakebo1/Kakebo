@@ -55,7 +55,7 @@
 
         <!-- Plan de pagos -->
         <Spinner
-            android:id="@+id/editPlanPagos"
+            android:id="@+id/spinnerPlanPagos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Plan de pagos" />

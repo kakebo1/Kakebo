@@ -49,22 +49,30 @@ public class Ingresos extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerIngresos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        transaccionAdapter = new TransaccionAdapter(ingresoItemList);
-        recyclerView.setAdapter(transaccionAdapter);
-
-        db = FirebaseFirestore.getInstance();
-        cargarIngresos("ingresos");
-
         Button btnReales = findViewById(R.id.btnIngReales);
         Button btnPlaneados = findViewById(R.id.btnIngPlaneados);
+
         btnReales.setOnClickListener(v -> {
+            transaccionAdapter = new TransaccionAdapter(ingresoItemList, this, "ingresos");
+            recyclerView.setAdapter(transaccionAdapter);
             cargarIngresos("ingresos");
             actualizarEstiloBotones(btnReales, btnPlaneados);
         });
+
         btnPlaneados.setOnClickListener(v -> {
-                cargarIngresos("plan_ingresos");
-                actualizarEstiloBotones(btnPlaneados, btnReales);
+            transaccionAdapter = new TransaccionAdapter(ingresoItemList, this, "plan_ingresos");
+            recyclerView.setAdapter(transaccionAdapter);
+            cargarIngresos("plan_ingresos");
+            actualizarEstiloBotones(btnPlaneados, btnReales);
         });
+
+        db = FirebaseFirestore.getInstance();
+        transaccionAdapter = new TransaccionAdapter(ingresoItemList, this, "ingresos");
+        recyclerView.setAdapter(transaccionAdapter);
+        cargarIngresos("ingresos");
+        actualizarEstiloBotones(btnReales, btnPlaneados);
+
+
 
         ImageButton btnAgregarIng = findViewById(R.id.btnAgregar);
         btnAgregarIng.setOnClickListener(new View.OnClickListener(){
@@ -161,21 +169,24 @@ public class Ingresos extends AppCompatActivity {
     private void cargarIngresos(String collection){
         db.collection(collection).get().addOnSuccessListener(queryDocumentSnapshots -> {
             Log.d("FirestoreDebug", "Datos recibidos: " + queryDocumentSnapshots.size());
-            ingresoItemList.clear(); //Limpiar para evitar duplicados
+            ingresoItemList.clear(); // Limpiar lista antes de cargar nuevos datos
             transaccionAdapter.notifyDataSetChanged();
 
             for (DocumentSnapshot doc : queryDocumentSnapshots){
-                try{
-                Transaccion ingreso = doc.toObject(Transaccion.class);
-                if(ingreso != null){
-                    ingreso.setDocId(doc.getId());
-                    ingresoItemList.add(ingreso);
-                    transaccionAdapter.notifyItemInserted(ingresoItemList.size() - 1); //Notificar por cada nuevo item
-                }
-                }catch (Exception e){
+                try {
+                    Transaccion ingreso = doc.toObject(Transaccion.class);
+                    if (ingreso != null) {
+                        ingreso.setId(doc.getId());
+                        ingresoItemList.add(ingreso);
+                        transaccionAdapter.notifyItemInserted(ingresoItemList.size() - 1);
+                    }
+                } catch (Exception e) {
                     Toast.makeText(this, "Error al obtener la información", Toast.LENGTH_SHORT).show();
                 }
             }
-        }).addOnFailureListener(e -> Log.e("FirestoreDebug", "Error al obtener la información", e));
+        }).addOnFailureListener(e ->
+                Log.e("FirestoreDebug", "Error al obtener la información", e)
+        );
     }
+
 }

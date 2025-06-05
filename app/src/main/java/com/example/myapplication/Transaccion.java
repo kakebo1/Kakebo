@@ -2,7 +2,7 @@ package com.example.myapplication;
 
 public class Transaccion {
 
-    private String docId;
+    private String id;
     private String fecha;
     private String subcategoria;
     private String categoria;
@@ -36,7 +36,7 @@ public class Transaccion {
     public String getPlan_pagos(){ return plan_pagos; }
     public void setPlan_pagos(String plan_pagos){ this.plan_pagos = plan_pagos; }
 
-    public String getDocId(){ return docId; }
-    public void setDocId(String docId) { this.docId = docId; }
+    public String getId(){ return id; }
+    public void setId(String id){ this.id = id; }
 }
 

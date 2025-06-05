@@ -37,7 +37,7 @@ public class PlaneacionEgresos extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerPlanEgresos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        transaccionAdapter = new TransaccionAdapter(planEgresosItemList);
+        transaccionAdapter = new TransaccionAdapter(planEgresosItemList, this, "plan_egresos");
         recyclerView.setAdapter(transaccionAdapter);
 
         db = FirebaseFirestore.getInstance();

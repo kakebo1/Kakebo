@@ -15,9 +15,13 @@ import java.util.List;
 
 public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.TransaccionViewHolder> {
     private final List<Transaccion> transaccionList;
+    private final Context context;
+    private final String tipo; // ingresos o plan_ingresos
 
-    public TransaccionAdapter(List<Transaccion> transaccionList){
+    public TransaccionAdapter(List<Transaccion> transaccionList, Context context, String tipo){
         this.transaccionList = transaccionList;
+        this.context = context;
+        this.tipo = tipo;
     }
 
     @NonNull
@@ -30,25 +34,29 @@ public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.
     @Override
     public void onBindViewHolder(@NonNull TransaccionViewHolder holder, int position){
         Transaccion transaccion = transaccionList.get(position);
-        String docId = transaccion.getDocId();
         holder.txtCategoria.setText(transaccion.getCategoria());
         holder.txtCantidad.setText(String.valueOf(transaccion.getCantidad()));
 
-        // Manejar el click
         holder.itemView.setOnClickListener(v -> {
             Context context = v.getContext();
             Intent intent = new Intent(context, itemDetails.class);
 
+            intent.putExtra("id", transaccion.getId());
+            intent.putExtra("coleccion", tipo);
             intent.putExtra("fecha", transaccion.getFecha());
             intent.putExtra("categoria", transaccion.getCategoria());
             intent.putExtra("subcategoria", transaccion.getSubcategoria());
             intent.putExtra("concepto", transaccion.getConcepto());
             intent.putExtra("cantidad", transaccion.getCantidad());
             intent.putExtra("comentario", transaccion.getComentario());
-            intent.putExtra("plan_pagos", transaccion.getPlan_pagos());
-            intent.putExtra("docId", docId);
+
+            if (tipo.equals("pago_deuda") || tipo.equals("plan_deuda")) {
+                intent.putExtra("plan_pagos", transaccion.getPlan_pagos());
+            }
+
             context.startActivity(intent);
         });
+
     }
 
     @Override
@@ -66,3 +74,4 @@ public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.
         }
     }
 }
+
