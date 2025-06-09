@@ -57,6 +57,16 @@ Button btnAvisoPriv, btnGuiaDeUso, btnTyC;
                     startActivity(egresos);
                 }
 
+                if (adapterView.getItemAtPosition(i).equals ("Deudas")){
+                    Intent deudas = new Intent(Ayuda.this, Deudas.class);
+                    startActivity(deudas);
+                }
+
+                if (adapterView.getItemAtPosition(i).equals ("Planeaciones")){
+                    Intent deudas = new Intent(Ayuda.this, Planeaciones.class);
+                    startActivity(deudas);
+                }
+
                 if (adapterView.getItemAtPosition(i).equals ("Notas")){
                     Intent notas = new Intent(Ayuda.this, notasActivity.class);
                     startActivity(notas);
@@ -64,10 +74,6 @@ Button btnAvisoPriv, btnGuiaDeUso, btnTyC;
                 if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
                     Intent checkbox = new Intent(Ayuda.this, checkbox.class);
                     startActivity(checkbox);
-                }
-                if (adapterView.getItemAtPosition(i).equals ("Deudas")){
-                    Intent deudas = new Intent(Ayuda.this, Deudas.class);
-                    startActivity(deudas);
                 }
 
                 if (adapterView.getItemAtPosition(i).equals ("Categorias")){

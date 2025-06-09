@@ -44,16 +44,29 @@
         android:layout_width="0dp"
         android:layout_height="67dp"
         android:layout_marginStart="307dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="124dp"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="608dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/imgAddPlanEg"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add" />
+
+    <Spinner
+        android:id="@+id/menuLateral"
+        android:layout_width="62dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="333dp"
+        android:layout_marginBottom="673dp"
+        android:background="@drawable/menu_100"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/divider2"

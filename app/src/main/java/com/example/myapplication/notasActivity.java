@@ -196,10 +196,7 @@ public class notasActivity extends AppCompatActivity {
 
         // MENU LATERAL
         Spinner menuLateral=findViewById(R.id.menuLateral);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.menu,
-                android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.menu, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         menuLateral.setAdapter(adapter);
 
@@ -209,7 +206,7 @@ public class notasActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
             @Override
-            public void onItemSelected (AdapterView<?> adapterView, View view,int i, long l){
+            public void onItemSelected (AdapterView<?> adapterView, View view,int i, long l) {
 
                 if (adapterView.getItemAtPosition(i).equals("Inicio")) {
                     Intent inicio = new Intent(notasActivity.this, MenuPrinc.class);
@@ -226,6 +223,16 @@ public class notasActivity extends AppCompatActivity {
                     startActivity(egresos);
                 }
 
+                if (adapterView.getItemAtPosition(i).equals("Deudas")) {
+                    Intent deudas = new Intent(notasActivity.this, Deudas.class);
+                    startActivity(deudas);
+                }
+
+                if (adapterView.getItemAtPosition(i).equals("Planeaciones")) {
+                    Intent deudas = new Intent(notasActivity.this, Planeaciones.class);
+                    startActivity(deudas);
+                }
+
                 if (adapterView.getItemAtPosition(i).equals("Notas")) {
                     Intent notas = new Intent(notasActivity.this, notasActivity.class);
                     startActivity(notas);
@@ -234,11 +241,6 @@ public class notasActivity extends AppCompatActivity {
                 if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
                     Intent checkbox = new Intent(notasActivity.this, checkbox.class);
                     startActivity(checkbox);
-                }
-
-                if (adapterView.getItemAtPosition(i).equals("Planeación de deudas")) {
-                    Intent deudas = new Intent(notasActivity.this, Deudas.class);
-                    startActivity(deudas);
                 }
 
                 if (adapterView.getItemAtPosition(i).equals("Categorias")) {
@@ -250,13 +252,26 @@ public class notasActivity extends AppCompatActivity {
                     Intent reportes = new Intent(notasActivity.this, Reportes.class);
                     startActivity(reportes);
                 }
+
                 if (adapterView.getItemAtPosition(i).equals("Meta financiera")) {
                     Intent metafin = new Intent(notasActivity.this, MetaFin.class);
                     startActivity(metafin);
                 }
+
                 if (adapterView.getItemAtPosition(i).equals("Ayuda")) {
                     Intent ayuda = new Intent(notasActivity.this, Ayuda.class);
                     startActivity(ayuda);
+                }
+
+                if (adapterView.getItemAtPosition(i).equals ("Cerrar sesión")){
+                    logOut();
+                }
+            }
+            public void logOut(){
+                FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                if(firebaseUser != null ){
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(notasActivity.this, InicioSesion.class));
                 }
             }
         });

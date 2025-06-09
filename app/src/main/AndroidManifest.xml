@@ -11,7 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+
+    <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="com.example.myapplication.provider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
+    </provider>
+
+        <activity
+            android:name=".PlaneacionDeudas"
+            android:exported="true" />
+        <activity
+            android:name=".Planeaciones"
+            android:exported="false" />
         <activity
             android:name=".editarRegistro"
             android:exported="false" />
@@ -76,9 +93,6 @@
         <activity
             android:name=".Reportes"
             android:exported="false" />
-        <activity
-            android:name=".Notas"
-            android:exported="true" />
         <activity
             android:name=".MetaFin"
             android:exported="true" />

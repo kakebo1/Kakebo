@@ -106,6 +106,16 @@ public class Egresos extends AppCompatActivity {
                         startActivity(egresos);
                     }
 
+                    if (adapterView.getItemAtPosition(i).equals("Deudas")) {
+                        Intent deudas = new Intent(Egresos.this, Deudas.class);
+                        startActivity(deudas);
+                    }
+
+                    if (adapterView.getItemAtPosition(i).equals("Planeaciones")) {
+                        Intent deudas = new Intent(Egresos.this, Planeaciones.class);
+                        startActivity(deudas);
+                    }
+
                     if (adapterView.getItemAtPosition(i).equals("Notas")) {
                         Intent notas = new Intent(Egresos.this, notasActivity.class);
                         startActivity(notas);
@@ -113,11 +123,6 @@ public class Egresos extends AppCompatActivity {
                     if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
                         Intent checkbox = new Intent(Egresos.this, checkbox.class);
                         startActivity(checkbox);
-                    }
-
-                    if (adapterView.getItemAtPosition(i).equals("Deudas")) {
-                        Intent deudas = new Intent(Egresos.this, Deudas.class);
-                        startActivity(deudas);
                     }
 
                     if (adapterView.getItemAtPosition(i).equals("Categorias")) {

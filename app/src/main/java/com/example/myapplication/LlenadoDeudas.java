@@ -83,7 +83,7 @@ public class LlenadoDeudas extends AppCompatActivity {
 
         });
 
-        Spinner categoria = findViewById(R.id.kakeboPlanDe);
+        Spinner categoria = findViewById(R.id.kakeboDe);
         ArrayAdapter<CharSequence> adc = ArrayAdapter.createFromResource(this, R.array.kakebo, simple_spinner_item);
         adc.setDropDownViewResource(simple_spinner_item);
         categoria.setAdapter(adc);
@@ -178,7 +178,7 @@ public class LlenadoDeudas extends AppCompatActivity {
         mapi.put("kakebo",kakeboDe);  //SE DEBE DE CAMBIAR, EL KAKEBO NO SE DEBE DE GUARDAR, SOLO LA SUBCATEGORIA+
         mapi.put("comentario", comentario);
 
-        basededatos.collection("plan_deuda").add(mapi)
+        basededatos.collection("pago_deuda").add(mapi)
                 .addOnSuccessListener(documentReference -> {
                     Toast.makeText(LlenadoDeudas.this, "Pago guardado con éxito", Toast.LENGTH_SHORT).show();
                     finish();

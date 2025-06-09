@@ -61,6 +61,7 @@ public class PlaneacionIngresos extends AppCompatActivity {
         btnAceptar=findViewById(R.id.btnAceptar);
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(this);
+        btnAceptar.setVisibility(View.INVISIBLE); // SI SE QUIERE USAR, QUITAR ESTA LINEA
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,6 +85,7 @@ public class PlaneacionIngresos extends AppCompatActivity {
             for(DocumentSnapshot doc : queryDocumentSnapshots){
                 Transaccion planIng = doc.toObject(Transaccion.class);
                 if(planIng != null){
+                    planIng.setId(doc.getId());
                     planIngresosItemList.add(planIng);
                     transaccionAdapter.notifyItemInserted(planIngresosItemList.size());
                 }

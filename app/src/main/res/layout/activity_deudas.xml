@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Egresos">
+    tools:context=".Deudas">
 
     <TextView
         android:id="@+id/textView1"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btnAgregar"
+        android:id="@+id/btnAgregarPagoDeu"
         android:layout_width="0dp"
         android:layout_height="67dp"
         android:layout_marginStart="289dp"

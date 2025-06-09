@@ -108,7 +108,17 @@ public class Ingresos extends AppCompatActivity {
                 startActivity(egresos);
             }
 
-            if (adapterView.getItemAtPosition(i).equals ("Notas")){
+                if (adapterView.getItemAtPosition(i).equals ("Deudas")){
+                    Intent deudas = new Intent(Ingresos.this, Deudas.class);
+                    startActivity(deudas);
+                }
+
+                if (adapterView.getItemAtPosition(i).equals ("Planeaciones")){
+                    Intent deudas = new Intent(Ingresos.this, Planeaciones.class);
+                    startActivity(deudas);
+                }
+
+                if (adapterView.getItemAtPosition(i).equals ("Notas")){
                 Intent notas = new Intent(Ingresos.this, notasActivity.class);
                 startActivity(notas);
             }
@@ -116,10 +126,6 @@ public class Ingresos extends AppCompatActivity {
                     Intent checkbox = new Intent(Ingresos.this, checkbox.class);
                     startActivity(checkbox);
                 }
-            if (adapterView.getItemAtPosition(i).equals ("Deudas")){
-                Intent deudas = new Intent(Ingresos.this, Deudas.class);
-                startActivity(deudas);
-            }
 
             if (adapterView.getItemAtPosition(i).equals ("Categorias")){
                 Intent categorias = new Intent(Ingresos.this, Categorias.class);

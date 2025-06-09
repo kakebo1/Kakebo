@@ -96,29 +96,34 @@ public class MetaFin extends AppCompatActivity {
                     startActivity(inicio);
                 }
 
-
                 if (adapterView.getItemAtPosition(i).equals("Ingresos")) {
                     Intent ingresos = new Intent(MetaFin.this, Ingresos.class);
                     startActivity(ingresos);
                 }
-
 
                 if (adapterView.getItemAtPosition(i).equals("Egresos")) {
                     Intent egresos = new Intent(MetaFin.this, Egresos.class);
                     startActivity(egresos);
                 }
 
+                if (adapterView.getItemAtPosition(i).equals("Deudas")) {
+                    Intent deudas = new Intent(MetaFin.this, Deudas.class);
+                    startActivity(deudas);
+                }
+
+                if (adapterView.getItemAtPosition(i).equals("Planeaciones")) {
+                    Intent deudas = new Intent(MetaFin.this, Planeaciones.class);
+                    startActivity(deudas);
+                }
+
                 if (adapterView.getItemAtPosition(i).equals("Notas")) {
                     Intent notas = new Intent(MetaFin.this, notasActivity.class);
                     startActivity(notas);
                 }
+
                 if (adapterView.getItemAtPosition(i).equals("Checkbox")) {
                     Intent checkbox = new Intent(MetaFin.this, checkbox.class);
                     startActivity(checkbox);
-                }
-                if (adapterView.getItemAtPosition(i).equals("Deudas")) {
-                    Intent deudas = new Intent(MetaFin.this, Deudas.class);
-                    startActivity(deudas);
                 }
 
                 if (adapterView.getItemAtPosition(i).equals("Categorias")) {

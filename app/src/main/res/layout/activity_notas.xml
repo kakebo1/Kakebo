@@ -29,7 +29,8 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="8dp"
                 android:background="@drawable/menu_100"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                android:dropDownHeight="10dp"/>
 
             <TextView
                 android:id="@+id/tituloToolbar"
