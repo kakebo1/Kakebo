@@ -61,7 +61,7 @@ public class CrearCuenta extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(getApplicationContext(), "Registro exitoso", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Registro Exitoso", Toast.LENGTH_SHORT).show();
                                 sendEmailVerification();
                             } else{
                                 Toast.makeText(getApplicationContext(), "Error al crear usuario", Toast.LENGTH_SHORT).show();
@@ -83,7 +83,7 @@ public class CrearCuenta extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "El correo de verificacion ha sido enviado, verifiquelo e ingrese de nuevo", Toast.LENGTH_SHORT).show();
                     firebaseAuth.signOut();
                     finish();
-                    startActivity(new Intent(CrearCuenta.this, MenuPrinc.class));
+
                 }
             });
         }

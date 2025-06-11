@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import static android.R.layout.simple_spinner_item;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +30,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import android.net.Uri;
+import androidx.annotation.Nullable;
+import com.google.firebase.storage.FirebaseStorage;
 
 public class LlenadoEgresos extends AppCompatActivity {
 

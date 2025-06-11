@@ -57,10 +57,12 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation (libs.firebaseui.firebase.ui.firestore)
     implementation (libs.firebaseui.firebase.ui.auth)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.core.ktx)
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
 }
