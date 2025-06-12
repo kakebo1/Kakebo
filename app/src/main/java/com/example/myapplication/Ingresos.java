@@ -10,7 +10,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,14 +18,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.ArrayList;
 import java.util.List;
+import androidx.appcompat.widget.SearchView;
 
 public class Ingresos extends AppCompatActivity {
 
@@ -48,6 +46,23 @@ public class Ingresos extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerIngresos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        transaccionAdapter = new TransaccionAdapter(ingresoItemList, this, "ingresos");
+        recyclerView.setAdapter(transaccionAdapter);
+
+        SearchView searchView = findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                transaccionAdapter.filtrar(newText);
+                return true;
+            }
+        });
 
         Button btnReales = findViewById(R.id.btnIngReales);
         Button btnPlaneados = findViewById(R.id.btnIngPlaneados);

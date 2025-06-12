@@ -66,7 +66,7 @@ public class MenuPrinc extends AppCompatActivity {
         btnCategorias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent btnCategorias = new Intent(MenuPrinc.this, Categorias.class);
+                Intent btnCategorias = new Intent(MenuPrinc.this, Planeaciones.class);
                 startActivity(btnCategorias);
             }
         });

@@ -10,15 +10,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import androidx.appcompat.widget.SearchView;
 import android.widget.Spinner;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -43,13 +42,26 @@ public class Egresos extends AppCompatActivity {
                     return insets;
         });
 
-        //Visualizar registros
         // Visualizar registros
         RecyclerView recyclerView = findViewById(R.id.recyclerEgresos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         transaccionAdapter = new TransaccionAdapter(egresoList, this, "egresos");
         recyclerView.setAdapter(transaccionAdapter);
+
+        SearchView searchView = findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                transaccionAdapter.filtrar(newText);
+                return true;
+            }
+        });
 
         Button btnReales = findViewById(R.id.btnEgReales);
         Button btnPlaneados = findViewById(R.id.btnEgPlaneados);

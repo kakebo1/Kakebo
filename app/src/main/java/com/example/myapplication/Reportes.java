@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
@@ -34,6 +35,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,7 +43,7 @@ public class Reportes extends AppCompatActivity {
 
     Button btnVer, btnDescargar, btnCompartir;
     Spinner reporte;
-    private final String[] categoriasIngresos = {"Salario", "Ahorro", "Beca", "Préstamo", "Aguinaldo", "Utilidades"};
+    private final String[] categoriasIngresos = {"Salario", "Beca", "Préstamo", "Aguinaldo", "Utilidades"};
     private final String[] categoriasEgresos = {"Supervivencia", "Cultural", "Ocio", "Otros"};
 
     @Override
@@ -273,7 +275,7 @@ public class Reportes extends AppCompatActivity {
             y += 30;
             paint.setTextSize(12);
             paint.setFakeBoldText(false);
-            canvas.drawText("Periodo del XX de XX al XX de 20XX", x, y, paint);
+            canvas.drawText("Periodo del 01 al 15 de junio de 2025", x, y, paint);
 
             // Tabla Ingresos
             //  y += 40;
@@ -364,12 +366,27 @@ public class Reportes extends AppCompatActivity {
             // ============================
             // GRAFICAS DE BARRAS
             // ============================
-            y += 60;
+            y += 30;
             paint.setFakeBoldText(true);
             paint.setTextSize(14);
             canvas.drawText("Gráfica de Ingresos", x, y, paint);
             paint.setTextSize(12);
-            y += 20;
+
+            //Mensajes de retroalimnetación sobre el desempeño
+            y+=30; //Espacio antes de la gráfica
+            paint.setFakeBoldText(true);
+            paint.setTextSize(14);
+
+            if(totalRealIngresos > totalEsperadoIngresos){
+                paint.setColor(Color.BLACK);
+                canvas.drawText("Tus ingresos reales han superado a los esperados. ¡Excelente!", x, y, paint);
+                y += 25;
+            }
+            if(totalRealIngresos < totalEsperadoIngresos){
+                paint.setColor(Color.RED);
+                canvas.drawText("Tus ingresos reales han sido menores a los esperados. Triste situación.", x, y, paint);
+                y += 25;
+            }
 
             int barWidth = 30;
             int space = 20;
@@ -411,15 +428,38 @@ public class Reportes extends AppCompatActivity {
             paint.setTextSize(14);
             canvas.drawText("Gráfica de Egresos", x, y, paint);
             paint.setTextSize(12);
-            y += 20;
 
+            //Mensajes de retroalimnetación sobre el desempeño
+            y+=20; //Espacio antes de la gráfica
+            paint.setFakeBoldText(true);
+            paint.setTextSize(14);
+
+            if(totalRealEgresos > totalEsperadoEgresos){
+                paint.setColor(Color.RED);
+                canvas.drawText("Tus egresos reales han superado a los esperados.", x, y, paint);
+                y += 20; // espacio entre líneas
+                canvas.drawText("¡Cuidado! Te alejas de tu meta financiera.", x, y, paint);
+                y += 25; // espacio final
+
+            }
+            if(totalRealEgresos < totalEsperadoEgresos){
+                paint.setColor(Color.BLACK);
+                canvas.drawText("Tus egresos reales han sido menores a los esperados. ¡Excelente! Sigue así.", x, y, paint);
+                y += 25;
+            }
+            paint.setColor(Color.BLACK); //Restaurar color para lo siguiente.
+
+            y += 20;
             maxBarHeight = 100;
             long maxEgresos = Math.max(totalEsperadoEgresos, totalRealEgresos);
             startX = x;
             baseY = y + maxBarHeight + 20;
 
             for (String categoria : categoriasEgresos) {
-                long esperado = planEgresos.getOrDefault(categoria, 0L);
+                long esperado = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    esperado = planEgresos.getOrDefault(categoria, 0L);
+                }
                 long real = 0;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
                     real = egresos.getOrDefault(categoria, 0L);
@@ -439,6 +479,19 @@ public class Reportes extends AppCompatActivity {
 
                 startX += 2 * barWidth + space;
             }
+            y = baseY + 40;
+
+            double fondoAhorro = totalEsperadoIngresos * 0.05;
+            double fondoEmergencia = totalEsperadoIngresos * 0.05;
+            DecimalFormat formato = new DecimalFormat("#.##");
+
+            y += 50;
+            paint.setFakeBoldText(true);
+            paint.setColor(Color.BLUE);
+            paint.setTextSize(14);
+            canvas.drawText("Fondo de ahorro ideal (5%): $" + formato.format(fondoAhorro), x, y, paint);
+            y += 20;
+            canvas.drawText("Fondo de emergencia (5%): $" + formato.format(fondoEmergencia), x, y, paint);
 
             pdfDocument.finishPage(page);
 

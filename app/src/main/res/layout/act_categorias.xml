@@ -28,26 +28,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView36"
+    <Button
+        android:id="@+id/btnIngresosCategorias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="112dp"
         android:layout_marginTop="24dp"
         android:text="@string/tituloIngresos"
+        android:backgroundTint="@color/lightgreen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
-    <TextView
-        android:id="@+id/textView37"
+    <Button
+        android:id="@+id/btnEgresosCategorias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="72dp"
         android:text="@string/tituloEgresos"
+        android:backgroundTint="@color/lightgreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toEndOf="@+id/textView36"
+        app:layout_constraintStart_toEndOf="@+id/btnIngresosCategorias"
         app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
     <ImageButton
@@ -93,13 +95,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="224dp"
         android:backgroundTint="@color/transparente"
         android:contentDescription="@string/tituloHogar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnFamilia"
-        app:layout_constraintTop_toBottomOf="@+id/textView37"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cat_casa" />
 
     <ImageButton
@@ -123,7 +125,7 @@
         android:text="@string/tituloSupervivencia"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView36" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresosCategorias" />
 
     <TextView
         android:id="@+id/textView40"
@@ -159,11 +161,11 @@
         android:id="@+id/textView43"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="292dp"
         android:text="@string/catHogar"
         app:layout_constraintStart_toEndOf="@+id/textView42"
-        app:layout_constraintTop_toBottomOf="@+id/btnHogar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btnAgregarSup"
@@ -176,8 +178,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/textView39"
-        app:layout_constraintTop_toBottomOf="@+id/textView36"
-        app:srcCompat="@drawable/add" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresosCategorias"
+        app:srcCompat="@drawable/add"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/textView44"
@@ -261,17 +264,18 @@
         app:layout_constraintHorizontal_bias="0.322"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAgregarOcio"
-        app:srcCompat="@drawable/add" />
+        app:srcCompat="@drawable/add"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/textView51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/culturalDefaultParque"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -302,15 +306,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="224dp"
         android:backgroundTint="@color/transparente"
         android:contentDescription="@string/imgParque"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageButton16"
+        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton19"
-        app:layout_constraintVertical_bias="0.04"
+        app:layout_constraintVertical_bias="0.4"
         app:srcCompat="@drawable/cat_bosque" />
 
     <ImageButton
@@ -325,15 +328,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView45"
         app:layout_constraintTop_toBottomOf="@+id/btnAgregarSup"
-        app:srcCompat="@drawable/add" />
+        app:srcCompat="@drawable/add"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/textView47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="@string/txtFiesta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnFiesta" />
 
@@ -341,10 +346,10 @@
         android:id="@+id/textView48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="@string/txtAlcohol"
-        app:layout_constraintEnd_toStartOf="@+id/textView49"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toEndOf="@+id/textView47"
         app:layout_constraintTop_toBottomOf="@+id/btnAlcohol" />
 
@@ -352,12 +357,11 @@
         android:id="@+id/textView49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginEnd="160dp"
         android:text="@string/txtJuegos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15"
-        app:layout_constraintVertical_bias="0.451" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.766" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

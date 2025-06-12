@@ -129,12 +129,14 @@ Estos términos y condiciones rigen el uso de la presente aplicación móvil que
         <item>----------</item>
         <item>Ocio</item>
         <item>----------</item>
-        <item>Cultura</item>
+        <item>Cultural</item>
     </string-array>
 
     <string-array name="ingresos">
         <item></item>
         <item>Salario</item>
+        <item>----------</item>
+        <item>Beca</item>
         <item>----------</item>
         <item>Préstamo</item>
         <item>----------</item>

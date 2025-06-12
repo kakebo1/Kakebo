@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.ui.itemDetails;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.TransaccionViewHolder> {
-    private final List<Transaccion> transaccionList;
+    private  List<Transaccion> transaccionList;
+    private final List<Transaccion> fullList;
     private final Context context;
     private final String tipo; // ingresos o plan_ingresos
 
@@ -22,6 +25,7 @@ public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.
         this.transaccionList = transaccionList;
         this.context = context;
         this.tipo = tipo;
+        this.fullList = new ArrayList<>(transaccionList);
     }
 
     @NonNull
@@ -63,6 +67,23 @@ public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.
     public int getItemCount(){
         return transaccionList.size();
     }
+
+    public void filtrar(String texto){
+        if(texto == null || texto.trim().isEmpty()){
+            transaccionList = new ArrayList<>(fullList);
+        }else{
+        List<Transaccion> listaFiltrada = new ArrayList<>();
+        for(Transaccion t : fullList){
+            if(t.getCategoria().toLowerCase().contains(texto.toLowerCase())){
+                listaFiltrada.add(t);
+            }
+        }
+        transaccionList = listaFiltrada;
+        }
+        notifyDataSetChanged();
+        Log.d("Filtrado", "Items encontrados: " + transaccionList.size());
+    }
+
 
     public static class TransaccionViewHolder extends RecyclerView.ViewHolder {
         TextView txtCantidad, txtCategoria;
