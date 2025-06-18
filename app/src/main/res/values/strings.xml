@@ -1,0 +1,349 @@
+<resources>
+    <string name="app_name">Kakebo</string>
+    <string name="kakebo">Kakebo</string>
+    <string name="Continuar">Continuar</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="Correo">Correo electrónico</string>
+    <string name="Tyc">Estoy de acuerdo con los términos y condiciones de uso </string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="AvisodePriv">
+        Aplicación móvil para la gestión de finanzas personales basado en el método Kakebo; es un proyecto escolar desarrollado por estudiantes de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN con fines académicos y sin fines de lucro. La protección de tus datos personales es importante para nosotros. \n\n En este aviso de privacidad te explicamos cómo recopilamos, utilizamos, y protegemos tu información cuando utilizas nuestra aplicación.
+\n\n 1. Responsable del tratamiento de los datos personales
+Los responsables del tratamiento de tus datos personales son los estudiantes y docentes a cargo del proyecto "Aplicación móvil para la gestión de finanzas personales basado en el método Kakebo" de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN
+\n\n 2. Datos personales que recopilamos
+La aplicación puede recopilar algunos de los siguientes datos personales de sus usuarios:
+\n	Nombre completo
+\n	Correo electrónico
+\n	Datos de uso dentro de la aplicación
+\n\n 3. Finalidad del tratamiento de los datos
+\n Los datos personales que recopilamos se utilizarán únicamente con el fin de monitorear y analizar el uso de la aplicación para fines académicos y de mejora del proyecto.
+\n No utilizamos tus datos personales para fines comerciales ni los compartimos con terceros sin tu consentimiento.
+\n\n 4. Conservación de los datos
+\n Los datos personales serán conservados solo por el tiempo necesario para cumplir con la finalidad del proyecto, es por eso que, una vez que el proyecto finalice o ya no se necesiten los datos para los fines educativos, estos serán eliminados de forma segura.
+\n 5. Cambios en el aviso de privacidad
+\n Nos reservamos el derecho a modificar este aviso de privacidad en cualquier momento. Cualquier cambio será notificado a través de la aplicación, por lo cual recomendamos revisar periódicamente este aviso de privacidad para estar al tanto de las actualizaciones.
+\n 6. Aceptación del aviso de privacidad
+\n Al utilizar nuestra aplicación, aceptas el tratamiento de tus datos personales conforme a los términos y condiciones descritos en este aviso de privacidad.
+\n\n Fecha de última actualización: 21 de octubre del 2024
+
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_scrolling2">ScrollingActivity2</string>
+    <string name="title_activity_main4">MainActivity4</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="large_text">a</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="TerminosyCond">
+Estos términos y condiciones rigen el uso de la presente aplicación móvil que ha sido desarrollada como un proyecto escolar por estudiantes de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN
+\n Al descargar, acceder y utilizar la aplicación, aceptas cumplir con los siguientes Términos; por lo cual, si no estás de acuerdo con estos términos, por favor no utilices la aplicación.
+\n\n 1. Descripción del servicio
+\n\n La aplicación es un proyecto educativo, el cual está destinado únicamente para fines académicos y no tiene un propósito comercial. El uso de la aplicación es completamente voluntario y gratuito.
+\n\n 2. Aceptación de los términos
+\n\n Al descargar, acceder o utilizar la aplicación, reconoces que has leído, comprendido y aceptado cumplir con estos términos; nos reservamos el derecho de modificarlos en cualquier momento, y cualquier cambio será notificado a los usuarios.
+        \n El uso continuo de la aplicación después de cualquier modificación constituye la aceptación de dichos cambios.
+\n\n 3. Uso de la aplicación
+\n\n El usuario se compromete a utilizar la aplicación únicamente para fines lícitos y de acuerdo con los presentes términos, queda prohibido:
+\n\n • Usar la aplicación para cualquier actividad ilegal o que infrinja derechos de terceros.
+\n • Descompilar, realizar ingeniería inversa o alterar la aplicación.
+\n\n 4. Recopilación y uso de datos
+\n\n La aplicación puede recopilar ciertos datos personales y de uso para mejorar la experiencia de usuario.
+        \n Para más información sobre cómo tratamos tus datos, por favor consulta nuestro Aviso de Privacidad.
+\n\n 5. Limitación de Responsabilidad
+\n No nos hacemos responsables de:
+\n •	Cualquier daño directo, indirecto, incidental, especial o consecuente derivado del uso o la imposibilidad de usar la aplicación.
+\n •	La pérdida de datos, interrupciones del servicio o cualquier otro daño relacionado con el uso de la aplicación.
+\n\n  6. Enlaces a Terceros
+\n\n La aplicación puede contener enlaces a sitios web o servicios de terceros que no están bajo nuestro control.
+        \n No somos responsables de los contenidos, políticas de privacidad o prácticas de sitios o servicios de terceros.
+\n\n 7. Modificaciones a los Términos de condiciones
+\n\n Nos reservamos el derecho de modificar estos términos en cualquier momento.
+\n Cualquier modificación será notificada a los usuarios a través de la aplicación.
+        \n Te recomendamos revisar los términos periódicamente para estar informado de cualquier cambio.
+</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="continuar">Continuar</string>
+    <string-array name="menu">
+        <item>-----------------</item>
+        <item>Inicio</item>
+        <item>-----------------</item>
+        <item>Ingresos</item>
+        <item>-----------------</item>
+        <item>Egresos</item>
+        <item>-----------------</item>
+        <item>Deudas</item>
+        <item>-----------------</item>
+        <item>Planeaciones</item>
+        <item>-----------------</item>
+        <item>Notas</item>
+        <item>-----------------</item>
+        <item>Checkbox</item>
+        <item>-----------------</item>
+        <item>Categorias</item>
+        <item>-----------------</item>
+        <item>Reportes</item>
+        <item>-----------------</item>
+        <item>Meta financiera</item>
+        <item>-----------------</item>
+        <item>Ayuda</item>
+        <item>-----------------</item>
+        <item>Cerrar sesión</item>
+        <item>----------------</item>
+    </string-array>
+
+    <string-array name="reporte">
+        <item>----------</item>
+        <item>Quincenal</item>
+        <item>----------</item>
+        <item>Mensual</item>
+        <item>----------</item>
+        <item>Trimestral</item>
+    </string-array>
+
+    <string-array name="plazo">
+        <item>---------------------</item>
+        <item>Corto (menor a 6 meses)</item>
+        <item>---------------------</item>
+        <item>Mediano (6 meses a 1 año)</item>
+        <item>---------------------</item>
+        <item>Largo (mayor a 1 año) </item>
+    </string-array>
+
+    <string-array name="plazospagodeuda">
+        <item>----------</item>
+        <item>Mensual</item>
+        <item>-----------</item>
+        <item>Quincenal</item>
+        <item>----------</item>
+        <item>Único</item>
+    </string-array>
+
+    <string-array name="kakebo">
+        <item>----------</item>
+        <item>Supervivencia</item>
+        <item>----------</item>
+        <item>Ocio</item>
+        <item>----------</item>
+        <item>Cultural</item>
+    </string-array>
+
+    <string-array name="ingresos">
+        <item></item>
+        <item>Salario</item>
+        <item>----------</item>
+        <item>Beca</item>
+        <item>----------</item>
+        <item>Préstamo</item>
+        <item>----------</item>
+        <item>Utilidades</item>
+        <item>----------</item>
+        <item>Aguinaldo</item>
+        <item>----------</item>
+    </string-array>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="nuevo_elemento">Nuevo elemento</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="agregar">Agregar</string>
+    <string name="savenote">savenote</string>
+    <string name="noteContent">Contenido de la nota</string>
+    <string name="noteTitle">Título de la nota</string>
+    <string name="editNoteTitle">Editar título de la nota</string>
+    <string name="editar_nota">Editar nota</string>
+    <string name="passwordReset">Recuperar contraseña</string>
+    <string name="inputEmail">Ingresa tu correo electrónico</string>
+    <string name="sendRecoverEmail">Enviar correo de recuperación</string>
+    <string name="signInGoogle">O inicia sesión con Google</string>
+    <string name="createAccount">Crear cuenta</string>
+    <string name="regresarRecuperarContra"><![CDATA[<- Regresar]]></string>
+    <string name="googlelogin">googleLogin</string>
+    <string name="crear_una_nueva_nota">Crear una nueva nota</string>
+    <string name="contenido_de_la_nota">Contenido de la nota</string>
+    <string name="popupbtn">popupbtn</string>
+    <string name="notetitle">Titulo de la nota</string>
+    <string name="logout">Logout</string>
+    <string name="editnote">editNote</string>
+    <string name="notecontent">Escriba el contenido de la nota...</string>
+    <string name="showTitle">El título se muestra aquí</string>
+    <string name="btnRegistrar">Registrar</string>
+    <string name="txtcrear_cuenta">Crear cuenta</string>
+    <string name="hintEmail">Escriba su correo electrónico</string>
+    <string name="hintPassword">Escriba una contraseña</string>
+    <string name="textCuentaExist">¿Ya tienes una cuenta?</string>
+    <string name="textLogIn">Iniciar sesión</string>
+    <string name="cantidad">Cantidad: $</string>
+    <string name="culturalDefaultParque">Parque</string>
+    <string name="tituloSeccionCategorias">Categorias</string>
+    <string name="tituloIngresos">Ingresos</string>
+    <string name="tituloEgresos">Egresos</string>
+    <string name="tituloComida">Comida</string>
+    <string name="tituloSalud">Salud</string>
+    <string name="tituloFamilia">Familia</string>
+    <string name="tituloHogar">Hogar\n</string>
+    <string name="tituloTransporte">Transporte\n</string>
+    <string name="tituloSupervivencia">Supervivencia</string>
+    <string name="tituloComidaSupervivencia">Comida</string>
+    <string name="categSalud">Salud</string>
+    <string name="catFamilia">Familia</string>
+    <string name="catHogar">Hogar</string>
+    <string name="imgAdd">TODO</string>
+    <string name="catTransporte">Transporte</string>
+    <string name="catkOcio">Ocio</string>
+    <string name="imgFiesta">TODO</string>
+    <string name="imgAlcohol">imgAlcohol</string>
+    <string name="imgJuegos">imgJuegos\n</string>
+    <string name="titleCultural">Cultural</string>
+    <string name="imgParque">imgparque\n</string>
+    <string name="imgMuseo">imgmuseo\n</string>
+    <string name="imgAddOcio">agregarCatOcio</string>
+    <string name="imgAddCultural">agregarCatCultural</string>
+    <string name="txtMuseo">Museo</string>
+    <string name="txtFiesta">Fiesta</string>
+    <string name="txtAlcohol">Alcohol</string>
+    <string name="txtJuegos">Juegos</string>
+    <string name="imgSalud">imgSaludSuperViv</string>
+    <string name="agregar_categoria">Agregar categoría</string>
+    <string name="cancelarCat">cancelarCategoria</string>
+    <string name="imgBottle">imgbottle\n</string>
+    <string name="todo">TODO</string>
+    <string name="imgTrees">imgtrees</string>
+    <string name="imgMaletin">imgmaletin\n</string>
+    <string name="imgCasa">imgcasa</string>
+    <string name="imgCine">imgcine</string>
+    <string name="imgComida">imcomida</string>
+    <string name="imgFamilia">imgfamilia</string>
+    <string name="imgParty">imgParty</string>
+    <string name="imgGym">imggym</string>
+    <string name="imgVideogames">imgvideogames</string>
+    <string name="imgLibro">imglibro</string>
+    <string name="imgDado">imgDado</string>
+    <string name="imgRopa">imgropa</string>
+    <string name="imgTarjeta">imgtarjeta</string>
+    <string name="imgTelefono">imgtelefono</string>
+    <string name="btnAceptar">Aceptar</string>
+    <string name="textNombre">Nombre</string>
+    <string name="addNombre">Nombre</string>
+    <string name="icono">Icono:</string>
+    <string name="color">Color</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="imgBus">imgbus</string>
+    <string name="colores">colors</string>
+    <string name="titlePlaneacionEgresos">Planeación</string>
+    <string name="titlePlanEgresos">Egresos</string>
+    <string name="imgAddPlanEg">agregar plan egresos\n</string>
+    <string name="quincena_1">Quincena 1</string>
+    <string name="quincena_2">Quincena 2</string>
+    <string name="aceptarPlanEg">Aceptar</string>
+    <string name="cantidadEg">Cantidad: $</string>
+    <string name="conceptoEg">Escriba el concepto</string>
+    <string name="fecha">Fecha:</string>
+    <string name="concepto">Concepto:</string>
+    <string name="categoria">Categoria</string>
+    <string name="comentarios">Comentarios:</string>
+    <string name="cancelarEg">cancelar registro de egreso</string>
+    <string name="addImgEg">agregar imagen egresos</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="deuda">Deuda</string>
+    <string name="gastoFijo">Fijo</string>
+    <string name="gastoVariable">Variable</string>
+    <string name="catKakebo">Kakebo</string>
+    <string name="cantidadDeuda">Cantidad:</string>
+    <string name="ingrese_concepto">Ingrese concepto</string>
+    <string name="fechaDeuda">Fecha:</string>
+    <string name="conceptoDeuda">Concepto:</string>
+    <string name="categoriaDeudas">Categoria:</string>
+    <string name="comentariosDeudas">Comentarios:</string>
+    <string name="cancelarDeuda">cancelarDeuda</string>
+    <string name="imgAddDeudas">agregar imagen a deuda</string>
+    <string name="aceptarDeuda">Aceptar</string>
+    <string name="plan_de_pagos">Plan de pagos</string>
+    <string name="catKakeboDeudas">Kakebo</string>
+    <string name="name">Nombre</string>
+    <string name="CorreoHint" />
+    <string name="subcategoria">Subcategoría</string>
+    <string name="title_meta_financiera">Meta financiera</string>
+    <string name="imgPuerquito">pqiito</string>
+    <string name="defina_su_objetivo_financiero">Defina su objetivo financiero</string>
+    <string name="motivoMeta">¿Para qué quiere ese dinero?</string>
+    <string name="plazoMeta">Defina el plazo de tiempo en el que espera obtener su meta</string>
+    <string name="ahorroCant">Cantidad a ahorrar</string>
+    <string name="motivoAhorro">Motivo del ahorro</string>
+    <string name="aceptarMetaF">Aceptar</string>
+    <string name="signoPesos">$</string>
+    <string name="ayudaTyC">Terminos y condiciones de uso</string>
+    <string name="ayudaGuiaUso">Guia de uso de la aplicación</string>
+    <string name="ayudaAvisoPriv">Aviso de privacidad</string>
+    <string name="titleAyuda">Ayuda</string>
+    <string name="exitLlenadoDeudas">Cancelar llenado deudas</string>
+    <string name="selecciona_la_fecha">Selecciona la fecha</string>
+    <string name="deudas">Deudas</string>
+    <string name="txtquincena_2">Quincena 2</string>
+    <string name="txtquincena_1">Quincena 1</string>
+    <string name="reales">Reales</string>
+    <string name="planeados">Planeados</string>
+    <string name="addEgreso">Añadir registro de egreso</string>
+    <string name="egresos">Egresos</string>
+    <string name="quincena">Quincena</string>
+    <string name="fijo">Fijo</string>
+    <string name="variable">Variable</string>
+    <string name="monto">Monto: $00.0</string>
+    <string name="planeacion">Planeación</string>
+    <string name="ingresos">Ingresos</string>
+    <string name="iniciarSesion">Iniciar Sesión</string>
+    <string name="opcionGoogle">O inicia sesión con Google</string>
+    <string name="btnGoogle">logInGoogle</string>
+    <string name="viewPassword">view password in log in</string>
+    <string name="questForgotPassword">¿Olvidaste tu contraseña?</string>
+    <string name="coinsLogo">coin logo in log in screen</string>
+    <string name="PagodeDeudas">Pagos de Deudas</string>
+    <string name="planeadas">Planeadas</string>
+    <string name="allNotes">Todas las notas</string>
+    <string name="volver">volver\n</string>
+
+</resources>

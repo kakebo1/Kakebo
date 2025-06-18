@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31" >
+
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_notification" />
+    <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="com.example.myapplication.provider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
+    </provider>
+
+    <service android:name=".MyFirebaseMessagingService"
+        android:exported="false" >
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        </intent-filter>
+    </service>
+
+
+
+        <activity
+            android:name=".PlaneacionDeudas"
+            android:exported="true" />
+        <activity
+            android:name=".Planeaciones"
+            android:exported="false" />
+        <activity
+            android:name=".editarRegistro"
+            android:exported="false" />
+        <activity
+            android:name=".ui.itemDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Deudas"
+            android:exported="false" />
+        <activity
+            android:name=".LlenadoPlanIngresos"
+            android:exported="true" />
+        <activity
+            android:name=".LlenadoPlanDeudas"
+            android:exported="true" />
+        <activity
+            android:name=".LlenadoPlanEgresos"
+            android:exported="true" />
+        <activity
+            android:name=".noteDetails"
+            android:exported="false" />
+        <activity
+            android:name=".notasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RecuperarContra"
+            android:exported="false" />
+        <activity
+            android:name=".editNoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".createNote"
+            android:exported="true" />
+        <activity
+            android:name=".checkbox"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication" />
+        <activity
+            android:name=".categoriasIngresos"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarCategoria"
+            android:exported="false" />
+        <activity
+            android:name=".LlenadoDeudas"
+            android:exported="true" />
+        <activity
+            android:name=".LlenadoEgresos"
+            android:exported="true" />
+        <activity
+            android:name=".LlenadoIngresos"
+            android:exported="true" />
+        <activity
+            android:name=".PlaneacionIngresos"
+            android:exported="true" />
+        <activity
+            android:name=".Categorias"
+            android:exported="false" />
+        <activity
+            android:name=".Egresos"
+            android:exported="true" />
+        <activity
+            android:name=".Reportes"
+            android:exported="false" />
+        <activity
+            android:name=".MetaFin"
+            android:exported="true" />
+        <activity
+            android:name=".Ingresos"
+            android:exported="true" />
+        <activity
+            android:name=".Ayuda"
+            android:exported="false" />
+        <activity
+            android:name=".PlaneacionEgresos"
+            android:exported="false" />
+        <activity
+            android:name=".MenuPrinc"
+            android:exported="true" />
+        <activity
+            android:name=".CrearCuenta"
+            android:exported="false" />
+        <activity
+            android:name=".InicioSesion"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

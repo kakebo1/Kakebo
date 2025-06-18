@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBE8BA"
+    tools:context=".LlenadoPlanDeudas">
+
+    <!-- Concepto -->
+    <TextView
+        android:id="@+id/textViewConcepto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/concepto"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/txtConceptoPlanDe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/concepto"
+        android:inputType="text"
+        android:background="@drawable/esquinas_redondeadas"
+        app:layout_constraintTop_toBottomOf="@id/textViewConcepto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Cantidad -->
+    <TextView
+        android:id="@+id/textViewCantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cantidad"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/txtConceptoPlanDe"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/txtCantidadPlanDe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:background="@drawable/esquinas_redondeadas"
+        app:layout_constraintTop_toBottomOf="@id/textViewCantidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Fecha -->
+    <TextView
+        android:id="@+id/textViewFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fecha"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/txtCantidadPlanDe"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/txtFechaPlanDe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/selecciona_la_fecha"
+        android:inputType="date"
+        android:background="@drawable/esquinas_redondeadas"
+        app:layout_constraintTop_toBottomOf="@id/textViewFecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Plan de pagos -->
+    <TextView
+        android:id="@+id/textViewPlanPagos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plan_de_pagos"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/txtFechaPlanDe"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <Spinner
+        android:id="@+id/plandepagosDe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewPlanPagos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Kakebo -->
+    <TextView
+        android:id="@+id/textViewKakebo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kakebo"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/plandepagosDe"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <Spinner
+        android:id="@+id/kakeboPlanDe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewKakebo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Subcategoría -->
+    <TextView
+        android:id="@+id/textViewSubcategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subcategoria"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/kakeboPlanDe"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <Spinner
+        android:id="@+id/subcategoriaPlanDe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewSubcategoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Comentarios -->
+    <TextView
+        android:id="@+id/textViewComentarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comentarios"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/subcategoriaPlanDe"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/txtComentariosPlanDe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/comentarios"
+        android:inputType="textMultiLine"
+        android:gravity="start|top"
+        android:minLines="3"
+        android:background="@drawable/esquinas_redondeadas"
+        app:layout_constraintTop_toBottomOf="@id/textViewComentarios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAgregarImgPlan"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Botón Agregar Imagen -->
+    <ImageButton
+        android:id="@+id/btnAgregarImgPlan"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/addImgEg"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/icons8_add_image_96"
+        app:tint="@color/black"
+        app:layout_constraintTop_toTopOf="@id/txtComentariosPlanDe"
+        app:layout_constraintBottom_toBottomOf="@id/txtComentariosPlanDe"
+        app:layout_constraintStart_toEndOf="@id/txtComentariosPlanDe"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Botón Aceptar -->
+    <Button
+        android:id="@+id/btnAceptarPlanDe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aceptar"
+        android:backgroundTint="#4C7A34"
+        app:layout_constraintTop_toBottomOf="@id/txtComentariosPlanDe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <ImageButton
+        android:id="@+id/btnCancelarPlanDe"
+        android:layout_width="47dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="337dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="660dp"
+        android:backgroundTint="@color/transparente"
+        android:contentDescription="@string/cancelarEg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icons8_cancelar_100" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

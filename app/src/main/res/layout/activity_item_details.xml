@@ -1,0 +1,37 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/txtFecha" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fecha"/>
+        <TextView android:id="@+id/txtCategoria" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Categoría"/>
+        <TextView android:id="@+id/txtSubcategoria" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Subcategoría"/>
+        <TextView android:id="@+id/txtConcepto" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Concepto"/>
+        <TextView android:id="@+id/txtCantidad" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Cantidad"/>
+        <TextView android:id="@+id/txtComentario" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Comentario"/>
+        <TextView android:id="@+id/txtPlanPagos" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Plan de Pagos"/>
+
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editar"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eliminar"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

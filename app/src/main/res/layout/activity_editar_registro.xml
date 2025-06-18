@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Fecha -->
+        <EditText
+            android:id="@+id/editFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Seleccionar fecha"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none" />
+
+        <!-- Categoría -->
+        <Spinner
+            android:id="@+id/spinnerCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Subcategoría -->
+        <Spinner
+            android:id="@+id/spinnerSubcategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Concepto -->
+        <EditText
+            android:id="@+id/editConcepto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Concepto" />
+
+        <!-- Cantidad -->
+        <EditText
+            android:id="@+id/editCantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cantidad"
+            android:inputType="numberDecimal" />
+
+        <!-- Comentario -->
+        <EditText
+            android:id="@+id/editComentario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Comentario" />
+
+        <!-- Plan de pagos -->
+        <Spinner
+            android:id="@+id/spinnerPlanPagos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Plan de pagos" />
+
+        <!-- Botones -->
+        <Button
+            android:id="@+id/btnGuardarCambios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Cambios"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_red_dark"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>
