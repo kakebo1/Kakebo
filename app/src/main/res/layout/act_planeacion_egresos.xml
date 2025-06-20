@@ -54,6 +54,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add" />
 
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/graficaPlanEgresos"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_margin="46dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1"
+        app:layout_constraintVertical_bias="1.0" />
+
     <Spinner
         android:id="@+id/menuLateral"
         android:layout_width="62dp"
@@ -132,29 +144,28 @@
         android:id="@+id/txtQuincena1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="354dp"
-        android:layout_marginBottom="354dp"
+        android:layout_marginBottom="3dp"
         android:text="@string/quincena_1"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/divider4"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/divider4"
+        app:layout_constraintEnd_toStartOf="@+id/txtQuincena2"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graficaPlanEgresos"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtQuincena2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="239dp"
-        android:layout_marginTop="353dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginBottom="354dp"
         android:text="@string/quincena_2"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerPlanEgresos"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.791"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/graficaPlanEgresos"
+        app:layout_constraintVertical_bias="0.903" />
 
     <Button
         android:id="@+id/btnAceptarPlan"

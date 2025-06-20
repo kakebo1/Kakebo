@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,12 +19,21 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import androidx.appcompat.widget.SearchView;
 
 public class Ingresos extends AppCompatActivity {
@@ -31,6 +41,7 @@ public class Ingresos extends AppCompatActivity {
     private TransaccionAdapter transaccionAdapter;
     private final List<Transaccion> ingresoItemList = new ArrayList<>();
     private FirebaseFirestore db;
+    private PieChart pieChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +54,15 @@ public class Ingresos extends AppCompatActivity {
             return insets;
 
         });
+
+        pieChart = findViewById(R.id.graficaIngresos);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setUsePercentValues(true);
+        pieChart.setEntryLabelTextSize(16f);
+        pieChart.setCenterText("");
+        pieChart.setCenterTextSize(0f);
+        pieChart.setDrawEntryLabels(false);
+        pieChart.getLegend().setEnabled(true);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerIngresos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -67,27 +87,25 @@ public class Ingresos extends AppCompatActivity {
         Button btnReales = findViewById(R.id.btnIngReales);
         Button btnPlaneados = findViewById(R.id.btnIngPlaneados);
 
+        db = FirebaseFirestore.getInstance();
+
         btnReales.setOnClickListener(v -> {
-            transaccionAdapter = new TransaccionAdapter(ingresoItemList, this, "ingresos");
-            recyclerView.setAdapter(transaccionAdapter);
-            cargarIngresos("ingresos");
-            actualizarEstiloBotones(btnReales, btnPlaneados);
+            cargarIngresos("ingresos", transacciones ->{
+                transaccionAdapter = new TransaccionAdapter(transacciones, this, "ingresos");
+                recyclerView.setAdapter(transaccionAdapter);
+                actualizarEstiloBotones(btnReales, btnPlaneados);
+                actualizarPieChart(transacciones);
+            });
         });
 
         btnPlaneados.setOnClickListener(v -> {
-            transaccionAdapter = new TransaccionAdapter(ingresoItemList, this, "plan_ingresos");
-            recyclerView.setAdapter(transaccionAdapter);
-            cargarIngresos("plan_ingresos");
-            actualizarEstiloBotones(btnPlaneados, btnReales);
+            cargarIngresos("plan_ingresos", transacciones -> {
+                transaccionAdapter = new TransaccionAdapter(transacciones, this, "plan_ingresos");
+                recyclerView.setAdapter(transaccionAdapter);
+                actualizarEstiloBotones(btnPlaneados, btnReales);
+                actualizarPieChart(transacciones);
+            });
         });
-
-        db = FirebaseFirestore.getInstance();
-        transaccionAdapter = new TransaccionAdapter(ingresoItemList, this, "ingresos");
-        recyclerView.setAdapter(transaccionAdapter);
-        cargarIngresos("ingresos");
-        actualizarEstiloBotones(btnReales, btnPlaneados);
-
-
 
         ImageButton btnAgregarIng = findViewById(R.id.btnAgregar);
         btnAgregarIng.setOnClickListener(new View.OnClickListener(){
@@ -180,6 +198,37 @@ public class Ingresos extends AppCompatActivity {
     });
     }
 
+    public interface OnDatosCargadosListener {
+        void onCarga(List<Transaccion> transacciones);
+    }
+
+
+    private void actualizarPieChart(List<Transaccion> transacciones){
+        Map<String, Float> totalPorCategoria = new HashMap<>();
+
+        for(Transaccion t : transacciones){
+            String categoria = t.getCategoria();
+            float cantidad = (float) t.getCantidad();
+
+            totalPorCategoria.put(categoria, totalPorCategoria.getOrDefault(categoria, 0f) + cantidad);
+        }
+
+        List<PieEntry> entries = new ArrayList<>();
+        for(Map.Entry<String, Float> entry : totalPorCategoria.entrySet()){
+            entries.add(new PieEntry(entry.getValue(), entry.getKey()));
+        }
+
+        PieDataSet dataSet = new PieDataSet(entries, "");
+        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        PieData pieData = new PieData(dataSet);
+        pieData.setValueTextSize(0f);
+        pieData.setValueTextColor(Color.TRANSPARENT);
+
+        pieChart.setData(pieData);
+        pieChart.invalidate(); // Redibuja
+    }
+
+
     private void actualizarEstiloBotones(Button selec, Button noSel){
         selec.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.teal_200));
         selec.setTextColor(ContextCompat.getColor(this, android.R.color.white));
@@ -187,24 +236,26 @@ public class Ingresos extends AppCompatActivity {
         noSel.setTextColor(ContextCompat.getColor(this, R.color.black));
     }
 
-    private void cargarIngresos(String collection){
+    private void cargarIngresos(String collection, Ingresos.OnDatosCargadosListener listener){
         db.collection(collection).get().addOnSuccessListener(queryDocumentSnapshots -> {
             Log.d("FirestoreDebug", "Datos recibidos: " + queryDocumentSnapshots.size());
-            ingresoItemList.clear(); // Limpiar lista antes de cargar nuevos datos
-            transaccionAdapter.notifyDataSetChanged();
+          //  ingresoItemList.clear(); // Limpiar lista antes de cargar nuevos datos
+            //transaccionAdapter.notifyDataSetChanged();
+            List<Transaccion> lista = new ArrayList<>();
 
             for (DocumentSnapshot doc : queryDocumentSnapshots){
                 try {
                     Transaccion ingreso = doc.toObject(Transaccion.class);
                     if (ingreso != null) {
                         ingreso.setId(doc.getId());
-                        ingresoItemList.add(ingreso);
-                        transaccionAdapter.notifyItemInserted(ingresoItemList.size() - 1);
+                        lista.add(ingreso);
+                        //transaccionAdapter.notifyItemInserted(ingresoItemList.size() - 1);
                     }
                 } catch (Exception e) {
                     Toast.makeText(this, "Error al obtener la información", Toast.LENGTH_SHORT).show();
                 }
             }
+            listener.onCarga(lista);
         }).addOnFailureListener(e ->
                 Log.e("FirestoreDebug", "Error al obtener la información", e)
         );

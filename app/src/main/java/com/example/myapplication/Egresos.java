@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,18 +19,27 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import androidx.appcompat.widget.SearchView;
 import android.widget.Spinner;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Egresos extends AppCompatActivity {
 
     private TransaccionAdapter transaccionAdapter;
     private final List<Transaccion> egresoList = new ArrayList<>();
     private FirebaseFirestore db;
+    private PieChart pieChart;
+    private String tipo = "egresos";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +51,15 @@ public class Egresos extends AppCompatActivity {
                     v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
                     return insets;
         });
+
+        pieChart = findViewById(R.id.graficaEgresos);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setUsePercentValues(true);
+        pieChart.setEntryLabelTextSize(16f);
+        pieChart.setCenterText("");
+        pieChart.setCenterTextSize(0f);
+        pieChart.setDrawEntryLabels(false);
+        pieChart.getLegend().setEnabled(true);
 
         // Visualizar registros
         RecyclerView recyclerView = findViewById(R.id.recyclerEgresos);
@@ -66,24 +85,25 @@ public class Egresos extends AppCompatActivity {
         Button btnReales = findViewById(R.id.btnEgReales);
         Button btnPlaneados = findViewById(R.id.btnEgPlaneados);
 
+        db = FirebaseFirestore.getInstance();
+
         btnReales.setOnClickListener(v -> {
-            transaccionAdapter = new TransaccionAdapter(egresoList, this, "egresos");
-            recyclerView.setAdapter(transaccionAdapter);
-            cargarEgresos("egresos");
+            cargarEgresos("egresos", transacciones -> {
+                transaccionAdapter = new TransaccionAdapter(transacciones, this, "egresos");
+                recyclerView.setAdapter(transaccionAdapter);
             actualizarEstiloBotones(btnReales, btnPlaneados);
+            actualizarPieChart(transacciones);
+            });
         });
 
         btnPlaneados.setOnClickListener(v -> {
-            transaccionAdapter = new TransaccionAdapter(egresoList, this, "plan_egresos");
-            recyclerView.setAdapter(transaccionAdapter);
-            cargarEgresos("plan_egresos");
-            actualizarEstiloBotones(btnPlaneados, btnReales);
+            cargarEgresos("plan_egresos", transacciones -> {
+                transaccionAdapter = new TransaccionAdapter(transacciones, this, "plan_egresos");
+                recyclerView.setAdapter(transaccionAdapter);
+                actualizarEstiloBotones(btnPlaneados, btnReales);
+                actualizarPieChart(transacciones);
+            });
         });
-
-        db = FirebaseFirestore.getInstance();
-        cargarEgresos("egresos");
-        actualizarEstiloBotones(btnReales, btnPlaneados);
-
 
         ImageButton btnAgregarEg = findViewById(R.id.btnAgregar);
         btnAgregarEg.setOnClickListener(new View.OnClickListener(){
@@ -94,7 +114,7 @@ public class Egresos extends AppCompatActivity {
                 }
             });
 
-            //Menú Lateral
+        //Menú Lateral
             Spinner menuLateral = findViewById(R.id.menuLateral);
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.menu, android.R.layout.simple_spinner_item);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -177,6 +197,35 @@ public class Egresos extends AppCompatActivity {
 
     }
 
+    public interface OnDatosCargadosListener {
+        void onCarga(List<Transaccion> transacciones);
+    }
+
+    private void actualizarPieChart(List<Transaccion> transacciones){
+        Map<String, Float> totalPorCategoria = new HashMap<>();
+
+        for(Transaccion t : transacciones){
+            String categoria = t.getCategoria();
+            float cantidad = (float) t.getCantidad();
+
+            totalPorCategoria.put(categoria, totalPorCategoria.getOrDefault(categoria, 0f) + cantidad);
+        }
+
+        List<PieEntry> entries = new ArrayList<>();
+        for(Map.Entry<String, Float> entry : totalPorCategoria.entrySet()){
+            entries.add(new PieEntry(entry.getValue(), entry.getKey()));
+        }
+
+        PieDataSet dataSet = new PieDataSet(entries, "");
+        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        PieData pieData = new PieData(dataSet);
+        pieData.setValueTextSize(0f);
+        pieData.setValueTextColor(Color.TRANSPARENT);
+
+        pieChart.setData(pieData);
+        pieChart.invalidate(); // Redibuja
+    }
+
     private void actualizarEstiloBotones(Button selec, Button noSel){
         selec.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.teal_200));
         selec.setTextColor(ContextCompat.getColor(this, android.R.color.white));
@@ -184,25 +233,26 @@ public class Egresos extends AppCompatActivity {
         noSel.setTextColor(ContextCompat.getColor(this, R.color.black));
     }
 
-    private void cargarEgresos(String collection) {
+    private void cargarEgresos(String collection, OnDatosCargadosListener listener) {
         db.collection(collection).get().addOnSuccessListener(queryDocumentSnapshots -> {
             Log.d("FirestoreDebug", "Documentos recibidos: " + queryDocumentSnapshots.size());
-            egresoList.clear(); //Limpiar para evitar duplicados
-            transaccionAdapter.notifyDataSetChanged();
+            //egresoList.clear(); //Limpiar para evitar duplicados
+            List<Transaccion> lista = new ArrayList<>(); // Lista temporal para el callback
 
             for (DocumentSnapshot doc : queryDocumentSnapshots) {
                 try {
                     EgresoItem egreso = doc.toObject(EgresoItem.class);
                     if (egreso != null) {
                         egreso.setId(doc.getId());
-                        egresoList.add(egreso);
-                        transaccionAdapter.notifyItemInserted(egresoList.size() - 1); //Notificar por cada nuevo item
+                        lista.add(egreso); //Se agrega a lista temporal, no a egresoList
+                        //transaccionAdapter.notifyItemInserted(egresoList.size() - 1); //Notificar por cada nuevo item
                         Log.d("FirestoreDebug", "Documento bruto: " + doc.getData());
                     }
                 } catch (Exception e){
                     Log.e("FirestoreDebug", "Error al convertir documento: ", e);
                 }
             }
+            listener.onCarga(lista); // Envia la lista al callback
         }).addOnFailureListener(e ->
                 Log.e("FirestoreDebug", "Error al obtener egresos", e)
         );

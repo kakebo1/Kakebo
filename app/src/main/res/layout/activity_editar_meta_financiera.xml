@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <EditText
+                android:id="@+id/editCantidadObj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="$ Cantidad Objetivo"
+                android:inputType="numberDecimal"/>
+
+            <EditText
+                android:id="@+id/editMotivoAhorro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Motivo de Ahorro"
+                android:inputType="text"/>
+
+            <Spinner
+                android:id="@+id/SpinnerEditPlazo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Plazo" />
+
+         <Button
+                android:id="@+id/btnGuardarCambios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar Cambios"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_red_dark"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </ScrollView>
+

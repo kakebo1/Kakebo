@@ -178,4 +178,26 @@
         app:srcCompat="@drawable/dollar_symbol"
         app:tint="@color/black" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="163dp"
+        android:layout_height="46dp"
+        android:text="Meta Financiera actual"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnHistorialMetasF"
+        android:layout_width="171dp"
+        android:layout_height="43dp"
+        android:text="Historial Metas Financieras"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintStart_toEndOf="@+id/button2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

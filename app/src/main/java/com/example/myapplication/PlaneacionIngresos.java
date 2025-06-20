@@ -2,7 +2,9 @@ package com.example.myapplication;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -16,18 +18,26 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PlaneacionIngresos extends AppCompatActivity {
 
-    Button btnAceptar;
+    Button btnRegresar;
     private TransaccionAdapter transaccionAdapter;
     private final List<Transaccion> planIngresosItemList = new ArrayList<>();
     private FirebaseFirestore db;
+    private PieChart pieChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +50,26 @@ public class PlaneacionIngresos extends AppCompatActivity {
             return insets;
         });
 
+        pieChart = findViewById(R.id.graficaPlanIngresos);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setUsePercentValues(true);
+        pieChart.setEntryLabelTextSize(16f);
+        pieChart.setCenterText("");
+        pieChart.setCenterTextSize(0f);
+        pieChart.setDrawEntryLabels(false);
+        pieChart.getLegend().setEnabled(true);
+
         RecyclerView recyclerView = findViewById(R.id.recyclerPlanIngresos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        transaccionAdapter = new TransaccionAdapter(planIngresosItemList, this, "plan_ingresos");
-        recyclerView.setAdapter(transaccionAdapter);
-
         db = FirebaseFirestore.getInstance();
-        cargarPlanIngresos();
+
+        cargarPlanIngresos("plan_ingresos", transacciones -> {
+            transaccionAdapter = new TransaccionAdapter(transacciones, this, "plan_ingresos");
+            recyclerView.setAdapter(transaccionAdapter);
+            actualizarPieChart(transacciones);
+        });
+
 
         ImageButton btnAddPlanIng = findViewById(R.id.btnAgregarPlanIng);
         btnAddPlanIng.setOnClickListener(new View.OnClickListener() {
@@ -58,38 +80,65 @@ public class PlaneacionIngresos extends AppCompatActivity {
             }
         });
 
-        btnAceptar=findViewById(R.id.btnAceptar);
+        btnRegresar=findViewById(R.id.btnRegresar);
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(this);
-        btnAceptar.setVisibility(View.INVISIBLE); // SI SE QUIERE USAR, QUITAR ESTA LINEA
-        btnAceptar.setOnClickListener(new View.OnClickListener() {
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View view) {
-                builder.setTitle("NO SE HA AGREGADO NINGÚN REGISTRO");
-                builder.setMessage("Se debe de agregar por lo menos un registro planeado");
-                builder.setCancelable(false);
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        //     finish();
-                    }
-                });
-                builder.show();
+            public void onClick(View v) {
+                finish();
             }
         });
     }
 
-    private void cargarPlanIngresos(){
-        db.collection("plan_ingresos").get().addOnSuccessListener(queryDocumentSnapshots -> {
-            planIngresosItemList.clear();
+    public interface OnDatosCargadosListener {
+        void onCarga(List<Transaccion> transacciones);
+    }
+
+    private void actualizarPieChart(List<Transaccion> transacciones){
+        Map<String, Float> totalPorCategoria = new HashMap<>();
+
+        for(Transaccion t : transacciones){
+            String categoria = t.getCategoria();
+            float cantidad = (float) t.getCantidad();
+
+            totalPorCategoria.put(categoria, totalPorCategoria.getOrDefault(categoria, 0f) + cantidad);
+        }
+
+        List<PieEntry> entries = new ArrayList<>();
+        for(Map.Entry<String, Float> entry : totalPorCategoria.entrySet()){
+            entries.add(new PieEntry(entry.getValue(), entry.getKey()));
+        }
+
+        PieDataSet dataSet = new PieDataSet(entries, "");
+        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        PieData pieData = new PieData(dataSet);
+        pieData.setValueTextSize(0f);
+        pieData.setValueTextColor(Color.TRANSPARENT);
+
+        pieChart.setData(pieData);
+        pieChart.invalidate(); // Redibuja
+    }
+
+    private void cargarPlanIngresos(String collection, PlaneacionIngresos.OnDatosCargadosListener listener){
+        db.collection(collection).get().addOnSuccessListener(queryDocumentSnapshots -> {
+           // planIngresosItemList.clear();
+            List<Transaccion> lista = new ArrayList<>();
+
             for(DocumentSnapshot doc : queryDocumentSnapshots){
-                Transaccion planIng = doc.toObject(Transaccion.class);
-                if(planIng != null){
-                    planIng.setId(doc.getId());
-                    planIngresosItemList.add(planIng);
-                    transaccionAdapter.notifyItemInserted(planIngresosItemList.size());
-                }
+               try {
+                   Transaccion planIng = doc.toObject(Transaccion.class);
+                   if(planIng != null){
+                       planIng.setId(doc.getId());
+                       lista.add(planIng);
+                       transaccionAdapter.notifyItemInserted(planIngresosItemList.size());
+                   }
+               } catch (Exception e){
+                   Log.e("FirestoreDebug", "Error al obtener el documento", e);
+               }
             }
-        });
+            listener.onCarga(lista);
+        }).addOnFailureListener(e -> Log.e("FirestoreDebug", "Error al obtener plan de ingresos", e));
     }
 }

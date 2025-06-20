@@ -12,7 +12,8 @@ plugins {
 buildscript{
     repositories{
         google()
-        maven("https://jetpack.io")
+        mavenCentral()
+        maven("https://jitpack.io")
     }
     dependencies{
         classpath("com.android.tools.build:gradle:8.5.1")

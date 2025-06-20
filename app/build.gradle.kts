@@ -65,4 +65,5 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("com.google.firebase:firebase-messaging:23.4.1")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

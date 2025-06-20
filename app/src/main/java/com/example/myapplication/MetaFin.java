@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import static android.R.layout.*;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,21 +10,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,6 +44,19 @@ public class MetaFin extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button verMetaActual = findViewById(R.id.button2);
+        verMetaActual.setOnClickListener(view -> {
+            Intent intent = new Intent(MetaFin.this, metaFinancieraActual.class);
+            startActivity(intent);
+        });
+
+        Button historialMetasF = findViewById(R.id.btnHistorialMetasF);
+        historialMetasF.setOnClickListener(v -> {
+            Intent intent = new Intent(MetaFin.this, historialMetasFinancieras.class);
+            startActivity(intent);
+            finish();
         });
 
         Spinner plazo = findViewById(R.id.plazoMeta);
@@ -206,6 +216,7 @@ Map <String, Object> map = new HashMap<>();
 map.put("cantidad_objetivo",cantidad_objetivo ); //ESTE ES STRING
 map.put("motivo_ahorro", motivo_ahorro);
 map.put("plazo",plazoM);
+map.put("timestamp", FieldValue.serverTimestamp());
 basededatos.collection("metaFinanciera").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
     @Override
     public void onSuccess(DocumentReference documentReference) {

@@ -9,8 +9,8 @@
 
     <Spinner
         android:id="@+id/menuLateral"
-        android:layout_width="62dp"
-        android:layout_height="58dp"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/menu_100"
         android:spinnerMode="dropdown"
@@ -32,10 +32,10 @@
         android:id="@+id/btnIngresosCategorias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="24dp"
-        android:text="@string/tituloIngresos"
         android:backgroundTint="@color/lightgreen"
+        android:text="@string/tituloIngresos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
@@ -260,23 +260,25 @@
         android:layout_marginTop="124dp"
         android:backgroundTint="@color/transparente"
         android:contentDescription="@string/imgAddCultural"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintHorizontal_bias="0.377"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAgregarOcio"
-        app:srcCompat="@drawable/add"
-        android:visibility="invisible"/>
+        app:srcCompat="@drawable/add" />
 
     <TextView
         android:id="@+id/textView51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:layout_marginBottom="8dp"
         android:text="@string/culturalDefaultParque"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.346"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toEndOf="@+id/textView50"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton17" />
 
     <TextView
         android:id="@+id/textView46"
@@ -310,10 +312,10 @@
         android:contentDescription="@string/imgParque"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.352"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toEndOf="@+id/imageButton16"
         app:layout_constraintTop_toBottomOf="@+id/imageButton19"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/cat_bosque" />
 
     <ImageButton
@@ -324,12 +326,12 @@
         android:layout_marginTop="216dp"
         android:backgroundTint="@color/transparente"
         android:contentDescription="@string/imgAddOcio"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toEndOf="@+id/textView45"
         app:layout_constraintTop_toBottomOf="@+id/btnAgregarSup"
-        app:srcCompat="@drawable/add"
-        android:visibility="invisible"/>
+        app:srcCompat="@drawable/add" />
 
     <TextView
         android:id="@+id/textView47"
@@ -357,11 +359,13 @@
         android:id="@+id/textView49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="160dp"
+        android:layout_marginEnd="172dp"
         android:text="@string/txtJuegos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView48"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton15"
+        app:layout_constraintVertical_bias="0.072" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

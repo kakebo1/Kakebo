@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
@@ -27,6 +28,13 @@ public class Categorias extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button btnCatIng = findViewById(R.id.btnIngresosCategorias);
+        btnCatIng.setOnClickListener(v -> {
+            Intent aux = new Intent(Categorias.this, categoriasIngresos.class);
+            startActivity(aux);
+            finish();
         });
 
         Spinner menuLateral = findViewById(R.id.menuLateral);
