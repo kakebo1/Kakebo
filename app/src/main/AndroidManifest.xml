@@ -65,6 +65,8 @@
         <activity
             android:name=".ui.metafin_itemDetails"
             android:exported="false" />
+        <activity android:name=".RecuperarContra"
+            android:exported="true"/>
         <activity
             android:name=".Deudas"
             android:exported="false" />
@@ -83,9 +85,6 @@
         <activity
             android:name=".notasActivity"
             android:exported="true" />
-        <activity
-            android:name=".RecuperarContra"
-            android:exported="false" />
         <activity
             android:name=".editNoteActivity"
             android:exported="false" />

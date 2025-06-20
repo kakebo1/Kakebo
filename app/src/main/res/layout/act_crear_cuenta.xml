@@ -31,13 +31,14 @@
         android:layout_width="195dp"
         android:layout_height="30dp"
         android:layout_marginStart="47dp"
-        android:layout_marginTop="178dp"
+        android:layout_marginTop="176dp"
         android:layout_marginEnd="247dp"
         android:fontFamily="@font/asap_semibold"
         android:foregroundTint="#629C44"
         android:text="@string/Correo"
         android:textColor="#629C44"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,12 +64,13 @@
         android:layout_width="133dp"
         android:layout_height="21dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="314dp"
+        android:layout_marginTop="316dp"
         android:layout_marginEnd="289dp"
         android:fontFamily="@font/asap_semibold"
         android:text="@string/Contraseña"
         android:textColor="#629C44"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,15 +92,15 @@
         app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxTyC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="312dp"
-        android:layout_marginBottom="221dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="424dp"
+        android:layout_marginBottom="259dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtTerminosyCond"

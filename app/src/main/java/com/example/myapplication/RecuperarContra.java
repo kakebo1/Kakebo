@@ -16,58 +16,46 @@ import java.util.Objects;
 
 public class RecuperarContra extends AppCompatActivity {
 
-    public class forgotPassword extends AppCompatActivity {
-
         private EditText mforgotPassword;
-
         FirebaseAuth firebaseAuth;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.act_recuperar_contra);
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.act_recuperar_contra);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
-            Objects.requireNonNull(getSupportActionBar()).hide();
+        mforgotPassword = findViewById(R.id.correoRecuperacion);
 
-            mforgotPassword = findViewById(R.id.correoRecuperacion);
-            Button mpasswordRecoverButton = findViewById(R.id.btnRecuperarContra);
-            TextView mgobacktologin = findViewById(R.id.goBackToLogin);
+        Button mpasswordRecoverButton = findViewById(R.id.btnRecuperarContra);
+        TextView mgobacktologin = findViewById(R.id.goBackToLogin);
 
-            firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
-            mgobacktologin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(com.example.myapplication.RecuperarContra.this, InicioSesion.class);
-                    startActivity(intent);
-                }
-            });
+        mgobacktologin.setOnClickListener(v -> {
+            startActivity(new Intent(this, InicioSesion.class));
+        });
 
-            mpasswordRecoverButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String mail = mforgotPassword.getText().toString().trim();
-                    if(mail.isEmpty()){
-                        Toast.makeText(getApplicationContext(), "Ingrese su correo electrónico", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        //we have to send password recover email
-                        firebaseAuth.sendPasswordResetEmail(mail).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
+        mpasswordRecoverButton.setOnClickListener(v -> {
+            String mail = mforgotPassword.getText().toString().trim();
 
-                                if (task.isSuccessful()){
-                                    Toast.makeText(getApplicationContext(), "Un código ha sido enviado a tu correo, con él puedes recuperar tu contraseña", Toast.LENGTH_SHORT).show();
-                                    finish();
-                                    startActivity(new Intent(com.example.myapplication.RecuperarContra.this, InicioSesion.class));
-                                } else{
-                                    Toast.makeText(getApplicationContext(), "Correo incorrecto", Toast.LENGTH_SHORT).show();
-                                }
+            if (mail.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Ingrese su correo electrónico", Toast.LENGTH_SHORT).show();
+            } else {
+                firebaseAuth.sendPasswordResetEmail(mail)
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "Se ha enviado un código a tu correo", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(this, InicioSesion.class));
+                                finish();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Correo incorrecto", Toast.LENGTH_SHORT).show();
                             }
                         });
-                    }
-                }
-            });
-        }
+            }
+        });
     }
+
 }

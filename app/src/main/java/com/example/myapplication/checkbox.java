@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -64,7 +65,11 @@ public class checkbox extends AppCompatActivity {
         });
 
         ImageButton backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(v -> finish());
+        backButton.setOnClickListener(v -> {
+            Intent aux = new Intent(checkbox.this, notasActivity.class);
+            startActivity(aux);
+            finish();
+        });
 
     }
 }

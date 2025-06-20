@@ -68,7 +68,11 @@ public class Reportes extends AppCompatActivity {
             return insets;
         });
 
-        generarPDFConFirebase();
+        Button btnGenerarReporte = findViewById(R.id.btnGenerarReporte);
+        btnGenerarReporte.setOnClickListener(v -> {
+            generarPDFConFirebase();
+        });
+
 
         Spinner menuLateral=findViewById(R.id.menuLateral);
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.menu,android.R.layout.simple_spinner_item);
@@ -150,6 +154,8 @@ public class Reportes extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
+
+
         });
 
         Spinner reporte=findViewById(R.id.reporte);

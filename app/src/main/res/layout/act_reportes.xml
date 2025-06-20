@@ -70,43 +70,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="61dp"
-        android:layout_marginTop="269dp"
         android:layout_marginEnd="262dp"
-        android:layout_marginBottom="414dp"
+        android:layout_marginBottom="376dp"
         android:backgroundTint="#92D36E"
         android:text="Ver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnDescargar"
         android:layout_width="114dp"
         android:layout_height="49dp"
         android:layout_marginStart="160dp"
-        android:layout_marginTop="269dp"
         android:layout_marginEnd="137dp"
-        android:layout_marginBottom="413dp"
+        android:layout_marginBottom="376dp"
         android:backgroundTint="#92D36E"
         android:text="Descargar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnCompartir"
         android:layout_width="70dp"
         android:layout_height="54dp"
         android:layout_marginStart="283dp"
-        android:layout_marginTop="266dp"
         android:layout_marginEnd="58dp"
-        android:layout_marginBottom="411dp"
+        android:layout_marginBottom="376dp"
         android:backgroundTint="#92D36E"
         app:icon="@drawable/compartir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/reporte"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnGenerarReporte"
+        android:layout_width="189dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/red"
+        android:text="Generar Reporte"
+        app:layout_constraintBottom_toTopOf="@+id/btnDescargar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
