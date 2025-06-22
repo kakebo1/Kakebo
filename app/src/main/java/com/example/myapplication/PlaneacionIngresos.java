@@ -80,6 +80,13 @@ public class PlaneacionIngresos extends AppCompatActivity {
             }
         });
 
+        Button btnirAFondos = findViewById(R.id.btnGotoFondos);
+        btnirAFondos.setOnClickListener(v -> {
+            Intent aux = new Intent(PlaneacionIngresos.this, Fondos.class);
+            startActivity(aux);
+            finish();
+        });
+
         btnRegresar=findViewById(R.id.btnRegresar);
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(this);

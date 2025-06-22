@@ -19,6 +19,9 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".Fondos"
+            android:exported="false" />
+        <activity
             android:name=".editarMetaFinanciera"
             android:exported="false" />
         <activity
@@ -65,8 +68,9 @@
         <activity
             android:name=".ui.metafin_itemDetails"
             android:exported="false" />
-        <activity android:name=".RecuperarContra"
-            android:exported="true"/>
+        <activity
+            android:name=".RecuperarContra"
+            android:exported="true" />
         <activity
             android:name=".Deudas"
             android:exported="false" />

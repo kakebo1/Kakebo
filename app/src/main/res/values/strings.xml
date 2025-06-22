@@ -6,6 +6,7 @@
     <string name="Correo">Correo electrónico</string>
     <string name="Tyc">Estoy de acuerdo con los términos y condiciones de uso </string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="default_web_client_id">TU_CLIENT_ID.apps.googleusercontent.com</string>
     <string name="AvisodePriv">
         Aplicación móvil para la gestión de finanzas personales basado en el método Kakebo; es un proyecto escolar desarrollado por estudiantes de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas IPN con fines académicos y sin fines de lucro. La protección de tus datos personales es importante para nosotros. \n\n En este aviso de privacidad te explicamos cómo recopilamos, utilizamos, y protegemos tu información cuando utilizas nuestra aplicación.
 \n\n 1. Responsable del tratamiento de los datos personales

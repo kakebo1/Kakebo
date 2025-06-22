@@ -66,4 +66,7 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("com.google.firebase:firebase-messaging:23.4.1")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    implementation(libs.play.services.auth)
+    implementation(libs.firebase.auth.v2321)
+
 }

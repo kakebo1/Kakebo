@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+
 public class InicioSesion extends AppCompatActivity {
 
     private final ActivityResultLauncher<String> requestPermissionLauncher = registerForActivityResult(

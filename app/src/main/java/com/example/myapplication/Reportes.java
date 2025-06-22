@@ -219,7 +219,6 @@ public class Reportes extends AppCompatActivity {
                             }
                         }
                     }
-
                     db.collection("plan_egresos").get().addOnSuccessListener(planEgresosDocs -> {
                         for (QueryDocumentSnapshot doc : planEgresosDocs) {
                             String rawCategoria = doc.getString("categoria");
