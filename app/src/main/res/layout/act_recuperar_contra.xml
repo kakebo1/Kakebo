@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecuperarContra">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40sp"
+        android:layout_marginTop="142sp"
+        android:layout_marginEnd="41sp"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/passwordReset"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="61sp"
+        android:layout_marginTop="263sp"
+        android:layout_marginEnd="170sp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="@string/inputEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/correoRecuperacion"
+        android:layout_width="311sp"
+        android:layout_height="47sp"
+        android:layout_marginStart="61sp"
+        android:layout_marginTop="320sp"
+        android:layout_marginEnd="39sp"
+        android:ems="10"
+        android:fontFamily="@font/asap_medium"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRecuperarContra"
+        android:layout_width="152sp"
+        android:layout_height="64sp"
+        android:layout_marginStart="127sp"
+        android:layout_marginTop="416sp"
+        android:layout_marginEnd="132sp"
+        android:backgroundTint="#72BB53"
+        android:text="@string/sendRecoverEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124sp"
+        android:layout_marginEnd="123sp"
+        android:layout_marginBottom="201sp"
+        android:fontFamily="@font/asap_medium"
+        android:text="@string/signInGoogle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="61sp"
+        android:layout_height="39sp"
+        android:layout_marginStart="174sp"
+        android:layout_marginTop="548sp"
+        android:layout_marginEnd="195sp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/googlelogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/googleicon" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="253sp"
+        android:layout_marginEnd="79sp"
+        android:layout_marginBottom="86sp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="@string/createAccount"
+        android:textColor="#72BB53"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/goBackToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16sp"
+        android:text="@string/regresarRecuperarContra"
+        android:textAlignment="center"
+        android:textColor="#72BB53"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+</androidx.constraintlayout.widget.ConstraintLayout>

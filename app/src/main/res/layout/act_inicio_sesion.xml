@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFAFA"
+    tools:context=".InicioSesion">
+
+    <!-- Logo -->
+
+    <!-- Título "Kakebo" -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="115dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="@string/coinsLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/monedas_removebg_preview__1_" />
+
+    <TextView
+        android:id="@+id/lblKakebo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/kakebo"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="74dp"/>
+
+    <!-- "Iniciar sesión" -->
+    <TextView
+        android:id="@+id/textLogIn"
+        android:layout_width="110dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/iniciarSesion"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblKakebo" />
+
+    <!-- Label correo -->
+    <TextView
+        android:id="@+id/textEmail"
+        android:layout_width="276dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="@string/Correo"
+        android:textColor="#629C44"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textLogIn" />
+
+    <!-- Campo correo -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="339dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginemail"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:fontFamily="@font/asap_medium"
+            android:hint="@string/CorreoHint"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Label contraseña -->
+    <TextView
+        android:id="@+id/textPassword"
+        android:layout_width="102dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="@string/Contraseña"
+        android:textSize="18sp"
+        android:textColor="#629C44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout" />
+
+    <!-- Campo contraseña -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="34dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:fontFamily="@font/asap_medium"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botón mostrar contraseña -->
+    <ImageButton
+        android:id="@+id/btnVerContra"
+        android:layout_width="30dp"
+        android:layout_height="23dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/viewPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintEnd_toEndOf="@id/textInputLayout2"
+        app:layout_constraintTop_toTopOf="@id/textInputLayout2"
+        app:srcCompat="@drawable/ojoabierto" />
+
+    <!-- Botón continuar -->
+
+    <!-- Texto login con Google -->
+
+    <!-- Botón Google -->
+
+    <!-- Olvidé mi contraseña -->
+
+    <!-- Crear cuenta -->
+
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_width="224dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#72BB53"
+        android:fontFamily="@font/asap_semibold"
+        android:text="@string/continuar"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout2" />
+
+    <TextView
+        android:id="@+id/logInGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/asap_medium"
+        android:text="@string/opcionGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnContinuar" />
+
+    <ImageButton
+        android:id="@+id/btnGoogle"
+        android:layout_width="66dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/btnGoogle"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logInGoogle"
+        app:srcCompat="@drawable/googleicon" />
+
+    <TextView
+        android:id="@+id/gotoforgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="52dp"
+        android:fontFamily="@font/asap_medium"
+        android:text="@string/questForgotPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="135dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#72BB53"
+        android:fontFamily="@font/asap_semibold"
+        android:text="@string/crear_cuenta"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Barra de progreso -->
+    <ProgressBar
+        android:id="@+id/progressbaroflogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnGoogle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

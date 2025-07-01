@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBE8BA"
+    tools:context=".LlenadoEgresos">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/cantidadEg"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toStartOf="@+id/txtCantidadEgReal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtConceptoEgReal"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <EditText
+        android:id="@+id/txtConceptoEgReal"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="7dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:hint="@string/conceptoEg"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelarEg"
+        app:layout_constraintStart_toEndOf="@+id/textView16" />
+
+    <EditText
+        android:id="@+id/txtCantidadEgReal"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/txtFechaEgReal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView1"
+        app:layout_constraintTop_toBottomOf="@+id/txtConceptoEgReal"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="12dp"
+        android:text="@string/fecha"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/switchDeuda"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="9dp"
+        android:text="@string/concepto"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        app:layout_constraintEnd_toStartOf="@+id/txtConceptoEgReal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/subcategoria"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/textView25"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/comentarios"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtComentariosEgReal"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnCancelarEg"
+        android:layout_width="37dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/transparente"
+        android:contentDescription="@string/cancelarEg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtConceptoEgReal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_cancelar_100"
+        app:tint="@color/black" />
+
+    <EditText
+        android:id="@+id/txtComentariosEgReal"
+        android:layout_width="341dp"
+        android:layout_height="109dp"
+        android:layout_marginBottom="57dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAceptarPlan"
+        app:layout_constraintEnd_toEndOf="@+id/textView31"
+        app:layout_constraintStart_toEndOf="@+id/textView31" />
+
+    <Button
+        android:id="@+id/btnAceptarPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:backgroundTint="#4C7A34"
+        android:text="@string/aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/switchDeuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/deuda"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVariable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toEndOf="@+id/btnFijo"
+        app:layout_constraintTop_toBottomOf="@+id/txtFechaEgReal"
+        app:layout_constraintVertical_bias="0.793"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <RadioButton
+        android:id="@+id/btnFijo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/gastoFijo"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnVariable"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchDeuda" />
+
+    <RadioButton
+        android:id="@+id/btnVariable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/gastoVariable"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.816"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFechaEgReal" />
+
+    <EditText
+        android:id="@+id/txtFechaEgReal"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="true"
+        android:hint="@string/selecciona_la_fecha"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/switchDeuda"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <Spinner
+        android:id="@+id/categoriaEgReal"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="57dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/btnVariable" />
+
+    <Spinner
+        android:id="@+id/subcategoriaEgReal"
+        android:layout_width="179dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toEndOf="@+id/textView31"
+        app:layout_constraintTop_toBottomOf="@+id/categoriaEgReal" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/catKakebo"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/btnFijo"
+        app:layout_constraintTop_toBottomOf="@+id/btnFijo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

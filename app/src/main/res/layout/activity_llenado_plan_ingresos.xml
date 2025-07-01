@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBE8BA"
+    tools:context=".LlenadoIngresos">
+
+    <EditText
+        android:id="@+id/txtFechaIngPlan"
+        android:layout_width="192dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="526dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:clickable="true"
+        android:focusable="true"
+        android:hint="@string/selecciona_la_fecha"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="150dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="237dp"
+        android:layout_marginBottom="592dp"
+        android:text="@string/cantidad"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="317dp"
+        android:layout_marginBottom="535dp"
+        android:text="@string/fecha"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtQuincenaIngPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="222dp"
+        android:layout_marginBottom="467dp"
+        android:text="@string/quincena"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="307dp"
+        android:layout_marginEnd="284dp"
+        android:layout_marginBottom="392dp"
+        android:text="@string/categoria"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="157dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="501dp"
+        android:layout_marginEnd="221dp"
+        android:layout_marginBottom="194dp"
+        android:text="@string/comentarios"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/categoriaPlanIng"
+        android:layout_width="168dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="307dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="388dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="662dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/concepto"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtConceptoIng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtComentarioIngPlan"
+        android:layout_width="389dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="549dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="56dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAceptarPlanIng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="679dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#4C7A34"
+        android:onClick="aceptar1"
+        android:text="@string/aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtCantidadIngPlan"
+        android:layout_width="165dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="592dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtConceptoIngPlan"
+        android:layout_width="193dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="658dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelarIng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnCancelarIngPlan"
+        android:layout_width="34dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="348dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="669dp"
+        android:backgroundTint="@color/transparente"
+        android:contentDescription="@string/cancelarEg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icons8_cancelar_100" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

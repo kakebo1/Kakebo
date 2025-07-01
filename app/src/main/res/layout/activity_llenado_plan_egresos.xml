@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBE8BA"
+    tools:context=".LlenadoPlanEgresos">
+
+    <ImageButton
+        android:id="@+id/btnCancelarEgPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="337dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="660dp"
+        android:backgroundTint="@color/transparente"
+        android:contentDescription="@string/cancelarEg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_cancelar_100" />
+
+    <EditText
+        android:id="@+id/txtFechaEgPlan"
+        android:layout_width="192dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="547dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:clickable="true"
+        android:focusable="true"
+        android:hint="@string/selecciona_la_fecha"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="661dp"
+        android:text="@string/concepto"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView62"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="258dp"
+        android:layout_marginBottom="604dp"
+        android:text="@string/cantidadDeuda"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView63"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="309dp"
+        android:layout_marginBottom="547dp"
+        android:text="@string/fecha"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:layout_width="360dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView64"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFechaEgPlan">
+
+        <RadioButton
+            android:id="@+id/btnFijoEgPlan"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/fijo"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/btnVariableEgPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/variable"
+            android:textSize="24sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="288dp"
+        android:layout_marginBottom="409dp"
+        android:text="@string/kakebo"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <Spinner
+        android:id="@+id/kakeboEgPlan"
+        android:layout_width="161dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="322dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="378dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView66"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="514dp"
+        android:layout_marginEnd="237dp"
+        android:layout_marginBottom="185dp"
+        android:text="@string/comentarios"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtComentarioEgPlan"
+        android:layout_width="349dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="552dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="56dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAceptarEgPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="677dp"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="6dp"
+        android:backgroundTint="#4C7A34"
+        android:text="@string/aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtConceptoEgPlan"
+        android:layout_width="161dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="660dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtCantidadEgPlan"
+        android:layout_width="185dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="606dp"
+        android:autofillHints=""
+        android:background="@drawable/esquinas_redondeadas"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="@string/subcategoria"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/textView64"
+        app:layout_constraintTop_toBottomOf="@+id/textView64" />
+
+    <Spinner
+        android:id="@+id/subcategoriaEgPlan"
+        android:layout_width="179dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="202dp"
+        android:layout_marginTop="434dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="259dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
